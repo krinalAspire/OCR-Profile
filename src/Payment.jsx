@@ -114,6 +114,20 @@ function Payment() {
         },
       },
     },
+    components: {
+      MuiSvgIcon: {
+        styleOverrides: {
+          root: {
+            '&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon': {
+              fill: 'red',
+              width:'18px',
+              height:'18px'
+              /* Add other CSS properties or modifications here */
+            },
+          },
+        },
+      },
+    },
   });
 
   const Customicons = {
@@ -276,19 +290,21 @@ function Payment() {
                     <AddIcon
                       sx={{
                         width: {
-                          xl: "18px",
-                          lg: "17px",
-                          md: "16px",
-                          sm: "15px",
+                          xl: "20px",
+                          lg: "18px",
+                          md: "17px",
+                          sm: "14px",
                           xs: "14px",
                         },
                         height: {
-                          xl: "18px",
-                          lg: "17px",
-                          md: "16px",
-                          sm: "15px",
+                          xl: "20px",
+                          lg: "18px",
+                          md: "17px",
+                          sm: "14px",
                           xs: "14px",
                         },
+                        marginBottom:{sm:'2.5px', xs:'2px'},
+                        marginTop:{md:'1.4px', xl:'2.5px'},
                         display:'flex',
                         alignItems:'center',
                         justifyContent:'center'
@@ -330,7 +346,19 @@ function Payment() {
                           // marginLeft:{xl:2}
                         }}
                       >
-                         <img src={filter} alt="filter" style={{ marginRight:'6px'}}  />
+                         {/* <img src={filter} alt="filter" style={{ marginRight:'6px'}}  className="filter-icon" /> */}
+                         <Box
+      component="img"
+      src={filter}
+      alt="Filter Icon"
+      sx={{
+        width: {xl:'19px', lg:'18px', md:'17px', sm:'13px', xs:'12px'}, 
+        height:{xl:'19px', lg:'18px', md:'17px', sm:'13px', xs:'12px'}, 
+        marginRight:{xl:'10px', lg:'8px', md:'7px', sm:'6px', xs:'6px'},
+        display:'flex',
+        alignItems:'center'
+      }}
+    />
                         Filter by organiztion
                       </InputLabel>
                       <Select
@@ -359,7 +387,13 @@ function Payment() {
                             xs: "25px",
                           },
                           fontSize: CustomFont,
-                          
+                          '& .MuiSelect-icon': {
+                            // fill: 'red',
+                            width:{xl:'25px',lg:'22px',md:'20px',sm:'18px',xs:'18px'},
+                            height:{xl:'25px', lg:'22px',md:'20px',sm:'18px',xs:'18px'},
+                            top:{xl:'14px',lg:'12px',md:'10px',sm:'9px',xs:'4px'},
+                            /* Add other CSS properties or modifications here */
+                          },
                           // top: {
                           //   xl: "-12px",
                           //   lg: "-10px",

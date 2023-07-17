@@ -20,14 +20,15 @@
 }
 
 
-.ag-theme-alpine .ag-cell {
+/* .ag-theme-alpine .ag-cell {
     border-radius: 5px; 
-  }
+  } */
 
   .ag-theme-alpine .ag-cell {
     display: flex;
   align-items: center;
   }
+  
 .ag-theme-alpine .ag-root-wrapper {
   border-radius: 5px; 
   border-color: rgb(232,232,232);

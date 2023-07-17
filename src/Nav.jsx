@@ -188,7 +188,7 @@ function Nav() {
       {/* <Box sx={{ flexGrow: 1 }}>
         <Profile/>
       </Box> */}
-      <NewProfile/>
+      {/* <NewProfile/> */}
     </ThemeProvider>
   );
 }

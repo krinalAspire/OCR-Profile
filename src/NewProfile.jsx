@@ -13,6 +13,7 @@ import mail from "./images/mail.svg";
 import SelectButton from "./Select";
 import layers from "./images/layers.svg";
 import Progress from "./Progress";
+import Nav from "./Nav";
 
 function NewProfile() {
   const theme = createTheme({
@@ -53,6 +54,7 @@ function NewProfile() {
 
   return (
     <>
+    <Nav />
       <ThemeProvider theme={theme}>
         <Box sx={{ height: "auto" }}>
           <Typography

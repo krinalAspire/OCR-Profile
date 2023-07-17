@@ -19,12 +19,11 @@ import AddIcon from "@mui/icons-material/Add";
 import filter from "./images/filter.svg";
 import Checkbox from "@mui/material/Checkbox";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import download  from "./images/download.svg";
+import download from "./images/download.svg";
 import "./Payment.css";
 import { PaymentData } from "./rowData";
 
 function Payment() {
-
   const [rowData, setrowData] = useState(PaymentData);
 
   const [organization, setOrganization] = useState([]);
@@ -93,41 +92,40 @@ function Payment() {
         xl: 1920, // Extra large devices (large desktops)
       },
     },
-    components: {
-      MuiMenu: {
-        styleOverrides: {
-          paper: {
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
-            "&::-webkit-scrollbar": {
-              width: "0.4em",
-              borderRadius: "5px", 
+      components: {
+        MuiMenu: {
+          styleOverrides: {
+            paper: {
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+              "&::-webkit-scrollbar": {
+                width: "0.4em",
+                // borderRadius: "5px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "#D9D9D9",
+                borderRadius: "5px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: "#868686",
+                borderRadius: "5px",
+              },
             },
-            "&::-webkit-scrollbar-track": {
-              background: "#D9D9D9",
-              borderRadius: "5px",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              background: "#868686",
-              borderRadius: "5px",
-            },
-          }, 
+          },
         },
-      },
-    },
-    components: {
-      MuiSvgIcon: {
-        styleOverrides: {
-          root: {
-            '&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon': {
-              fill: 'red',
-              width:'18px',
-              height:'18px'
-              /* Add other CSS properties or modifications here */
+
+        MuiSvgIcon: {
+          styleOverrides: {
+            root: {
+              "&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
+                fill: "red",
+                width: "18px",
+                height: "18px",
+                /* Add other CSS properties or modifications here */
+              },
             },
           },
         },
       },
-    },
   });
 
   const Customicons = {
@@ -141,24 +139,32 @@ function Payment() {
     };
 
     return (
-       <Grid >
+      <Grid>
         <Grid container alignItems="center" justifyContent="flex-start">
-          <Grid item xs={3} > <img src={download} alt="download" style={{marginRight: '8px',marginTop:'9px'}}/></Grid>
-          <Grid item xs={3} ><Typography
-        sx={{
-          color: "#9F77EB",
-          cursor: "pointer",
-          fontFamily: "Heebo",
-          fontWeight: "500",
-          fontSize: "16px",
-        }}
-        onClick={() => handleClicked()}
-      >
-        Download Invoice
-      </Typography></Grid>
+          <Grid item xs={3}>
+            {" "}
+            <img
+              src={download}
+              alt="download"
+              style={{ marginRight: "8px", marginTop: "9px" }}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Typography
+              sx={{
+                color: "#9F77EB",
+                cursor: "pointer",
+                fontFamily: "Heebo",
+                fontWeight: "500",
+                fontSize: "16px",
+              }}
+              onClick={() => handleClicked()}
+            >
+              Download Invoice
+            </Typography>
+          </Grid>
         </Grid>
-       </Grid>
-      
+      </Grid>
     );
   };
 
@@ -167,34 +173,34 @@ function Payment() {
       field: "Payment Invoice",
       checkboxSelection: true,
       headerCheckboxSelection: true,
-      minWidth:400,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500}
+      minWidth: 400,
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
     },
     {
       field: "Organization",
       minWidth: 350,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500},
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
     },
     {
       field: "Amount",
       minWidth: 95,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500},
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
     },
     {
       field: "Date",
       minWidth: 110,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500},
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
     },
     {
       field: "Status",
       minWidth: 100,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500},
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
     },
     {
       field: " ",
-      minWidth:200,
-      cellStyle: {fontSize:"16px", fontFamily: "Heebo", fontWeight: 500},
-      sortable:false,
+      minWidth: 200,
+      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      sortable: false,
       cellRenderer: handleInvoice,
     },
   ]);
@@ -206,9 +212,8 @@ function Payment() {
   };
 
   const gridOptions = {
-    rowHeight: 50, 
+    rowHeight: 50,
   };
-
 
   return (
     <>
@@ -216,7 +221,7 @@ function Payment() {
         <Box
           sx={{
             border: "1px solid rgba(0, 0, 0, 0.20)",
-            borderRadius:"5px",
+            borderRadius: "5px",
             height: "auto",
             width: "auto",
           }}
@@ -232,109 +237,121 @@ function Payment() {
                 fontFamily: "Poppins",
                 fontWeight: 600,
                 fontSize: { xl: 24, lg: 20, md: 18, sm: 16, xs: 14 },
-                marginBottom:0.7
+                marginBottom: 0.7,
               }}
             >
               Payment History({DataCount})
             </Typography>
             <Grid>
-              <Grid
-                container
-                columns={{ xs: 4, sm: 12 }}
-                mb={2}
-              >
-                <Grid item xs={6} sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
-                  <Typography
-                    sx={{ fontSize: CustomFont }}
-                  >
+              <Grid container columns={{ xs: 4, sm: 12 }} mb={2}>
+                <Grid
+                  item
+                  xs={6}
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Typography sx={{ fontSize: CustomFont }}>
                     See history of your payment plan invoice
                   </Typography>
                 </Grid>
-                
-                <Grid item xs={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                  <Box  sx={{display: 'flex', alignItems: 'center'}}>
-                  <Button
-                    sx={{
-                      textTransform: "none",
-                      fontSize: CustomFont,
-                      fontFamily: "Heebo",
-                      fontWeight: "500",
-                      borderRadius: "5px",
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: {
-                        xl: "147px",
-                        lg: "137px",
-                        md: "130px",
-                        sm: "101px",
-                        xs: "100px",
-                      },
-                      height: {
-                        xl: "50px",
-                        lg: "45px",
-                        md: "40px",
-                        sm: "35px",
-                        xs: "25px",
-                      },
-                      background: "#9F77EB",
-                      color: "white",
-                      //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
-                      ":hover": {
-                        bgcolor: "#9F77EB",
-                        color: "white",
-                      },
-                      // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
-                    }}
-                  >
-                    <AddIcon
+
+                <Grid
+                  item
+                  xs={6}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Button
                       sx={{
+                        textTransform: "none",
+                        fontSize: CustomFont,
+                        fontFamily: "Heebo",
+                        fontWeight: "500",
+                        borderRadius: "5px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         width: {
-                          xl: "20px",
-                          lg: "18px",
-                          md: "17px",
-                          sm: "14px",
-                          xs: "14px",
+                          xl: "147px",
+                          lg: "137px",
+                          md: "130px",
+                          sm: "101px",
+                          xs: "100px",
                         },
                         height: {
-                          xl: "20px",
-                          lg: "18px",
-                          md: "17px",
-                          sm: "14px",
-                          xs: "14px",
+                          xl: "50px",
+                          lg: "45px",
+                          md: "40px",
+                          sm: "35px",
+                          xs: "25px",
                         },
-                        marginBottom:{sm:'2.5px', xs:'2px'},
-                        marginTop:{md:'1.4px', xl:'2.5px'},
-                        display:'flex',
-                        alignItems:'center',
-                        justifyContent:'center'
+                        background: "#9F77EB",
+                        color: "white",
+                        //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
+                        ":hover": {
+                          bgcolor: "#9F77EB",
+                          color: "white",
+                        },
+                        // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
                       }}
-                    />
-                    Add Payment
-                  </Button>
-                    <FormControl fullWidth sx={{ 
+                    >
+                      <AddIcon
+                        sx={{
                           width: {
-                            xl: "271px",
-                            lg: "207px",
-                            md: "199px",
-                            sm: "154px",
-                            xs: "150px",
+                            xl: "20px",
+                            lg: "18px",
+                            md: "17px",
+                            sm: "14px",
+                            xs: "14px",
                           },
                           height: {
-                            xl: "50px",
-                            lg: "45px",
-                            md: "40px",
-                            sm: "35px",
-                            xs: "25px",
+                            xl: "20px",
+                            lg: "18px",
+                            md: "17px",
+                            sm: "14px",
+                            xs: "14px",
                           },
-                          marginLeft:"10px",
-                          }}>
-
+                          marginBottom: { sm: "2.5px", xs: "2px" },
+                          marginTop: { md: "1.4px", xl: "2.5px" },
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      />
+                      Add Payment
+                    </Button>
+                    <FormControl
+                      fullWidth
+                      sx={{
+                        width: {
+                          xl: "271px",
+                          lg: "207px",
+                          md: "199px",
+                          sm: "154px",
+                          xs: "150px",
+                        },
+                        height: {
+                          xl: "50px",
+                          lg: "45px",
+                          md: "40px",
+                          sm: "35px",
+                          xs: "25px",
+                        },
+                        marginLeft: "10px",
+                      }}
+                    >
                       <InputLabel
                         id="demo-simple-select-label"
                         sx={{
-                          display: 'flex',
-                          alignItems: 'center',
+                          display: "flex",
+                          alignItems: "center",
                           fontSize: CustomFont,
                           top: {
                             xl: "-2px",
@@ -346,19 +363,37 @@ function Payment() {
                           // marginLeft:{xl:2}
                         }}
                       >
-                         {/* <img src={filter} alt="filter" style={{ marginRight:'6px'}}  className="filter-icon" /> */}
-                         <Box
-      component="img"
-      src={filter}
-      alt="Filter Icon"
-      sx={{
-        width: {xl:'19px', lg:'18px', md:'17px', sm:'13px', xs:'12px'}, 
-        height:{xl:'19px', lg:'18px', md:'17px', sm:'13px', xs:'12px'}, 
-        marginRight:{xl:'10px', lg:'8px', md:'7px', sm:'6px', xs:'6px'},
-        display:'flex',
-        alignItems:'center'
-      }}
-    />
+                        {/* <img src={filter} alt="filter" style={{ marginRight:'6px'}}  className="filter-icon" /> */}
+                        <Box
+                          component="img"
+                          src={filter}
+                          alt="Filter Icon"
+                          sx={{
+                            width: {
+                              xl: "19px",
+                              lg: "18px",
+                              md: "17px",
+                              sm: "13px",
+                              xs: "12px",
+                            },
+                            height: {
+                              xl: "19px",
+                              lg: "18px",
+                              md: "17px",
+                              sm: "13px",
+                              xs: "12px",
+                            },
+                            marginRight: {
+                              xl: "10px",
+                              lg: "8px",
+                              md: "7px",
+                              sm: "6px",
+                              xs: "6px",
+                            },
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        />
                         Filter by organiztion
                       </InputLabel>
                       <Select
@@ -387,11 +422,29 @@ function Payment() {
                             xs: "25px",
                           },
                           fontSize: CustomFont,
-                          '& .MuiSelect-icon': {
+                          "& .MuiSelect-icon": {
                             // fill: 'red',
-                            width:{xl:'25px',lg:'22px',md:'20px',sm:'18px',xs:'18px'},
-                            height:{xl:'25px', lg:'22px',md:'20px',sm:'18px',xs:'18px'},
-                            top:{xl:'14px',lg:'12px',md:'10px',sm:'9px',xs:'4px'},
+                            width: {
+                              xl: "25px",
+                              lg: "22px",
+                              md: "20px",
+                              sm: "18px",
+                              xs: "18px",
+                            },
+                            height: {
+                              xl: "25px",
+                              lg: "22px",
+                              md: "20px",
+                              sm: "18px",
+                              xs: "18px",
+                            },
+                            top: {
+                              xl: "13px",
+                              lg: "11px",
+                              md: "10px",
+                              sm: "7px",
+                              xs: "3px",
+                            },
                             /* Add other CSS properties or modifications here */
                           },
                           // top: {
@@ -406,7 +459,7 @@ function Payment() {
                           <MenuItem
                             key={option.value}
                             value={option.value}
-                            sx={{ fontSize: CustomFont}}
+                            sx={{ fontSize: CustomFont }}
                           >
                             <Checkbox
                               checked={organization.includes(option.value)}
@@ -424,15 +477,21 @@ function Payment() {
               </Grid>
             </Grid>
 
-              <Box
-              className="ag-theme-alpine custom-scrollbar"
-
+            <Box
+              className="ag-theme-alpine"
+              //  custom-scrollbar
               sx={{
-                height:{xl:"55vh", lg:"55vh", md:"47vh", sm:"53vh", xs:"63vh"},
+                height: {
+                  xl: "55vh",
+                  lg: "55vh",
+                  md: "47vh",
+                  sm: "53vh",
+                  xs: "63vh",
+                },
                 // height: "46vh",
                 width: "auto",
                 // width:{xl:"auto", lg:"auto", md:"auto", sm:"auto", xs:"auto"},
-                fontSize:"16px",
+                fontSize: "16px",
                 fontFamily: "Heebo",
                 fontWeight: 500,
               }}
@@ -449,7 +508,6 @@ function Payment() {
                 className=" ag-root-wrapper"
               ></AgGridReact>
             </Box>
-
           </Box>
         </Box>
       </ThemeProvider>

@@ -163,3 +163,32 @@ export const PaymentData = [
     // Unknown: "Download Invoice",
   },
 ];
+
+
+// <div>
+    //   {editMode ? (
+    //     <p
+    //       contentEditable
+    //       value={editedData}
+    //       onChange={(e) => setEditedData(e.target.textContent)}
+    //     >
+    //       {editedData}
+    //     </p>
+    //   ) : (
+    //     <p>{data}</p>
+    //   )}
+    //   {editMode ? (
+    //     <div>
+    //       <Button variant="contained" onClick={handleSaveClick}>
+    //         Save
+    //       </Button>
+    //       <Button variant="contained" onClick={handleCancelClick}>
+    //         Cancel
+    //       </Button>
+    //     </div>
+    //   ) : (
+    //     <Button variant="contained" onClick={handleEditClick}>
+    //       Edit Data
+    //     </Button>
+    //   )}
+    // </div>

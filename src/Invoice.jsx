@@ -33,7 +33,7 @@ function Invoice() {
     xl: 14,
     lg: 13,
     md: 12,
-    sm: 11,
+    sm: 10,
     xs: 10,
   };
 
@@ -117,7 +117,7 @@ function Invoice() {
                     sx={{
                       border: "1px solid red",
                       mx: { xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
-                      my: { xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                      my: { xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },  
                     }}
                   >
                     <div>Hello</div>
@@ -127,8 +127,8 @@ function Invoice() {
               <Grid item xs={3.5}>
                 <Box
                   sx={{
-                    // borderLeft: "1px solid rgba(0, 0, 0, 0.06)",
-                    border: "1px solid blue",
+                    borderLeft: "1px solid rgba(0, 0, 0, 0.06)",
+                    // border: "1px solid blue",
                     background: "#F7F7F7",
                   }}
                 >
@@ -136,7 +136,8 @@ function Invoice() {
                     sx={{
                       // border: "1px solid red",
                       mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      my: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
+                      mt: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
+                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
                     }}
                   >
                     <Typography
@@ -167,7 +168,7 @@ function Invoice() {
                     sx={{
                       // border: "1px solid red",
                       mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      my: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
+                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
                     }}
                   >
                     <Typography
@@ -195,7 +196,7 @@ function Invoice() {
                     sx={{
                       // border: "1px solid red",
                       mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      my: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
+                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
                     }}
                   >
                     <Typography
@@ -223,7 +224,7 @@ function Invoice() {
                     sx={{
                       // border: "1px solid red",
                       mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      mt: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
+                      // mt: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
                       mb:{xl:15, lg:13, md:11, sm:9, xs:7}
                     }}
                   >

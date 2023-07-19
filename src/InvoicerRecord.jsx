@@ -14,27 +14,25 @@ const InvoiceRecord = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [editedData, setEditedData] = useState("");
   const [editedfield, setEditedfield] = useState("");
+  const [isEdited, setIsEdited] = useState(false);
 
   const handleEditClick = () => {
     setEditMode(true);
     setEditedData(data);
     setEditedfield(field);
+    setIsEdited(false);
   };
 
   const handleSaveClick = () => {
     setData(editedData);
     setfield(editedfield);
     setEditMode(false);
+    setIsEdited(true);
   };
 
   const handleCancelClick = () => {
     setEditMode(false);
   };
-
-  // const handleChange = (e) => {
-  //   setEditedData(e.target.textContent);
-  //   setEditedfield(e.target.textContent);
-  // };
 
   const handleChange = (e) => {
     const content = e.target.textContent;
@@ -60,7 +58,7 @@ const InvoiceRecord = (props) => {
           container
           sx={{
             background: editMode ? "rgba(159, 119, 235, 0.20)" : null,
-            padding: { xl: 1, md: 0.5 },
+            padding: { xl: 1, lg:0.7, md: 0.5, sm:0.3, xs:0.2 },
             borderRadius: "5px",
           }}
         >
@@ -73,17 +71,62 @@ const InvoiceRecord = (props) => {
               justifyContent: "center",
             }}
           >
-            {editMode ? (
-              <CheckIcon />
-            ) : (
-              <FiberManualRecordIcon
+            
+            { editMode ? ( <CheckIcon
+                sx={{
+                  color:"#9F77EB",
+                  width: {
+                    xl: "21px",
+                    lg: "19px",
+                    md: "17px",
+                    sm: "16px",
+                    xs: "15px",
+                  },
+                  height: {
+                    xl: "21px",
+                    lg: "19px",
+                    md: "17px",
+                    sm: "16px",
+                    xs: "15px",
+                  },
+                }}
+              />): isEdited ? ( <CheckIcon
+                sx={{
+                  color: isEdited ? "#9F77EB" : "#868686",
+                  width: {
+                    xl: "21px",
+                    lg: "19px",
+                    md: "17px",
+                    sm: "16px",
+                    xs: "15px",
+                  },
+                  height: {
+                    xl: "21px",
+                    lg: "19px",
+                    md: "17px",
+                    sm: "16px",
+                    xs: "15px",
+                  },
+                }}
+              />):(<FiberManualRecordIcon
                 sx={{
                   color: "#868686",
-                  width: { md: "10px" },
-                  height: { md: "10px" },
+                  width: {
+                    xl: "10px",
+                    lg: "9px",
+                    md: "8px",
+                    sm: "7px",
+                    xs: "6px",
+                  },
+                  height: {
+                    xl: "10px",
+                    lg: "9px",
+                    md: "8px",
+                    sm: "7px",
+                    xs: "6px",
+                  },
                 }}
-              />
-            )}
+              /> )}
           </Grid>
           <Grid
             item
@@ -106,7 +149,7 @@ const InvoiceRecord = (props) => {
                   cursor: "pointer",
                   fontFamily: "Heebo",
                   fontWeight: 500,
-                  fontSize:CustomFontsize
+                  fontSize: CustomFontsize,
                 }}
               >
                 {editedfield}
@@ -114,7 +157,12 @@ const InvoiceRecord = (props) => {
             ) : (
               <Typography
                 onClick={handleEditClick}
-                sx={{ cursor: "pointer", fontFamily: "Heebo", fontWeight: 500, fontSize:CustomFontsize }}
+                sx={{
+                  cursor: "pointer",
+                  fontFamily: "Heebo",
+                  fontWeight: 500,
+                  fontSize: CustomFontsize,
+                }}
               >
                 {field}
               </Typography>
@@ -122,7 +170,7 @@ const InvoiceRecord = (props) => {
           </Grid>
           <Grid
             item
-            xs={5}
+            xs={5.5}
             sx={{
               display: "flex",
               alignItems: "center",
@@ -137,12 +185,13 @@ const InvoiceRecord = (props) => {
                 onBlur={handleSaveClick}
                 onChange={handleChange}
                 sx={{
+                  color:"#9F77EB",
                   border: "none",
                   outline: "none",
                   cursor: "pointer",
                   fontFamily: "Heebo",
                   fontWeight: 400,
-                  fontSize:CustomFontsize
+                  fontSize: CustomFontsize,
                 }}
               >
                 {editedData}
@@ -152,36 +201,68 @@ const InvoiceRecord = (props) => {
                 onClick={handleEditClick}
                 sx={{
                   cursor: "pointer",
-                  color: "#868686",
+                  color: isEdited ? "#9F77EB" : "#868686",
                   fontFamily: "Heebo",
                   fontWeight: 400,
-                  fontSize:CustomFontsize
+                  fontSize: CustomFontsize,
                 }}
               >
                 {data}
               </Typography>
             )}
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={0.5}>
             {/* Render Icons only in editMode */}
             {editMode && (
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "flex-end",
+                  justifyContent: "flex-start",
                   alignItems: "center",
                 }}
               >
                 <Box>
                   <CheckIcon
                     onClick={handleSaveClick}
-                    sx={{ cursor: "pointer" }}
+                    sx={{
+                      cursor: "pointer",
+                      width: {
+                        xl: "22px",
+                        lg: "20px",
+                        md: "18px",
+                        sm: "17px",
+                        xs: "16px",
+                      },
+                      height: {
+                        xl: "22px",
+                        lg: "20px",
+                        md: "18px",
+                        sm: "17px",
+                        xs: "16px",
+                      },
+                    }}
                   />
                 </Box>
                 <Box>
                   <CloseIcon
                     onClick={handleCancelClick}
-                    sx={{ cursor: "pointer" }}
+                    sx={{
+                      cursor: "pointer",
+                      width: {
+                        xl: "22px",
+                        lg: "20px",
+                        md: "18px",
+                        sm: "17px",
+                        xs: "16px",
+                      },
+                      height: {
+                        xl: "22px",
+                        lg: "20px",
+                        md: "18px",
+                        sm: "17px",
+                        xs: "16px",
+                      },
+                    }}
                   />
                 </Box>
               </Box>

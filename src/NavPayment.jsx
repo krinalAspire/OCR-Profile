@@ -186,7 +186,7 @@ function NavPayment() {
           // marginTop:"35px"
         }}
       ></Box>
-      <Payment />
+      {/* <Payment /> */}
       {/* <Box sx={{ flexGrow: 1 }}>
         <Profile/>
       </Box> */}

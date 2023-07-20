@@ -17,17 +17,17 @@ function Invoice() {
   //   console.log(fieldCount);
   // };
 
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0, // Extra small devices (portrait phones)
-        sm: 600, // Small devices (landscape phones)
-        md: 1360, // Medium devices (tablets)
-        lg: 1440, // Large devices (desktops)
-        xl: 1920, // Extra large devices (large desktops)
-      },
-    },
-  });
+  // const theme = createTheme({
+  //   breakpoints: {
+  //     values: {
+  //       xs: 0, // Extra small devices (portrait phones)
+  //       sm: 600, // Small devices (landscape phones)
+  //       md: 1360, // Medium devices (tablets)
+  //       lg: 1440, // Large devices (desktops)
+  //       xl: 1920, // Extra large devices (large desktops)
+  //     },
+  //   },
+  // });
 
   const customFont = {
     xl: 14,
@@ -107,7 +107,7 @@ function Invoice() {
   return (
     <>
       <Nav />
-      <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}> */}
         <Box sx={{ height: "auto" }}>
           <Box sx={{ height: "46vh" }}>
             <Grid container columns={{ xs: 4, sm: 12, md: 12, lg: 12, xl: 12 }}>
@@ -350,7 +350,7 @@ function Invoice() {
             </Grid>
           </Box>
         </Box>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 }

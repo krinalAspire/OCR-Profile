@@ -7,17 +7,17 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 
 function SelectButton(props) {
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0, // Extra small devices (portrait phones)
-        sm: 600, // Small devices (landscape phones)
-        md: 1366, // Medium devices (tablets)
-        lg: 1440, // Large devices (desktops)
-        xl: 1920, // Extra large devices (large desktops)
-      },
-    },
-  });
+  // const theme = createTheme({
+  //   breakpoints: {
+  //     values: {
+  //       xs: 0, // Extra small devices (portrait phones)
+  //       sm: 600, // Small devices (landscape phones)
+  //       md: 1366, // Medium devices (tablets)
+  //       lg: 1440, // Large devices (desktops)
+  //       xl: 1920, // Extra large devices (large desktops)
+  //     },
+  //   },
+  // });
 
   const isDisabled = true;
 
@@ -36,8 +36,8 @@ function SelectButton(props) {
     // console.log(event.target.value);
   };
   return (
-    <ThemeProvider theme={theme}>
-      {/* <Box> */}
+
+      <>
       <FormControl
         sx={{
           my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
@@ -134,8 +134,8 @@ function SelectButton(props) {
           {/* <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
-      {/* </Box> */}
-    </ThemeProvider>
+      </>
+
   );
 }
 

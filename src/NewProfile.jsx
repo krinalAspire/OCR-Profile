@@ -16,17 +16,17 @@ import Progress from "./Progress";
 import Nav from "./Nav";
 
 function NewProfile() {
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0, // Extra small devices (portrait phones)
-        sm: 600, // Small devices (landscape phones)
-        md: 1366, // Medium devices (tablets)
-        lg: 1440, // Large devices (desktops)
-        xl: 1920, // Extra large devices (large desktops)
-      },
-    },
-  });
+  // const theme = createTheme({
+  //   breakpoints: {
+  //     values: {
+  //       xs: 0, // Extra small devices (portrait phones)
+  //       sm: 600, // Small devices (landscape phones)
+  //       md: 1366, // Medium devices (tablets)
+  //       lg: 1440, // Large devices (desktops)
+  //       xl: 1920, // Extra large devices (large desktops)
+  //     },
+  //   },
+  // });
 
   const SettingTitle = {
     xl: "18px",
@@ -55,7 +55,7 @@ function NewProfile() {
   return (
     <>
     <Nav />
-      <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}> */}
         <Box sx={{ height: "auto" }}>
           <Typography
             sx={{
@@ -105,8 +105,9 @@ function NewProfile() {
               mt={{ xl: 2.8, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
             >
               <Typography
+                variant="subtitle1"
                 sx={{
-                  fontSize: ContentFonstsize,
+                  // fontSize: ContentFonstsize,
                   fontFamily: "Heebo",
                   fontWeight: 400,
                   color: "rgba(30, 30, 30, 0.60)",
@@ -146,16 +147,18 @@ function NewProfile() {
                     </Grid>
                     <Grid xs={11} align="left">
                       <Typography
+                      variant="body1"
                         sx={{
                           color: "#1E1E1E",
                           fontWeight: "500",
                           fontFamily: "Heebo",
-                          fontSize: TitleFontsize,
+                          // fontSize: TitleFontsize,
                         }}
                       >
                         Pratik Patel
                       </Typography>
                       <Typography
+                      variant="subtitle1"
                         marginTop={{
                           xl: "2px",
                           lg: "2px",
@@ -165,7 +168,7 @@ function NewProfile() {
                         }}
                         sx={{
                           color: "rgba(43, 43, 43, 0.80)",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                           fontFamily: "Heebo",
                           fontWeight: 400,
                         }}
@@ -213,8 +216,9 @@ function NewProfile() {
               </Grid>
 
               <Typography
+                variant="subtitle1"
                 sx={{
-                  fontSize: ContentFonstsize,
+                  // fontSize: ContentFonstsize,
                   fontFamily: "Heebo",
                   fontWeight: 400,
                   color: "rgba(30, 30, 30, 0.60)",
@@ -261,16 +265,18 @@ function NewProfile() {
                     </Grid>
                     <Grid xs={11} align="left">
                       <Typography
+                        variant="subtitle1"
                         sx={{
                           color: "#1E1E1E",
                           fontWeight: "500",
                           fontFamily: "Heebo",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                         }}
                       >
                         Pratik Patel
                       </Typography>
                       <Typography
+                        variant="subtitle1"
                         marginTop={{
                           xl: "2px",
                           lg: "2px",
@@ -280,7 +286,7 @@ function NewProfile() {
                         }}
                         sx={{
                           color: "rgba(43, 43, 43, 0.80)",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                           fontFamily: "Heebo",
                           fontWeight: 400,
                         }}
@@ -325,16 +331,18 @@ function NewProfile() {
                     </Grid>
                     <Grid xs={11} align="left">
                       <Typography
+                        variant="subtitle1"
                         sx={{
                           color: "#1E1E1E",
                           fontWeight: "500",
                           fontFamily: "Heebo",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                         }}
                       >
                         poonampavakar5632@gmail.com
                       </Typography>
                       <Typography
+                        variant="subtitle1"
                         marginTop={{
                           xl: "2px",
                           lg: "2px",
@@ -344,7 +352,7 @@ function NewProfile() {
                         }}
                         sx={{
                           color: "rgba(43, 43, 43, 0.80)",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                           fontFamily: "Heebo",
                           fontWeight: 400,
                         }}
@@ -360,8 +368,9 @@ function NewProfile() {
               </Grid>
 
               <Typography
+                variant="subtitle1"
                 sx={{
-                  fontSize: ContentFonstsize,
+                  // fontSize: ContentFonstsize,
                   fontFamily: "Heebo",
                   fontWeight: 400,
                   color: "rgba(30, 30, 30, 0.60)",
@@ -411,6 +420,7 @@ function NewProfile() {
                         My Current Plan
                       </Typography>
                       <Typography
+                        variant="subtitle1"
                         marginTop={{
                           xl: "2px",
                           lg: "2px",
@@ -420,7 +430,7 @@ function NewProfile() {
                         }}
                         sx={{
                           color: "rgba(43, 43, 43, 0.80)",
-                          fontSize: ContentFonstsize,
+                          // fontSize: ContentFonstsize,
                           fontFamily: "Heebo",
                           fontWeight: 400,
                         }}
@@ -451,6 +461,7 @@ function NewProfile() {
                       190 of 200 credits remaining
                     </Typography>
                     <Typography
+                     variant="body1"
                       marginTop={{
                         xl: "2px",
                         lg: "2px",
@@ -460,7 +471,7 @@ function NewProfile() {
                       }}
                       sx={{
                         color: "rgba(43, 43, 43, 0.60)",
-                        fontSize: TitleFontsize,
+                        // fontSize: TitleFontsize,
                         fontFamily: "Heebo",
                         fontWeight: 400,
                       }}
@@ -472,8 +483,9 @@ function NewProfile() {
               </Grid>
 
               <Typography
+                variant="subtitle1"
                 sx={{
-                  fontSize: ContentFonstsize,
+                  // fontSize: ContentFonstsize,
                   fontFamily: "Heebo",
                   fontWeight: 400,
                   color: "rgba(30, 30, 30, 0.60)",
@@ -501,7 +513,7 @@ function NewProfile() {
             </Box>
           </Box>
         </Box>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 }

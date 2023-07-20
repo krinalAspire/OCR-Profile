@@ -22,6 +22,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import download from "./images/download.svg";
 import "./Payment.css";
 import { PaymentData } from "./rowData";
+import NavPayment from "./NavPayment";
 
 function Payment() {
   const [rowData, setrowData] = useState(PaymentData);
@@ -82,51 +83,51 @@ function Payment() {
     xs: 10,
   };
 
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xs: 0, // Extra small devices (portrait phones)
-        sm: 960, // Small devices (landscape phones)
-        md: 1360, // Medium devices (tablets)
-        lg: 1440, // Large devices (desktops)
-        xl: 1920, // Extra large devices (large desktops)
-      },
-    },
-      components: {
-        MuiMenu: {
-          styleOverrides: {
-            paper: {
-              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
-              "&::-webkit-scrollbar": {
-                width: "0.4em",
-                // borderRadius: "5px",
-              },
-              "&::-webkit-scrollbar-track": {
-                background: "#D9D9D9",
-                borderRadius: "5px",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                background: "#868686",
-                borderRadius: "5px",
-              },
-            },
-          },
-        },
+  // const theme = createTheme({
+  //   breakpoints: {
+  //     values: {
+  //       xs: 0, // Extra small devices (portrait phones)
+  //       sm: 600, // Small devices (landscape phones)
+  //       md: 1366, // Medium devices (tablets)
+  //       lg: 1440, // Large devices (desktops)
+  //       xl: 1920, // Extra large devices (large desktops)
+  //     },
+  //   },
+  //     components: {
+  //       MuiMenu: {
+  //         styleOverrides: {
+  //           paper: {
+  //             boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+  //             "&::-webkit-scrollbar": {
+  //               width: "0.4em",
+  //               // borderRadius: "5px",
+  //             },
+  //             "&::-webkit-scrollbar-track": {
+  //               background: "#D9D9D9",
+  //               borderRadius: "5px",
+  //             },
+  //             "&::-webkit-scrollbar-thumb": {
+  //               background: "#868686",
+  //               borderRadius: "5px",
+  //             },
+  //           },
+  //         },
+  //       },
 
-        MuiSvgIcon: {
-          styleOverrides: {
-            root: {
-              "&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
-                fill: "red",
-                width: "18px",
-                height: "18px",
-                /* Add other CSS properties or modifications here */
-              },
-            },
-          },
-        },
-      },
-  });
+  //       MuiSvgIcon: {
+  //         styleOverrides: {
+  //           root: {
+  //             "&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
+  //               fill: "red",
+  //               width: "18px",
+  //               height: "18px",
+  //               /* Add other CSS properties or modifications here */
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  // });
 
   const Customicons = {
     sortAscending: '<i class="fa fa-arrow-up"/><i class="fa fa-arrow-down"/>',
@@ -217,7 +218,8 @@ function Payment() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
+      {/* <ThemeProvider theme={theme}> */}
+      <NavPayment />
         <Box
           sx={{
             border: "1px solid rgba(0, 0, 0, 0.20)",
@@ -253,7 +255,10 @@ function Payment() {
                     justifyContent: "flex-start",
                   }}
                 >
-                  <Typography sx={{ fontSize: CustomFont }}>
+                  <Typography
+                  variant="body1" 
+                  // sx={{ fontSize: CustomFont }}
+                  >
                     See history of your payment plan invoice
                   </Typography>
                 </Grid>
@@ -510,7 +515,7 @@ function Payment() {
             </Box>
           </Box>
         </Box>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 }

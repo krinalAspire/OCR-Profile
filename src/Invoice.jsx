@@ -17,26 +17,6 @@ function Invoice() {
   //   console.log(fieldCount);
   // };
 
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 0, // Extra small devices (portrait phones)
-  //       sm: 600, // Small devices (landscape phones)
-  //       md: 1360, // Medium devices (tablets)
-  //       lg: 1440, // Large devices (desktops)
-  //       xl: 1920, // Extra large devices (large desktops)
-  //     },
-  //   },
-  // });
-
-  const customFont = {
-    xl: 14,
-    lg: 13,
-    md: 12,
-    sm: 10,
-    xs: 10,
-  };
-
   const AddField = () => {
     const [fieldCount, setFieldCount] = useState(2); // Initial field count is 2 (for the first two InvoiceRecord components)
 
@@ -86,12 +66,10 @@ function Invoice() {
           </Box>
           <Box>
             <Typography
+            variant="body2"
               sx={{
                 cursor: "pointer",
                 color: "#868686",
-                fontSize: customFont,
-                fontFamily: "Heebo",
-                fontWeight: 400,
               }}
               onClick={handleAddField}
               // onClick={onAddField}
@@ -107,7 +85,6 @@ function Invoice() {
   return (
     <>
       <Nav />
-      {/* <ThemeProvider theme={theme}> */}
         <Box sx={{ height: "auto" }}>
           <Box sx={{ height: "46vh" }}>
             <Grid container columns={{ xs: 4, sm: 12, md: 12, lg: 12, xl: 12 }}>
@@ -141,9 +118,9 @@ function Invoice() {
                     }}
                   >
                     <Typography
+                    variant="body2"
                       sx={{
                         color: "rgba(30, 30, 30, 0.60)",
-                        fontSize: customFont,
                         pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
                       }}
                     >
@@ -172,9 +149,9 @@ function Invoice() {
                     }}
                   >
                     <Typography
+                    variant="body2"
                       sx={{
                         color: "rgba(30, 30, 30, 0.60)",
-                        fontSize: customFont,
                         pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
                       }}
                     >
@@ -200,9 +177,9 @@ function Invoice() {
                     }}
                   >
                     <Typography
+                    variant="body2"
                       sx={{
                         color: "rgba(30, 30, 30, 0.60)",
-                        fontSize: customFont,
                         pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
                       }}
                     >
@@ -229,9 +206,9 @@ function Invoice() {
                     }}
                   >
                     <Typography
+                    variant="body2"
                       sx={{
                         color: "rgba(30, 30, 30, 0.60)",
-                        fontSize: customFont,
                         pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
                       }}
                     >
@@ -262,17 +239,6 @@ function Invoice() {
                         <Box sx={{ display: "flex", alignItems: "center" }}>
                           <Button
                             sx={{
-                              textTransform: "none",
-                              fontSize: {
-                                xl: 16,
-                                lg: 15,
-                                md: 12,
-                                sm: 10,
-                                xs: 10,
-                              },
-                              fontFamily: "Heebo",
-                              fontWeight: "500",
-                              borderRadius: "5px",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -350,7 +316,6 @@ function Invoice() {
             </Grid>
           </Box>
         </Box>
-      {/* </ThemeProvider> */}
     </>
   );
 }

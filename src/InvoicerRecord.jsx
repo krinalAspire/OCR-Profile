@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
@@ -43,13 +41,13 @@ const InvoiceRecord = (props) => {
     }
   };
 
-  const CustomFontsize = {
-    xl: 16,
-    lg: 15,
-    md: 12,
-    sm: 10,
-    xs: 10,
-  };
+  // const CustomFontsize = {
+  //   xl: 16,
+  //   lg: 15,
+  //   md: 12,
+  //   sm: 10,
+  //   xs: 10,
+  // };
 
   return (
     <>
@@ -139,6 +137,7 @@ const InvoiceRecord = (props) => {
           >
             {editMode ? (
               <Typography
+              variant="body1"
                 contentEditable
                 value={editedfield}
                 onBlur={handleSaveClick}
@@ -149,19 +148,20 @@ const InvoiceRecord = (props) => {
                   cursor: "pointer",
                   fontFamily: "Heebo",
                   fontWeight: 500,
-                  fontSize: CustomFontsize,
+                  // fontSize: CustomFontsize,
                 }}
               >
                 {editedfield}
               </Typography>
             ) : (
               <Typography
+              variant="body1"
                 onClick={handleEditClick}
                 sx={{
                   cursor: "pointer",
                   fontFamily: "Heebo",
                   fontWeight: 500,
-                  fontSize: CustomFontsize,
+                  // fontSize: CustomFontsize,
                 }}
               >
                 {field}
@@ -180,6 +180,7 @@ const InvoiceRecord = (props) => {
             {/* Render additional data for the second column */}
             {editMode ? (
               <Typography
+              variant="body1"
                 contentEditable
                 value={editedData}
                 onBlur={handleSaveClick}
@@ -191,20 +192,21 @@ const InvoiceRecord = (props) => {
                   cursor: "pointer",
                   fontFamily: "Heebo",
                   fontWeight: 400,
-                  fontSize: CustomFontsize,
+                  // fontSize: CustomFontsize,
                 }}
               >
                 {editedData}
               </Typography>
             ) : (
               <Typography
+              variant="body1"
                 onClick={handleEditClick}
                 sx={{
                   cursor: "pointer",
                   color: isEdited ? "#9F77EB" : "#868686",
                   fontFamily: "Heebo",
                   fontWeight: 400,
-                  fontSize: CustomFontsize,
+                  // fontSize: CustomFontsize,
                 }}
               >
                 {data}

@@ -2,32 +2,12 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { createTheme, ThemeProvider } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 
 function SelectButton(props) {
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 0, // Extra small devices (portrait phones)
-  //       sm: 600, // Small devices (landscape phones)
-  //       md: 1366, // Medium devices (tablets)
-  //       lg: 1440, // Large devices (desktops)
-  //       xl: 1920, // Extra large devices (large desktops)
-  //     },
-  //   },
-  // });
 
   const isDisabled = true;
-
-  const TitleFontsize = {
-    xl: 16,
-    lg: 15,
-    md: 12,
-    sm: 10,
-    xs: 10,
-  };
 
   const [role, setRole] = useState("");
 
@@ -50,9 +30,6 @@ function SelectButton(props) {
           id="demo-simple-select-helper-label"
           // shrink={false}
           sx={{
-            fontSize: TitleFontsize,
-            fontFamily: "Heebo",
-            fontWeight: 400,
             ml: { xl: 1.5, lg: 1.2, md: 1 },
             // position: 'absolute',
           // top: '-6px',
@@ -67,7 +44,7 @@ function SelectButton(props) {
           {/* {role} */}
         </InputLabel>
         <Select
-          disabled={props.label === "Admin" ? { isDisabled } : null}
+          disabled={props.label === "Admin" ?  isDisabled  : null}
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
           IconComponent={KeyboardArrowDownIcon}
@@ -100,38 +77,21 @@ function SelectButton(props) {
               sm: "27px",
               xs: "25px",
             },
-            fontSize: TitleFontsize,
-            fontFamily: "Heebo",
-            fontWeight: 400,
             pl: { xl: 1.5, lg: 1.2, md: 1 },
             color:"rgba(43, 43, 43, 0.80)"
             // position:"relative"
           }}
         >
-          {/* <MenuItem value="">
-          <em>None</em>
-        </MenuItem> */}
           <MenuItem
             value="admin"
-            sx={{
-              fontSize: TitleFontsize,
-              fontFamily: "Heebo",
-              fontWeight: 400,
-            }}
           >
             Admin
           </MenuItem>
           <MenuItem
             value="member"
-            sx={{
-              fontSize: TitleFontsize,
-              fontFamily: "Heebo",
-              fontWeight: 400,
-            }}
           >
             Members
           </MenuItem>
-          {/* <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
       </>

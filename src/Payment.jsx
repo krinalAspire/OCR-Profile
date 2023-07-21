@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import {
   Button,
-  createTheme,
   Grid,
-  ThemeProvider,
   Typography,
   ListItemText,
 } from "@mui/material";
@@ -75,59 +73,13 @@ function Payment() {
     label: organization,
   }));
 
-  const CustomFont = {
-    xl: 16,
-    lg: 15,
-    md: 13,
-    sm: 10,
-    xs: 10,
-  };
-
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 0, // Extra small devices (portrait phones)
-  //       sm: 600, // Small devices (landscape phones)
-  //       md: 1366, // Medium devices (tablets)
-  //       lg: 1440, // Large devices (desktops)
-  //       xl: 1920, // Extra large devices (large desktops)
-  //     },
-  //   },
-  //     components: {
-  //       MuiMenu: {
-  //         styleOverrides: {
-  //           paper: {
-  //             boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
-  //             "&::-webkit-scrollbar": {
-  //               width: "0.4em",
-  //               // borderRadius: "5px",
-  //             },
-  //             "&::-webkit-scrollbar-track": {
-  //               background: "#D9D9D9",
-  //               borderRadius: "5px",
-  //             },
-  //             "&::-webkit-scrollbar-thumb": {
-  //               background: "#868686",
-  //               borderRadius: "5px",
-  //             },
-  //           },
-  //         },
-  //       },
-
-  //       MuiSvgIcon: {
-  //         styleOverrides: {
-  //           root: {
-  //             "&.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
-  //               fill: "red",
-  //               width: "18px",
-  //               height: "18px",
-  //               /* Add other CSS properties or modifications here */
-  //             },
-  //           },
-  //         },
-  //       },
-  //     },
-  // });
+  // const CustomFont = {
+  //   xl: 16,
+  //   lg: 15,
+  //   md: 13,
+  //   sm: 10,
+  //   xs: 10,
+  // };
 
   const Customicons = {
     sortAscending: '<i class="fa fa-arrow-up"/><i class="fa fa-arrow-down"/>',
@@ -235,10 +187,8 @@ function Payment() {
             mx={{ xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 1.5 }}
           >
             <Typography
+            variant="h4"
               sx={{
-                fontFamily: "Poppins",
-                fontWeight: 600,
-                fontSize: { xl: 24, lg: 20, md: 18, sm: 16, xs: 14 },
                 marginBottom: 0.7,
               }}
             >
@@ -257,7 +207,6 @@ function Payment() {
                 >
                   <Typography
                   variant="body1" 
-                  // sx={{ fontSize: CustomFont }}
                   >
                     See history of your payment plan invoice
                   </Typography>
@@ -275,11 +224,6 @@ function Payment() {
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Button
                       sx={{
-                        textTransform: "none",
-                        fontSize: CustomFont,
-                        fontFamily: "Heebo",
-                        fontWeight: "500",
-                        borderRadius: "5px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -332,6 +276,7 @@ function Payment() {
                       />
                       Add Payment
                     </Button>
+                    
                     <FormControl
                       fullWidth
                       sx={{
@@ -357,7 +302,7 @@ function Payment() {
                         sx={{
                           display: "flex",
                           alignItems: "center",
-                          fontSize: CustomFont,
+                          // fontSize: CustomFont,
                           top: {
                             xl: "-2px",
                             lg: "-4px",
@@ -426,7 +371,6 @@ function Payment() {
                             sm: "35px",
                             xs: "25px",
                           },
-                          fontSize: CustomFont,
                           "& .MuiSelect-icon": {
                             // fill: 'red',
                             width: {
@@ -464,14 +408,12 @@ function Payment() {
                           <MenuItem
                             key={option.value}
                             value={option.value}
-                            sx={{ fontSize: CustomFont }}
                           >
                             <Checkbox
                               checked={organization.includes(option.value)}
                             />
                             <ListItemText
                               primary={option.label}
-                              sx={{ fontSize: CustomFont }}
                             />
                           </MenuItem>
                         ))}

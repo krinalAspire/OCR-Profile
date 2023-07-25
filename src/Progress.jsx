@@ -3,23 +3,36 @@ import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import {up} from "./Theme";
 
 function Progress() {
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 0, // Extra small devices (portrait phones)
-  //       sm: 600, // Small devices (landscape phones)
-  //       md: 1366, // Medium devices (tablets)
-  //       lg: 1440, // Large devices (desktops)
-  //       xl: 1920, // Extra large devices (large desktops)
-  //     },
-  //   },
-  // });
 
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-    // height: 14,
-    // width:325,
+    [up("xs")]: {
+      width:'45vw',
+      height:'1vh'
+    },
+    [up("sm")]: {
+      width:'23vw',
+      height:'0.8vh'
+    },
+    [up("md")]: {
+      width:'17vw',
+      height:'1.3vh'
+    },
+    [up("lg")]: {
+      width:'17vw',
+      height:'1.7vh'
+    },
+    [up("xl")]: {
+      width:'17vw',
+      height:'1.29vh'
+    },
+    [up("xxl")]: {
+      // width:'16.92vw',
+      width:'15vw',
+      height:'1.29vh'
+    },
     borderRadius: 7,
     [`&.${linearProgressClasses.colorPrimary}`]: {
       backgroundColor: theme.palette.grey[300],
@@ -32,16 +45,10 @@ function Progress() {
   }));
 
   return (
-    // <ThemeProvider theme={theme}>
       <BorderLinearProgress
         variant="determinate"
         value={85}
-        sx={{
-          width: { xl: 325, lg: 285, md: 265, sm: 210, xs: 180 },
-          height: { xl: 14, lg: 13, md: 12, sm: 10, xs: 8 },
-        }}
       />
-    // </ThemeProvider>
   );
 }
 

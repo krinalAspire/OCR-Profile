@@ -8,6 +8,7 @@ import SelectButton from "./Select";
 import layers from "./images/layers.svg";
 import Progress from "./Progress";
 import Nav from "./Nav";
+import { up } from "./Theme";
 // import { makeStyles } from '@mui/styles';
 import { styled } from "@mui/material/styles";
 // import {makeStyles} from '@mui/material/styles';
@@ -65,43 +66,45 @@ import { styled } from "@mui/material/styles";
 
 // const PREFIX = "MainBox";
 const classes = {
-  root: 'root',
-  box: 'box',
-  title: 'title',
-  titlegrid:'titlegri',
-  content: 'content',
+  root: "root",
+  box: "box",
+  title: "title",
+  titlegrid: "titlegrid",
+  IndividualGrid: "IndividualGrid",
+  Icon: "Icon",
+  btn: "btn",
+  content: "content",
 };
 
-const MainBox = styled(Box)(({ theme }) => ({
-  
+const Root = styled(Box)(({ theme }) => ({
   [`&.${classes.root}`]: {
     // background:"yellow",
-    [theme.breakpoints.up("xs")]: {
+    [up("xs")]: {
       marginLeft: "20px",
       marginRight: "20px",
       height: "83vh",
     },
-    [theme.breakpoints.up("sm")]: {
+    [up("sm")]: {
       marginLeft: "20px",
       marginRight: "20px",
       height: "85vh",
     },
-    [theme.breakpoints.up("md")]: {
+    [up("md")]: {
       marginLeft: "20px",
       marginRight: "20px",
       height: "75vh",
     },
-    [theme.breakpoints.up("lg")]: {
+    [up("lg")]: {
       marginLeft: "20px",
       marginRight: "20px",
       height: "75vh",
     },
-    [theme.breakpoints.up("xl")]: {
+    [up("xl")]: {
       marginLeft: "20px",
       marginRight: "20px",
       height: "79vh",
     },
-    [theme.breakpoints.up("xxl")]: {
+    [up("xxl")]: {
       marginLeft: "40px",
       marginRight: "40px",
       height: "81.5vh",
@@ -126,76 +129,161 @@ const MainBox = styled(Box)(({ theme }) => ({
 
   [`& .${classes.box}`]: {
     // background:"yellow"
-    [theme.breakpoints.up("xs")]: {
-      margin:"15px 17px 15px 17px"
+    [up("xs")]: {
+      margin: "15px 17px 15px 17px",
     },
-    [theme.breakpoints.up("sm")]: {
-      margin:"16px 19px 16px 19px"
+    [up("sm")]: {
+      margin: "16px 19px 16px 19px",
     },
-    [theme.breakpoints.up("md")]: {
-      margin:"14px 19px 14px 19px"
+    [up("md")]: {
+      margin: "14px 19px 14px 19px",
     },
-    [theme.breakpoints.up("lg")]: {
-      margin:"16px 20px 16px 20px"
+    [up("lg")]: {
+      margin: "16px 20px 16px 20px",
     },
-    [theme.breakpoints.up("xl")]: {
-      margin:"18px 23px 18px 23px"
+    [up("xl")]: {
+      margin: "18px 23px 18px 23px",
     },
-    [theme.breakpoints.up("xxl")]: {
-      margin:"20px 25px 20px 25px"
+    [up("xxl")]: {
+      margin: "20px 25px 20px 25px",
     },
   },
 
   [`& .${classes.title}`]: {
-    color:"rgba(30, 30, 30, 0.60)",
-    [theme.breakpoints.up("xs")]: {
-      marginBottom:"7px"
+    color: "rgba(30, 30, 30, 0.60)",
+    [up("xs")]: {
+      marginBottom: "7px",
     },
-    [theme.breakpoints.up("sm")]: {
-      marginBottom:"8px"
+    [up("sm")]: {
+      marginBottom: "8px",
     },
-    [theme.breakpoints.up("md")]: {
-      marginBottom:"9px"
+    [up("md")]: {
+      marginBottom: "9px",
     },
-    [theme.breakpoints.up("lg")]: {
-      marginBottom:"10px"
+    [up("lg")]: {
+      marginBottom: "10px",
     },
-    [theme.breakpoints.up("xl")]: {
-      marginBottom:"11px"
+    [up("xl")]: {
+      marginBottom: "11px",
     },
-    [theme.breakpoints.up("xxl")]: {
-      marginBottom:"13px"
+    [up("xxl")]: {
+      marginBottom: "13px",
     },
-    backgroundColor:` ${(theme) =>
-      ({  
-        xs: 'orange',
-        sm: 'green',
-        md: 'blue',
-        lg: 'red',
-        xl: 'yellow',
-        xxl:"pink",
-      }[theme.breakpoints.up()] || 'initial')}`
   },
   [`& .${classes.titlegrid}`]: {
-    background:"rgba(134, 134, 134, 0.10)",
-    [theme.breakpoints.up("xs")]: {
-      marginBottom:"20px"
+    background: "rgba(134, 134, 134, 0.10)",
+    [up("xs")]: {
+      marginBottom: "20px",
     },
-    [theme.breakpoints.up("sm")]: {
-      marginBottom:"25px"
+    [up("sm")]: {
+      marginBottom: "25px",
     },
-    [theme.breakpoints.up("md")]: {
-      marginBottom:"30px"
+    [up("md")]: {
+      marginBottom: "30px",
     },
-    [theme.breakpoints.up("lg")]: {
-      marginBottom:"35px"
+    [up("lg")]: {
+      marginBottom: "35px",
     },
-    [theme.breakpoints.up("xl")]: {
-      marginBottom:"40px"
+    [up("xl")]: {
+      marginBottom: "40px",
     },
-    [theme.breakpoints.up("xxl")]: {
-      marginBottom:"45px"
+    [up("xxl")]: {
+      marginBottom: "45px",
     },
+  },
+  [`& .${classes.IndividualGrid}`]: {
+    [up("xs")]: {
+      padding: "14px 0px 14px 14px",
+    },
+    [up("sm")]: {
+      padding: "16px 0px 16px 16px",
+    },
+    [up("md")]: {
+      padding: "18px 0px 18px 18px",
+    },
+    [up("lg")]: {
+      padding: "20px 0px 20px 20px",
+    },
+    [up("xl")]: {
+      padding: "22px 0px 22px 22px",
+    },
+    [up("xxl")]: {
+      padding: "24px 0px 24px 24px",
+    },
+  },
+  [`& .${classes.Icon}`]: {
+    [up("xs")]: {
+      width: "13px",
+      height: "13px",
+      marginTop: "1.6px",
+    },
+    [up("sm")]: {
+      width: "15px",
+      height: "15px",
+      marginTop: "2.4px",
+    },
+    [up("md")]: {
+      width: "18px",
+      height: "18px",
+      marginTop: "1.6px",
+    },
+    [up("lg")]: {
+      width: "20px",
+      height: "20px",
+      marginTop: "3.2px",
+    },
+    [up("xl")]: {
+      width: "22px",
+      height: "22px",
+      marginTop: "4.8px",
+    },
+    [up("xxl")]: {
+      width: "24px",
+      height: "24px",
+      marginTop: "3.2px",
+    },
+    paddingRight: "16px",
+  },
+  [`& .${classes.btn}`]: {
+    background: "rgba(134, 134, 134, 0.40)",
+    color: "#1E1E1E",
+    ":hover": {
+      bgcolor: "rgba(134, 134, 134, 0.40)",
+      color: "1E1E1E",
+    },
+    [up("xs")]: {
+      width: "29vw",
+      height: "4vh",
+      marginBottom: "10px",
+    },
+    [up("sm")]: {
+      width: "15vw",
+      height: "3vh",
+      margin: "20px 0px",
+    },
+    [up("md")]: {
+      width: "14vw",
+      height: "6vh",
+      margin: "20px 0px",
+    },
+    [up("lg")]: {
+      width: "13vw",
+      height: "7vh",
+      margin: "22px 0px",
+    },
+    [up("xl")]: {
+      width: "12.5vw",
+      height: "5.78vh",
+      margin: "23px 0px",
+    },
+    [up("xxl")]: {
+      width: "9.47vw",
+      height: "5vh",
+      margin: "24px 0px",
+    },
+  },
+  [`& .${classes.selectbtn}`]: {
+    background: "yellow",
   },
   [`& .${classes.content}`]: {
     color: theme.palette.common.white,
@@ -204,39 +292,29 @@ const MainBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-// const useStyles = makeStyles({
-//   root: {
-//     border: "1px solid rgba(0, 0, 0, 0.20)",
-//     background:"yellow",
-//     borderRadius: "5px",
-//     overflow: "auto",
-//     scrollbarWidth: "thin",
-//     "&::-webkit-scrollbar": {
-//       width: "0.4em",
-//     },
-//     "&::-webkit-scrollbar-track": {
-//       background: "#D9D9D9",
-//       borderRadius: "5px",
-//     },
-//     "&::-webkit-scrollbar-thumb": {
-//       backgroundColor: "#868686",
-//       borderRadius: "5px",
-//     },
-//   },
-// });
-
 function NewProfile() {
-  // const classes = useStyles();
   return (
     <>
       <Nav />
       <Box>
         <Typography
           variant="h5"
-          sx={{ fontSize: "Poppins", fontWeight: 600 }}
-          mx={{ xl: 5, lg: 4, md: 3, sm: 2.5, xs: 2 }}
-          pt={{ xl: 4, lg: 3, md: 2, sm: 1.5, xs: 1 }}
-          pb={{ xl: 2, lg: 1.3, md: 1, sm: 0.7, xs: 0.5 }}
+          sx={{
+            fontSize: "Poppins",
+            fontWeight: 600,
+            margin: {
+              xxl: "32px 43px 16px",
+              xl: "27px 23px 14px",
+              lg: "23px 23px 12px",
+              md: "19px 23px 11px",
+              sm: "18px 22px 8px",
+              xs: "16px 21px 6px",
+            },
+            // padding:{xxl:"32px 0px "}
+          }}
+          // mx={{ xl: 5, lg: 4, md: 3, sm: 2.5, xs: 2 }}
+          // pt={{ xl: 4, lg: 3, md: 2, sm: 1.5, xs: 1 }}
+          // pb={{ xl: 2, lg: 1.3, md: 1, sm: 0.7, xs: 0.5 }}
         >
           Account Settings
         </Typography>
@@ -273,7 +351,7 @@ function NewProfile() {
           mx={{ xl: 5, lg: 4, md: 3, sm: 2.5, xs: 2 }}
           mb={{ xl: 6.5, lg: 5.5, md: 4.5, sm: 3.5, xs: 2.5 }}
         > */}
-        <MainBox className={classes.root}>
+        <Root className={classes.root}>
           <Box
             className={classes.box}
             // mx={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
@@ -300,25 +378,28 @@ function NewProfile() {
               <Grid item xs={5}>
                 <Grid
                   container
-                  my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
-                  pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  className={classes.IndividualGrid}
+                  // py={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  // pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
                 >
                   <Grid
                     item
                     xs={1}
                     align="center"
-                    pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
+                    // pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
                   >
-                    <Typography
-                      sx={{
-                        width: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        height: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        mt: { xl: 0.5, lg: 0.6, md: 0.1 },
-                        mb: { xs: 0.5 },
-                      }}
+                    <Box
+                      className={classes.Icon}
+                      // sx={{
+                      //   width: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   height: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   mt: {xxl:0.4, xl: 0.6, lg: 0.4, md: 0.2, sm:0.3, xs:0.2 },
+                      //   // paddingRight:"16px"
+                      //   // mb: { xs: 0.5 },
+                      // }}
                     >
                       <img src={user} alt="user" />
-                    </Typography>
+                    </Box>
                   </Grid>
                   <Grid item xs={11} align="left">
                     <Typography
@@ -331,15 +412,16 @@ function NewProfile() {
                     </Typography>
                     <Typography
                       variant="subtitle1"
-                      marginTop={{
-                        xl: "2px",
-                        lg: "2px",
-                        md: "2px",
-                        sm: "2px",
-                        xs: "2px",
-                      }}
+                      // marginTop={{
+                      //   xl: "2px",
+                      //   lg: "2px",
+                      //   md: "2px",
+                      //   sm: "2px",
+                      //   xs: "2px",
+                      // }}
                       sx={{
                         color: "rgba(43, 43, 43, 0.80)",
+                        // marginTop:"2px"
                       }}
                     >
                       pratik.patel@aspiresoftserv.com
@@ -347,31 +429,33 @@ function NewProfile() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={7} sx={{ pl: { xs: 4.7 } }}>
+              <Grid item xs={7} sx={{ pl: 4.7 }}>
                 <Button
-                  sx={{
-                    width: {
-                      xl: "182px",
-                      lg: "178px",
-                      md: "145px",
-                      sm: "110px",
-                      xs: "105px",
-                    },
-                    height: {
-                      xl: "54px",
-                      lg: "52px",
-                      md: "38px",
-                      sm: "27px",
-                      xs: "25px",
-                    },
-                    background: "rgba(134, 134, 134, 0.40)",
-                    color: "#1E1E1E",
-                    my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
-                    ":hover": {
-                      bgcolor: "rgba(134, 134, 134, 0.40)",
-                      color: "1E1E1E",
-                    },
-                  }}
+                  className={classes.btn}
+                  // sx={{
+                  //   width: {
+                  //     xl: "182px",
+                  //     lg: "178px",
+                  //     md: "145px",
+                  //     sm: "110px",
+                  //     xs: "105px",
+                  //   },
+                  //   height: {
+                  //     xl: "54px",
+                  //     lg: "52px",
+                  //     md: "38px",
+                  //     sm: "27px",
+                  //     xs: "25px",
+                  //   },
+                  //   background: "rgba(134, 134, 134, 0.40)",
+                  //   color: "#1E1E1E",
+                  //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
+                  //   ":hover": {
+                  //     bgcolor: "rgba(134, 134, 134, 0.40)",
+                  //     color: "1E1E1E",
+                  //   },
+                  // }}
+                  // my={{ xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 }}
                   // onClick={handleButtonClick}
                 >
                   Change Password
@@ -399,14 +483,16 @@ function NewProfile() {
               <Grid item xs={5}>
                 <Grid
                   container
-                  my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
-                  pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  className={classes.IndividualGrid}
+                  // my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  // pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
                 >
                   <Grid
                     item
                     xs={1}
                     align="center"
-                    pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1.5, xs: 0.7 }}
+                    // className={classes.Icon}
+                    // pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1.5, xs: 0.7 }}
                   >
                     {/* <Typography> */}
                     <Avatar
@@ -414,13 +500,22 @@ function NewProfile() {
                       // src={selectedImage}
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
                       sx={{
-                        width: { xl: 45, lg: 35, md: 30, sm: 19, xs: 21 },
+                        marginRight: "16px",
+                        width: {
+                          xxl: 45,
+                          xl: 35,
+                          lg: 33,
+                          md: 25,
+                          sm: 20,
+                          xs: 19,
+                        },
                         height: {
-                          xl: 45,
-                          lg: 35,
-                          md: 30,
-                          sm: 19,
-                          xs: 21,
+                          xxl: 45,
+                          xl: 35,
+                          lg: 33,
+                          md: 25,
+                          sm: 20,
+                          xs: 19,
                         },
                       }}
                     />
@@ -437,13 +532,13 @@ function NewProfile() {
                     </Typography>
                     <Typography
                       variant="subtitle1"
-                      marginTop={{
-                        xl: "2px",
-                        lg: "2px",
-                        md: "2px",
-                        sm: "2px",
-                        xs: "2px",
-                      }}
+                      // marginTop={{
+                      //   xl: "2px",
+                      //   lg: "2px",
+                      //   md: "2px",
+                      //   sm: "2px",
+                      //   xs: "2px",
+                      // }}
                       sx={{
                         color: "rgba(43, 43, 43, 0.80)",
                       }}
@@ -453,7 +548,7 @@ function NewProfile() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={7} sx={{ pl: { xs: 4.7 } }}>
+              <Grid item xs={7} sx={{ pl: 4.7 }}>
                 <SelectButton label="Admin" />
               </Grid>
             </Grid>
@@ -468,25 +563,26 @@ function NewProfile() {
               <Grid item xs={5}>
                 <Grid
                   container
-                  my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
-                  pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  className={classes.IndividualGrid}
+                  // my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  // pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
                 >
                   <Grid
                     item
                     xs={1}
                     align="center"
-                    pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
+                    // pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
                   >
-                    <Typography
-                      sx={{
-                        width: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        height: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        mt: { xl: 0.5, lg: 0.6, md: 0.1 },
-                        mb: { xs: 0.5 },
-                      }}
+                    <Box
+                      className={classes.Icon}
+                      // sx={{
+                      //   width: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   height: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   mt: {xxl:0.4, xl: 0.6, lg: 0.4, md: 0.2, sm:0.3, xs:0.2 },
+                      // }}
                     >
                       <img src={mail} alt="mail" />
-                    </Typography>
+                    </Box>
                   </Grid>
                   <Grid item xs={11} align="left">
                     <Typography
@@ -499,13 +595,13 @@ function NewProfile() {
                     </Typography>
                     <Typography
                       variant="subtitle1"
-                      marginTop={{
-                        xl: "2px",
-                        lg: "2px",
-                        md: "2px",
-                        sm: "2px",
-                        xs: "2px",
-                      }}
+                      // marginTop={{
+                      //   xl: "2px",
+                      //   lg: "2px",
+                      //   md: "2px",
+                      //   sm: "2px",
+                      //   xs: "2px",
+                      // }}
                       sx={{
                         color: "rgba(43, 43, 43, 0.80)",
                       }}
@@ -515,7 +611,7 @@ function NewProfile() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={7} sx={{ pl: { xs: 4.7 } }}>
+              <Grid item xs={7} sx={{ pl: 4.7 }}>
                 <SelectButton label="Members" />
               </Grid>
             </Grid>
@@ -541,25 +637,26 @@ function NewProfile() {
               <Grid item xs={5}>
                 <Grid
                   container
-                  my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
-                  pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  className={classes.IndividualGrid}
+                  // my={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
+                  // pl={{ xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 }}
                 >
                   <Grid
                     item
                     xs={1}
                     align="center"
-                    pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
+                    // pr={{ xl: 2, lg: 1.7, md: 1.3, sm: 1, xs: 0.7 }}
                   >
-                    <Typography
-                      sx={{
-                        width: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        height: { xl: 24, lg: 21, md: 18, sm: 15, xs: 13 },
-                        mt: { xl: 0.5, lg: 0.6, md: 0.1 },
-                        mb: { xs: 0.5 },
-                      }}
+                    <Box
+                      className={classes.Icon}
+                      // sx={{
+                      //   width: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   height: {xxl:24, xl: 22, lg: 20, md: 18, sm: 15, xs: 13 },
+                      //   mt: {xxl:0.4, xl: 0.6, lg: 0.4, md: 0.2, sm:0.3, xs:0.2 },
+                      // }}
                     >
                       <img src={layers} alt="layers" />
-                    </Typography>
+                    </Box>
                   </Grid>
                   <Grid item xs={11} align="left">
                     <Typography
@@ -572,13 +669,13 @@ function NewProfile() {
                     </Typography>
                     <Typography
                       variant="subtitle1"
-                      marginTop={{
-                        xl: "2px",
-                        lg: "2px",
-                        md: "2px",
-                        sm: "2px",
-                        xs: "2px",
-                      }}
+                      // marginTop={{
+                      //   xl: "2px",
+                      //   lg: "2px",
+                      //   md: "2px",
+                      //   sm: "2px",
+                      //   xs: "2px",
+                      // }}
                       sx={{
                         color: "rgba(43, 43, 43, 0.80)",
                       }}
@@ -588,14 +685,20 @@ function NewProfile() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={7} sx={{ pl: { xs: 4.7 } }}>
-                <Box sx={{ my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 } }}>
+              <Grid item xs={7} sx={{ pl: 4.7 }}>
+                <Box
+                  sx={{
+                    my: { xxl: 3, xl: 2.9, lg: 2.75, md: 2.5, sm: 2.5 },
+                    mb: { xs: 1.3 },
+                  }}
+                >
                   <Progress />
                   <Typography
                     variant="h5"
                     sx={{
                       color: "rgba(43, 43, 43, 0.80)",
                       marginTop: {
+                        xxl: 2,
                         xl: 1.9,
                         lg: 1.7,
                         md: 1.5,
@@ -608,13 +711,13 @@ function NewProfile() {
                   </Typography>
                   <Typography
                     variant="body1"
-                    marginTop={{
-                      xl: "2px",
-                      lg: "2px",
-                      md: "2px",
-                      sm: "2px",
-                      xs: "2px",
-                    }}
+                    // marginTop={{
+                    //   xl: "2px",
+                    //   lg: "2px",
+                    //   md: "2px",
+                    //   sm: "2px",
+                    //   xs: "2px",
+                    // }}
                     sx={{
                       color: "rgba(43, 43, 43, 0.60)",
                     }}
@@ -651,7 +754,7 @@ function NewProfile() {
               mb={{ xl: 5.7, lg: 4.7, md: 3.7, sm: 2.7, xs: 1.7 }}
             ></Box>
           </Box>
-        </MainBox>
+        </Root>
         {/* </Box> */}
       </Box>
     </>

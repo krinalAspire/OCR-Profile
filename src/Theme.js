@@ -11,7 +11,7 @@ const breakpoints = {
   },
 };
 
-const { up } = createTheme({ breakpoints }).breakpoints;
+export const { up } = createTheme({ breakpoints }).breakpoints;
 
 export const theme = createTheme({
   breakpoints,
@@ -151,10 +151,18 @@ export const theme = createTheme({
     //       },
     //     },
     //   },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          borderRadius:'5px',
+          border:'1px solid rgba(0, 0, 0, 0.20)'
+        },
+      },
+    },
     MuiMenu: {
       styleOverrides: {
         paper: {
-          height: "30vh",
+          // height: "30vh",
           boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
           "&::-webkit-scrollbar": {
             width: "0.4em",
@@ -176,6 +184,8 @@ export const theme = createTheme({
             fontFamily: "Heebo",
             fontWeight: 400,
             letterSpacing: 0,
+            display:'flex',
+            textAlign: 'center',
             [up("xs")]: {
               fontSize: "10px",
             },

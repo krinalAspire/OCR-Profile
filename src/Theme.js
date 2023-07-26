@@ -67,19 +67,19 @@ export const theme = createTheme({
       fontWeight: 400,
       letterSpacing: 0,
       [up("xs")]: {
-        fontSize: "10px",
+        fontSize: "7px",
       },
       [up("sm")]: {
-        fontSize: "11px",
+        fontSize: "7px",
       },
       [up("md")]: {
-        fontSize: "11px",
+        fontSize: "9px",
       },
       [up("lg")]: {
-        fontSize: "12px",
+        fontSize: "11px",
       },
       [up("xl")]: {
-        fontSize: "14px",
+        fontSize: "13px",
       },
       [up("xxl")]: {
         fontSize: "15px",
@@ -151,11 +151,23 @@ export const theme = createTheme({
     //       },
     //     },
     //   },
+    // MuiFormControl: {
+    //   styleOverrides: {
+    //     root: {
+    //       background:'yellow',
+    //       size:'small'
+    //     },
+    //   },
+    // },
     MuiInputBase: {
       styleOverrides: {
         root: {
           borderRadius:'5px',
-          border:'1px solid rgba(0, 0, 0, 0.20)'
+          border:'1px solid rgba(0, 0, 0, 0.20)',
+          position: 'relative',
+          // background: 'yellow',
+          // width: '150px',
+          // width:'13vw'
         },
       },
     },
@@ -205,29 +217,6 @@ export const theme = createTheme({
               fontSize: "16px",
             },
           },
-        //   alternative: {
-        //     fontFamily: "Heebo",
-        //     fontWeight: 500,
-        //     letterSpacing: 0,
-        //     [up("xs")]: {
-        //       fontSize: "10px",
-        //     },
-        //     [up("sm")]: {
-        //       fontSize: "12px",
-        //     },
-        //     [up("md")]: {
-        //       fontSize: "14px",
-        //     },
-        //     [up("lg")]: {
-        //       fontSize: "16px",
-        //     },
-        //     [up("xl")]: {
-        //       fontSize: "18px",
-        //     },
-        //     [up("xxl")]: {
-        //       fontSize: "20px",
-        //     },
-        //   },
         },
       },
     MuiButton: {

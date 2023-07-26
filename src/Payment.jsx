@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  Grid,
-  Typography,
-  ListItemText,
-} from "@mui/material";
+import { Button, Grid, Typography, ListItemText } from "@mui/material";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -21,6 +16,37 @@ import download from "./images/download.svg";
 import "./Payment.css";
 import { PaymentData } from "./rowData";
 import NavPayment from "./NavPayment";
+import { styled } from "@mui/material/styles";
+import { up } from "./Theme";
+
+const classes = {
+  root: "root",
+};
+
+const Root = styled(Box)(({ theme }) => ({
+  [`&.${classes.root}`]: {
+    border: "1px solid rgba(0, 0, 0, 0.20)",
+    borderRadius: "5px",
+    // [up('xs')]:{
+    //   margin:"32px 40px"
+    // },
+    // [up('sm')]:{
+    //   margin:"32px 40px"
+    // },
+    // [up('md')]:{
+    //   margin:"32px 40px"
+    // },
+    // [up('lg')]:{
+    //   margin:"25px 32px"
+    // },
+    // [up('xl')]:{
+    //   margin:"27px 35px"
+    // },
+    // [up('xxl')]:{
+    //   margin:"32px 40px"
+    // }
+  },
+}));
 
 function Payment() {
   const [rowData, setrowData] = useState(PaymentData);
@@ -73,17 +99,19 @@ function Payment() {
     label: organization,
   }));
 
-  // const CustomFont = {
-  //   xl: 16,
-  //   lg: 15,
-  //   md: 13,
-  //   sm: 10,
-  //   xs: 10,
-  // };
-
   const Customicons = {
     sortAscending: '<i class="fa fa-arrow-up"/><i class="fa fa-arrow-down"/>',
     sortDescending: '<i class="fa fa-arrow-down"/><i class="fa fa-arrow-up "/>',
+  };
+
+  function responsiveHeader(params) {
+    const value = params.displayName;
+    return <Typography variant="body1">{value}</Typography>;
+  }
+
+  const ResponsiveFontsize = (params) => {
+    const value = params.value;
+    return <Typography variant="body1">{value}</Typography>;
   };
 
   const handleInvoice = () => {
@@ -104,12 +132,13 @@ function Payment() {
           </Grid>
           <Grid item xs={3}>
             <Typography
+              variant="body1"
               sx={{
                 color: "#9F77EB",
                 cursor: "pointer",
                 fontFamily: "Heebo",
                 fontWeight: "500",
-                fontSize: "16px",
+                // fontSize: "16px !important",
               }}
               onClick={() => handleClicked()}
             >
@@ -127,33 +156,38 @@ function Payment() {
       checkboxSelection: true,
       headerCheckboxSelection: true,
       minWidth: 400,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      headerComponent: responsiveHeader,
+      cellRenderer: ResponsiveFontsize,
     },
     {
       field: "Organization",
       minWidth: 350,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      headerComponent: responsiveHeader,
+      cellRenderer: ResponsiveFontsize,
     },
     {
       field: "Amount",
       minWidth: 95,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      headerComponent: responsiveHeader,
+      cellRenderer: ResponsiveFontsize,
     },
     {
       field: "Date",
       minWidth: 110,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      headerComponent: responsiveHeader,
+      cellRenderer: ResponsiveFontsize,
     },
     {
       field: "Status",
       minWidth: 100,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
+      headerComponent: responsiveHeader,
+      cellRenderer: ResponsiveFontsize,
     },
     {
       field: " ",
       minWidth: 200,
-      cellStyle: { fontSize: "16px", fontFamily: "Heebo", fontWeight: 500 },
       sortable: false,
+      headerComponent: responsiveHeader,
       cellRenderer: handleInvoice,
     },
   ]);
@@ -172,113 +206,189 @@ function Payment() {
     <>
       {/* <ThemeProvider theme={theme}> */}
       <NavPayment />
+      <Root
+      className={classes.root}
+        // sx={{
+        //   border: "1px solid rgba(0, 0, 0, 0.20)",
+        //   borderRadius: "5px",
+        //   // height: "auto",
+        //   // width: "auto",
+        // }}
+        my={{ xl: 4, lg: 3.5, md: 2.5, sm: 2, xs: 1.5 }}
+        mx={{ xl: 5, lg: 4, md: 3, sm: 2, xs: 2 }}
+      >
         <Box
-          sx={{
-            border: "1px solid rgba(0, 0, 0, 0.20)",
-            borderRadius: "5px",
-            height: "auto",
-            width: "auto",
-          }}
-          my={{ xl: 4, lg: 3.5, md: 2.5, sm: 2, xs: 1.5 }}
-          mx={{ xl: 5, lg: 4, md: 3, sm: 2, xs: 2 }}
+          my={{ xl: 4, lg: 3.5, md: 3, sm: 2.5, xs: 2 }}
+          mx={{ xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 1.5 }}
         >
-          <Box
-            my={{ xl: 4, lg: 3.5, md: 3, sm: 2.5, xs: 2 }}
-            mx={{ xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 1.5 }}
-          >
-            <Typography
+          <Typography
             variant="h4"
-              sx={{
-                marginBottom: 0.7,
-              }}
-            >
-              Payment History({DataCount})
-            </Typography>
-            <Grid>
-              <Grid container columns={{ xs: 4, sm: 12 }} mb={2}>
-                <Grid
-                  item
-                  xs={6}
-                  sx={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-start",
-                  }}
-                >
-                  <Typography
-                  variant="body1" 
-                  >
-                    See history of your payment plan invoice
-                  </Typography>
-                </Grid>
+            sx={{
+              marginBottom: 0.7,
+            }}
+          >
+            Payment History({DataCount})
+          </Typography>
+          <Grid>
+            <Grid container columns={{ xs: 4, sm: 12 }} mb={2}>
+              <Grid
+                item
+                xs={6}
+                sx={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "flex-start",
+                }}
+              >
+                <Typography variant="body1">
+                  See history of your payment plan invoice
+                </Typography>
+              </Grid>
 
-                <Grid
-                  item
-                  xs={6}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Button
+              <Grid
+                item
+                xs={6}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Button
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: {
+                        xl: "147px",
+                        lg: "137px",
+                        md: "130px",
+                        sm: "101px",
+                        xs: "100px",
+                      },
+                      height: {
+                        xl: "50px",
+                        lg: "45px",
+                        md: "40px",
+                        sm: "35px",
+                        xs: "25px",
+                      },
+                      background: "#9F77EB",
+                      color: "white",
+                      //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
+                      ":hover": {
+                        bgcolor: "#9F77EB",
+                        color: "white",
+                      },
+                      // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
+                    }}
+                  >
+                    <AddIcon
                       sx={{
+                        width: {
+                          xl: "20px",
+                          lg: "18px",
+                          md: "17px",
+                          sm: "14px",
+                          xs: "14px",
+                        },
+                        height: {
+                          xl: "20px",
+                          lg: "18px",
+                          md: "17px",
+                          sm: "14px",
+                          xs: "14px",
+                        },
+                        marginBottom: { sm: "2.5px", xs: "2px" },
+                        marginTop: { md: "1.4px", xl: "2.5px" },
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        width: {
-                          xl: "147px",
-                          lg: "137px",
-                          md: "130px",
-                          sm: "101px",
-                          xs: "100px",
+                      }}
+                    />
+                    Add Payment
+                  </Button>
+
+                  <FormControl
+                    fullWidth
+                    sx={{
+                      width: {
+                        xl: "271px",
+                        lg: "207px",
+                        md: "199px",
+                        sm: "154px",
+                        xs: "150px",
+                      },
+                      height: {
+                        xl: "50px",
+                        lg: "45px",
+                        md: "40px",
+                        sm: "35px",
+                        xs: "25px",
+                      },
+                      marginLeft: "10px",
+                    }}
+                  >
+                    <InputLabel
+                      id="demo-simple-select-label"
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        // fontSize: CustomFont,
+                        top: {
+                          xl: "-2px",
+                          lg: "-4px",
+                          md: "-5px",
+                          sm: "-6px",
+                          xs: "-10px",
                         },
-                        height: {
-                          xl: "50px",
-                          lg: "45px",
-                          md: "40px",
-                          sm: "35px",
-                          xs: "25px",
-                        },
-                        background: "#9F77EB",
-                        color: "white",
-                        //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
-                        ":hover": {
-                          bgcolor: "#9F77EB",
-                          color: "white",
-                        },
-                        // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
+                        // marginLeft:{xl:2}
                       }}
                     >
-                      <AddIcon
+                      {/* <img src={filter} alt="filter" style={{ marginRight:'6px'}}  className="filter-icon" /> */}
+                      <Box
+                        component="img"
+                        src={filter}
+                        alt="Filter Icon"
                         sx={{
                           width: {
-                            xl: "20px",
+                            xl: "19px",
                             lg: "18px",
                             md: "17px",
-                            sm: "14px",
-                            xs: "14px",
+                            sm: "13px",
+                            xs: "12px",
                           },
                           height: {
-                            xl: "20px",
+                            xl: "19px",
                             lg: "18px",
                             md: "17px",
-                            sm: "14px",
-                            xs: "14px",
+                            sm: "13px",
+                            xs: "12px",
                           },
-                          marginBottom: { sm: "2.5px", xs: "2px" },
-                          marginTop: { md: "1.4px", xl: "2.5px" },
+                          marginRight: {
+                            xl: "10px",
+                            lg: "8px",
+                            md: "7px",
+                            sm: "6px",
+                            xs: "6px",
+                          },
                           display: "flex",
                           alignItems: "center",
-                          justifyContent: "center",
                         }}
                       />
-                      Add Payment
-                    </Button>
-                    
-                    <FormControl
-                      fullWidth
+                      Filter by organiztion
+                    </InputLabel>
+                    <Select
+                      multiple
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={organization}
+                      label={organization}
+                      onChange={handleChange}
+                      IconComponent={KeyboardArrowDownIcon}
+                      // renderValue={(selected) => selected.join(", ")}
+                      renderValue={(selected) => selected}
                       sx={{
                         width: {
                           xl: "271px",
@@ -294,169 +404,88 @@ function Payment() {
                           sm: "35px",
                           xs: "25px",
                         },
-                        marginLeft: "10px",
-                      }}
-                    >
-                      <InputLabel
-                        id="demo-simple-select-label"
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          // fontSize: CustomFont,
-                          top: {
-                            xl: "-2px",
-                            lg: "-4px",
-                            md: "-5px",
-                            sm: "-6px",
-                            xs: "-10px",
-                          },
-                          // marginLeft:{xl:2}
-                        }}
-                      >
-                        {/* <img src={filter} alt="filter" style={{ marginRight:'6px'}}  className="filter-icon" /> */}
-                        <Box
-                          component="img"
-                          src={filter}
-                          alt="Filter Icon"
-                          sx={{
-                            width: {
-                              xl: "19px",
-                              lg: "18px",
-                              md: "17px",
-                              sm: "13px",
-                              xs: "12px",
-                            },
-                            height: {
-                              xl: "19px",
-                              lg: "18px",
-                              md: "17px",
-                              sm: "13px",
-                              xs: "12px",
-                            },
-                            marginRight: {
-                              xl: "10px",
-                              lg: "8px",
-                              md: "7px",
-                              sm: "6px",
-                              xs: "6px",
-                            },
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                        />
-                        Filter by organiztion
-                      </InputLabel>
-                      <Select
-                        multiple
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={organization}
-                        label={organization}
-                        onChange={handleChange}
-                        IconComponent={KeyboardArrowDownIcon}
-                        // renderValue={(selected) => selected.join(", ")}
-                        renderValue={(selected) => selected}
-                        sx={{
+                        "& .MuiSelect-icon": {
+                          // fill: 'red',
                           width: {
-                            xl: "271px",
-                            lg: "207px",
-                            md: "199px",
-                            sm: "154px",
-                            xs: "150px",
+                            xl: "25px",
+                            lg: "22px",
+                            md: "20px",
+                            sm: "18px",
+                            xs: "18px",
                           },
                           height: {
-                            xl: "50px",
-                            lg: "45px",
-                            md: "40px",
-                            sm: "35px",
-                            xs: "25px",
+                            xl: "25px",
+                            lg: "22px",
+                            md: "20px",
+                            sm: "18px",
+                            xs: "18px",
                           },
-                          "& .MuiSelect-icon": {
-                            // fill: 'red',
-                            width: {
-                              xl: "25px",
-                              lg: "22px",
-                              md: "20px",
-                              sm: "18px",
-                              xs: "18px",
-                            },
-                            height: {
-                              xl: "25px",
-                              lg: "22px",
-                              md: "20px",
-                              sm: "18px",
-                              xs: "18px",
-                            },
-                            top: {
-                              xl: "13px",
-                              lg: "11px",
-                              md: "10px",
-                              sm: "7px",
-                              xs: "3px",
-                            },
-                            /* Add other CSS properties or modifications here */
+                          top: {
+                            xl: "13px",
+                            lg: "11px",
+                            md: "10px",
+                            sm: "7px",
+                            xs: "3px",
                           },
-                          // top: {
-                          //   xl: "-12px",
-                          //   lg: "-10px",
-                          //   md: "-8px",
-                          //   sm: "-6px",
-                          // },
-                        }}
-                      >
-                        {options.map((option) => (
-                          <MenuItem
-                            key={option.value}
-                            value={option.value}
-                          >
-                            <Checkbox
-                              checked={organization.includes(option.value)}
-                            />
-                            <ListItemText
-                              primary={option.label}
-                            />
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
-                  </Box>
-                </Grid>
+                          /* Add other CSS properties or modifications here */
+                        },
+                        // top: {
+                        //   xl: "-12px",
+                        //   lg: "-10px",
+                        //   md: "-8px",
+                        //   sm: "-6px",
+                        // },
+                      }}
+                    >
+                      {options.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          <Checkbox
+                            checked={organization.includes(option.value)}
+                          />
+                          <ListItemText primary={option.label} />
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Box>
               </Grid>
             </Grid>
+          </Grid>
 
-            <Box
-              className="ag-theme-alpine"
-              //  custom-scrollbar
-              sx={{
-                height: {
-                  xl: "55vh",
-                  lg: "55vh",
-                  md: "47vh",
-                  sm: "53vh",
-                  xs: "63vh",
-                },
-                // height: "46vh",
-                width: "auto",
-                // width:{xl:"auto", lg:"auto", md:"auto", sm:"auto", xs:"auto"},
-                fontSize: "16px",
-                fontFamily: "Heebo",
-                fontWeight: 500,
-              }}
-              my={{ xl: 1, lg: 0.8, md: 0.7, sm: 0.6, xs: 2 }}
-            >
-              <AgGridReact
-                // rowData={rowData}
-                // rowData={rowData && rowData.filter((item)=>item.Organization.includes(organization))}
-                rowData={filteredRowData}
-                columnDefs={columnDefs}
-                defaultColDef={defaultColDef}
-                icons={Customicons}
-                gridOptions={gridOptions}
-                className=" ag-root-wrapper"
-              ></AgGridReact>
-            </Box>
+          <Box
+            className="ag-theme-alpine"
+            //  custom-scrollbar
+            sx={{
+              height: {
+                xxl:"55vh",
+                xl: "53vh",
+                lg: "41.5vh",
+                md: "47vh",
+                sm: "53vh",
+                xs: "63vh",
+              },
+              // height: "46vh",
+              width: "auto",
+              // width:{xl:"auto", lg:"auto", md:"auto", sm:"auto", xs:"auto"},
+              fontSize: "16px",
+              fontFamily: "Heebo",
+              fontWeight: 500,
+            }}
+            my={{ xl: 1, lg: 0.8, md: 0.7, sm: 0.6, xs: 2 }}
+          >
+            <AgGridReact
+              // rowData={rowData}
+              // rowData={rowData && rowData.filter((item)=>item.Organization.includes(organization))}
+              rowData={filteredRowData}
+              columnDefs={columnDefs}
+              defaultColDef={defaultColDef}
+              icons={Customicons}
+              gridOptions={gridOptions}
+              className=" ag-root-wrapper"
+            ></AgGridReact>
           </Box>
         </Box>
+      </Root>
       {/* </ThemeProvider> */}
     </>
   );

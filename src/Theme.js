@@ -159,12 +159,21 @@ export const theme = createTheme({
     //     },
     //   },
     // },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          '&.Mui-checked': {
+            color: '#9F77EB',
+          },
+        },
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         root: {
-          borderRadius:'5px',
-          border:'1px solid rgba(0, 0, 0, 0.20)',
-          position: 'relative',
+          borderRadius: "5px",
+          border: "1px solid rgba(0, 0, 0, 0.20)",
+          position: "relative",
           // background: 'yellow',
           // width: '150px',
           // width:'13vw'
@@ -191,41 +200,44 @@ export const theme = createTheme({
       },
     },
     MuiInputLabel: {
-        styleOverrides: {
-          root: {
-            fontFamily: "Heebo",
-            fontWeight: 400,
-            letterSpacing: 0,
-            display:'flex',
-            textAlign: 'center',
-            [up("xs")]: {
-              fontSize: "10px",
-            },
-            [up("sm")]: {
-              fontSize: "11px",
-            },
-            [up("md")]: {
-              fontSize: "12px",
-            },
-            [up("lg")]: {
-              fontSize: "13px",
-            },
-            [up("xl")]: {
-              fontSize: "15px",
-            },
-            [up("xxl")]: {
-              fontSize: "16px",
-            },
+      styleOverrides: {
+        root: {
+          fontFamily: "Heebo",
+          fontWeight: 400,
+          letterSpacing: 0,
+          display: "flex",
+          textAlign: "center",
+          [up("xs")]: {
+            fontSize: "10px",
+          },
+          [up("sm")]: {
+            fontSize: "11px",
+          },
+          [up("md")]: {
+            fontSize: "12px",
+          },
+          [up("lg")]: {
+            fontSize: "13px",
+          },
+          [up("xl")]: {
+            fontSize: "15px",
+          },
+          [up("xxl")]: {
+            fontSize: "16px",
           },
         },
       },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
-            fontFamily: "Heebo",
-            fontWeight: 500,
-            borderRadius: "5px",
-            textTransform: "none",
+          fontFamily: "Heebo",
+          fontWeight: 500,
+          borderRadius: "5px",
+          textTransform: "none",
+          padding: 0,
+          boxShadow: 0,
+          letterSpacing: 0,
           [up("xs")]: {
             fontSize: "10px",
           },
@@ -249,4 +261,3 @@ export const theme = createTheme({
     },
   },
 });
-

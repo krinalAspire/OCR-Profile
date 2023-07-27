@@ -6,6 +6,13 @@
     --ag-odd-row-background-color: #FFFFFF;
     --ag-cell-widget-spacing: calc(var(--ag-grid-size) * 3);
     --ag-body-vertical-scroll-container:var(--ag-body-vertical-scroll-container);
+    --ag-alpine-active-color:#9F77EB;
+    --ag-selected-row-background-color:rgba(159, 119, 235, 0.10);
+    --ag-row-hover-color:rgba(159, 119, 235, 0.10);
+    --ag-input-focus-border-color:none;
+    --ag-border-color:rgba(134, 134, 134, 0.20);
+    --ag-checkbox-indeterminate-color:#9F77EB;
+    /* --ag-checkbox-border-radius:10px; */
     /* --ag-header-column-resize-handle-color: rgba(134, 134, 134, 0.10); */
     /* --ag-cell-widget-spacing-display:none !important; */
     /* --ag-font-size: 17px;
@@ -13,11 +20,11 @@
     /* --ag-border-radius:5px; */
   }
 
-  .ag-theme-alpine i.fa-arrow-up,
+  /* .ag-theme-alpine i.fa-arrow-up,
 .ag-theme-alpine i.fa-arrow-down {
   color: #868686; /* Set the desired color for the sort icons */
-  font-size: 10px;
-}
+  /* font-size: 10px; */
+/* }  */
 
 
 /* .ag-theme-alpine .ag-cell {
@@ -32,6 +39,7 @@
 .ag-theme-alpine .ag-root-wrapper {
   border-radius: 5px; 
   border-color: rgb(232,232,232);
+  /* border-color: rgba(0, 0, 0, 0.20); */
   /* width: auto;
   height: 47vh; */  
 }

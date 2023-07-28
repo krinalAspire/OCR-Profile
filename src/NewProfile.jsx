@@ -63,7 +63,7 @@ const Root = styled(Box)(({ theme }) => ({
     borderRadius: "5px",
     border: "1px solid rgba(0, 0, 0, 0.20)",
     overflow: "auto",
-    height: "70vh",
+    // height: "70vh",
     scrollbarWidth: "thin",
     "&::-webkit-scrollbar": {
       width: "0.4em",

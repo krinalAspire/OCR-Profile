@@ -7,6 +7,274 @@ import InvoiceRecord from "./InvoicerRecord";
 import checkCircle from "./images/check-circle.svg";
 import trash from "./images/trash-2.svg";
 import AddIcon from "@mui/icons-material/Add";
+import { styled } from "@mui/material/styles";
+import { up } from "./Theme";
+
+export const classes = {
+  root: "root",
+  InvoicePdfMainBox: "InvoicePdfMainBox",
+  InvoicePdfBox: "InvoicePdfBox",
+  InvoiceGridMainBox: "InvoiceGridMainBox",
+  InvoiceGrid: "InvoiceGrid",
+  InvoiceGridBox: "InvoiceGridBox",
+  InvoiceRecordBox: "InvoiceRecordBox",
+  InvoiceRecordTitle: "InvoiceRecordTitle",
+  Validatebtn: "Validatebtn",
+  trashbtn: "trashbtn",
+  CheckCircleIcon: "CheckCircleIcon",
+};
+
+const Root = styled(Box)(({ theme }) => ({
+  [`&.${classes.root}`]: {
+    // background:'yellow'
+  },
+  [`& .${classes.InvoicePdfMainBox}`]: {
+    // background:'yellow'
+    overflow: "auto",
+    // scrollbarWidth: "thin",
+    // "&::-webkit-scrollbar": {
+    //   width: "0.4em",
+    // },
+    // "&::-webkit-scrollbar-track": {
+    //   background: "#D9D9D9",
+    //   borderRadius: "5px",
+    // },
+    // "&::-webkit-scrollbar-thumb": {
+    //   backgroundColor: "#868686",
+    //   borderRadius: "5px",
+    // },
+    [up("xs")]: {
+      height: "20vh",
+    },
+    [up("sm")]: {
+      height: "20vh",
+    },
+    [up("md")]: {
+      height: "86vh",
+    },
+    [up("lg")]: {
+      height: "88.8vh",
+    },
+    [up("xl")]: {
+      height: "80vh",
+    },
+    [up("xxl")]: {
+      height: "79vh",
+    },
+  },
+  [`& .${classes.InvoicePdfBox}`]: {
+    // overflow: "auto",
+    // scrollbarWidth: "thin",
+    // "&::-webkit-scrollbar": {
+    //   width: "0.4em",
+    // },
+    // "&::-webkit-scrollbar-track": {
+    //   background: "#D9D9D9",
+    //   borderRadius: "5px",
+    // },
+    // "&::-webkit-scrollbar-thumb": {
+    //   backgroundColor: "#868686",
+    //   borderRadius: "5px",
+    // },
+    height: "100vh",
+  },
+  [`& .${classes.InvoiceGridMainBox}`]: {
+    // background:"yellow",
+    overflow: "auto",
+    scrollbarWidth: "thin",
+    "&::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "&::-webkit-scrollbar-track": {
+      background: "#D9D9D9",
+      borderRadius: "5px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#868686",
+      borderRadius: "5px",
+    },
+    [up("xs")]: {
+      height: "77.5vh",
+    },
+    [up("sm")]: {
+      height: "55vh",
+    },
+    [up("md")]: {
+      height: "86vh",
+    },
+    [up("lg")]: {
+      height: "88.8vh",
+    },
+    [up("xl")]: {
+      height: "80vh",
+    },
+    [up("xxl")]: {
+      height: "79vh",
+    },
+  },
+  [`& .${classes.InvoiceGrid}`]: {
+    borderLeft: "1px solid rgba(0, 0, 0, 0.06)",
+    // border: "1px solid blue",
+    background: "#F7F7F7",
+    // background:'yellow'
+  },
+  [`& .${classes.InvoiceGridBox}`]: {
+    [up("xs")]: {
+      margin: "9px 10px",
+    },
+    [up("sm")]: {
+      margin: "10px 11px",
+    },
+    [up("md")]: {
+      margin: "11px 12px",
+    },
+    [up("lg")]: {
+      margin: "14px 13px",
+    },
+    [up("xl")]: {
+      margin: "12px 11px",
+    },
+    [up("xxl")]: {
+      margin: "20px 14px",
+    },
+  },
+  [`& .${classes.InvoiceRecordBox}`]: {
+    [up("xs")]: {
+      marginBottom: "16px",
+    },
+    [up("sm")]: {
+      marginBottom: "16px",
+    },
+    [up("md")]: {
+      marginBottom: "16px",
+    },
+    [up("lg")]: {
+      marginBottom: "16px",
+    },
+    [up("xl")]: {
+      marginBottom: "16px",
+    },
+    [up("xxl")]: {
+      marginBottom: "25px",
+    },
+  },
+  [`& .${classes.InvoiceRecordTitle}`]: {
+    color: "rgba(30, 30, 30, 0.60)",
+    [up("xs")]: {
+      paddingLeft: "10px",
+    },
+    [up("sm")]: {
+      paddingLeft: "12px",
+    },
+    [up("md")]: {
+      paddingLeft: "12px",
+    },
+    [up("lg")]: {
+      paddingLeft: "16px",
+    },
+    [up("xl")]: {
+      paddingLeft: "20px",
+    },
+    [up("xxl")]: {
+      paddingLeft: "23px",
+    },
+  },
+  [`& .${classes.Validatebtn}`]: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "#9F77EB",
+    color: "white",
+    ":hover": {
+      background: "#9F77EB",
+      color: "white",
+    },
+    [up("xs")]: {
+      width: "210px",
+      height: "35px",
+    },
+    [up("sm")]: {
+      width: "256px",
+      height: "40px",
+    },
+    [up("md")]: {
+      width: "190px",
+      height: "35px",
+    },
+    [up("lg")]: {
+      width: "260px",
+      height: "45px",
+    },
+    [up("xl")]: {
+      width: "285px",
+      height: "47px",
+    },
+    [up("xxl")]: {
+      width: "376px",
+      height: "54px",
+    },
+  },
+  [`& .${classes.trashbtn}`]: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "rgba(134, 134, 134, 0.20)",
+    [up("xs")]: {
+      width: "35px",
+      height: "35px",
+    },
+    [up("sm")]: {
+      width: "40px",
+      height: "40px",
+    },
+    [up("md")]: {
+      width: "35px",
+      height: "35px",
+    },
+    [up("lg")]: {
+      width: "45px",
+      height: "45px",
+    },
+    [up("xl")]: {
+      width: "47px",
+      height: "47px",
+    },
+    [up("xxl")]: {
+      width: "54px",
+      height: "54px",
+    },
+  },
+  [`& .${classes.CheckCircleIcon}`]: {
+    // display: "flex",
+    // alignItems: "center",
+    // justifyContent: "center",
+    marginRight: "14px",
+    // [up('xs')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+    // [up('sm')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+    // [up('md')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+    // [up('lg')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+    // [up('xl')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+    // [up('xxl')]:{
+    //   width:"20px",
+    //   height:"20px"
+    // },
+  },
+}));
 
 function Invoice() {
   // const [fieldCount, setFieldCount] = useState(2); // Initial field count is 2 (for the first two InvoiceRecord components)
@@ -20,10 +288,10 @@ function Invoice() {
   const AddField = () => {
     const [fieldCount, setFieldCount] = useState(2); // Initial field count is 2 (for the first two InvoiceRecord components)
 
-  const handleAddField = () => {
-    setFieldCount((prevCount) => prevCount + 1);
-    console.log(fieldCount);
-  };
+    const handleAddField = () => {
+      setFieldCount((prevCount) => prevCount + 1);
+      console.log(fieldCount);
+    };
 
     return (
       <>
@@ -66,7 +334,7 @@ function Invoice() {
           </Box>
           <Box>
             <Typography
-            variant="body2"
+              variant="body2"
               sx={{
                 cursor: "pointer",
                 color: "#868686",
@@ -85,237 +353,159 @@ function Invoice() {
   return (
     <>
       <Nav />
-        <Box sx={{ height: "auto" }}>
-          <Box sx={{ height: "46vh" }}>
-            <Grid container columns={{ xs: 4, sm: 12, md: 12, lg: 12, xl: 12 }}>
-              <Grid item xs={8.5}>
-                <Box sx={{ border: "1px solid black" }}>
-                  <Box
-                    sx={{
-                      border: "1px solid red",
-                      mx: { xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
-                      my: { xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },  
-                    }}
+      <Root className={classes.root}>
+        <Grid container columns={{ xs: 4, sm: 7, md: 12 }}>
+          <Grid item xs={9}>
+            <Box
+              // className={`${classes.InvoicePdfMainBox} scrollableBox`}
+              className={classes.InvoiceGridMainBox}
+              sx={{
+                border: "1px solid black",
+                // overflow: "auto",
+                // height: {
+                //   xs: "70vh",
+                //   sm: "70vh",
+                //   md: "70vh",
+                //   lg: "70vh",
+                //   xl: "70vh",
+                //   xxl: "70vh",
+                // },
+              }}
+            >
+              <Box
+                // className={classes.InvoicePdfBox}
+                sx={{
+                  overflow: "auto",
+                  border: "1px solid red",
+                  mx: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  my: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  height: "100vh",
+                }}
+              >
+                <div>Hello</div>
+              </Box>
+            </Box>
+          </Grid>
+
+          <Grid item xs={3} className={classes.InvoiceGrid}>
+            <Box className={classes.InvoiceGridMainBox}>
+              <Box
+                className={classes.InvoiceGridBox}
+                // sx={{height:"50vh", overflow: 'auto'}}
+              >
+                <Box className={classes.InvoiceRecordBox}>
+                  <Typography
+                    variant="body2"
+                    className={classes.InvoiceRecordTitle}
                   >
-                    <div>Hello</div>
-                  </Box>
+                    Invoice
+                  </Typography>
+                  <InvoiceRecord fieldName="Invoice No" fieldData="1325533" />
+                  <InvoiceRecord
+                    fieldName="Invoice Date"
+                    fieldData="12/02/2023"
+                  />
+                  <InvoiceRecord
+                    fieldName="Invoice Order Date"
+                    fieldData="10/02/2023"
+                  />
+                  <InvoiceRecord
+                    fieldName="Invoice Order No."
+                    fieldData="SD-1245632"
+                  />
                 </Box>
-              </Grid>
-              <Grid item xs={3.5}>
+
+                <Box className={classes.InvoiceRecordBox}>
+                  <Typography
+                    variant="body2"
+                    className={classes.InvoiceRecordTitle}
+                  >
+                    Supplier
+                  </Typography>
+                  <InvoiceRecord
+                    fieldName="Supplier Name"
+                    fieldData="Supplier Address"
+                  />
+                  <InvoiceRecord
+                    fieldName="Supplier Address"
+                    fieldData="2118 Thornridge Cir. Syracuse, Connecticut 35624"
+                  />
+
+                  {/* <AddField /> */}
+                </Box>
+
+                <Box className={classes.InvoiceRecordBox}>
+                  <Typography
+                    variant="body2"
+                    className={classes.InvoiceRecordTitle}
+                  >
+                    Customer
+                  </Typography>
+                  <InvoiceRecord
+                    fieldName="Customer Name"
+                    fieldData="Cameron Williamson"
+                  />
+                  <InvoiceRecord
+                    fieldName="Customer Address"
+                    fieldData="3891 Ranchview Dr. Richardson, California 62639"
+                  />
+
+                  {/* <AddField /> */}
+                </Box>
+
                 <Box
                   sx={{
-                    borderLeft: "1px solid rgba(0, 0, 0, 0.06)",
-                    // border: "1px solid blue",
-                    background: "#F7F7F7",
+                    mb: { xxl: 10.5, xl: 8, lg: 6, md: 4.1, sm: 6, xs: 6.5 },
                   }}
                 >
-                  <Box
-                    sx={{
-                      // border: "1px solid red",
-                      mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      mt: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
-                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
-                    }}
-                  >
-                    <Typography
+                  <Typography
                     variant="body2"
-                      sx={{
-                        color: "rgba(30, 30, 30, 0.60)",
-                        pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
-                      }}
-                    >
-                      Invoice
-                    </Typography>
-                    <InvoiceRecord fieldName="Invoice No" fieldData="1325533" />
-                    <InvoiceRecord
-                      fieldName="Invoice Date"
-                      fieldData="12/02/2023"
-                    />
-                    <InvoiceRecord
-                      fieldName="Invoice Order Date"
-                      fieldData="10/02/2023"
-                    />
-                    <InvoiceRecord
-                      fieldName="Invoice Order No."
-                      fieldData="SD-1245632"
-                    />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      // border: "1px solid red",
-                      mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
-                    }}
+                    className={classes.InvoiceRecordTitle}
                   >
-                    <Typography
-                    variant="body2"
-                      sx={{
-                        color: "rgba(30, 30, 30, 0.60)",
-                        pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
-                      }}
-                    >
-                      Supplier
-                    </Typography>
-                    <InvoiceRecord
-                      fieldName="Supplier Name"
-                      fieldData="Supplier Address"
-                    />
-                    <InvoiceRecord
-                      fieldName="Supplier Address"
-                      fieldData="2118 Thornridge Cir. Syracuse, Connecticut 35624"
-                    />
+                    Payment
+                  </Typography>
+                  <InvoiceRecord fieldName="Payment  Total" fieldData="9.460" />
+                  <InvoiceRecord
+                    fieldName="Payment Total Value"
+                    fieldData="2.00"
+                  />
 
-                    <AddField />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      // border: "1px solid red",
-                      mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      mb:{xl:5, lg:4.5, md:4, sm:3.5, xs:2}
-                    }}
-                  >
-                    <Typography
-                    variant="body2"
-                      sx={{
-                        color: "rgba(30, 30, 30, 0.60)",
-                        pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
-                      }}
-                    >
-                      Customer
-                    </Typography>
-                    <InvoiceRecord
-                      fieldName="Customer Name"
-                      fieldData="Cameron Williamson"
-                    />
-                    <InvoiceRecord
-                      fieldName="Customer Address"
-                      fieldData="3891 Ranchview Dr. Richardson, California 62639"
-                    />
-
-                    <AddField />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      // border: "1px solid red",
-                      mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      // mt: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
-                      mb:{xl:15, lg:13, md:11, sm:9, xs:7}
-                    }}
-                  >
-                    <Typography
-                    variant="body2"
-                      sx={{
-                        color: "rgba(30, 30, 30, 0.60)",
-                        pl: { xl: 3, lg: 2, md: 2, sm: 1.65, xs: 1.65 },
-                      }}
-                    >
-                      Payment
-                    </Typography>
-                    <InvoiceRecord
-                      fieldName="Payment  Total"
-                      fieldData="9.460"
-                    />
-                    <InvoiceRecord
-                      fieldName="Payment Total Value"
-                      fieldData="2.00"
-                    />
-
-                    <AddField />
-                  </Box>
-
-                  <Box
-                    sx={{
-                      // border: "1px solid red",
-                      mx: { xl: 3.75, lg: 3, md: 2.75, sm: 2, xs: 1.75 },
-                      mb:{xl:3.6, lg:3.2, md:2.3, sm:2, xs:1.7}
-                      // my: { xl: 4.25, lg: 4, md: 3.25, sm: 3, xs: 2.25 },
-                    }}
-                  >
-                    <Grid container>
-                      <Grid item xs={10.5}>
-                        <Box sx={{ display: "flex", alignItems: "center" }}>
-                          <Button
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: {
-                                xl: "421px",
-                                lg: "304px",
-                                md: "290px",
-                                sm: "265px",
-                                xs: "245px",
-                              },
-                              height: {
-                                xl: "54px",
-                                lg: "50px",
-                                md: "44px",
-                                sm: "40px",
-                                xs: "35px",
-                              },
-                              background: "#9F77EB",
-                              color: "white",
-                              //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
-                              ":hover": {
-                                bgcolor: "#9F77EB",
-                                color: "white",
-                              },
-                              // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
-                            }}
-                          >
-                            <img
-                              src={checkCircle}
-                              alt="check-circle"
-                              style={{ marginRight: "14px" }}
-                            />
-                            Validate Document
-                          </Button>
-                        </Box>
-                      </Grid>
-                      <Grid item xs={1.5} align="right">
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            background: "rgba(134, 134, 134, 0.20)",
-                            width: {
-                              xl: "54px",
-                              lg: "50px",
-                              md: "44px",
-                              sm: "40px",
-                              xs: "35px",
-                            },
-                            height: {
-                              xl: "54px",
-                              lg: "50px",
-                              md: "44px",
-                              sm: "40px",
-                              xs: "35px",
-                            },
-                          }}
-                        >
-                          <img
-                            src={trash}
-                            alt={"trash"}
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                            }}
-                          />
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </Box>
+                  {/* <AddField /> */}
                 </Box>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
+
+                <Box>
+                  <Grid container>
+                    <Grid item xs={10.5}>
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <Button className={classes.Validatebtn}>
+                          <Box
+                            component="img"
+                            src={checkCircle}
+                            alt="check-circle"
+                            className={classes.CheckCircleIcon}
+                            // sx={{ marginRight: "14px" }}
+                          />
+                          {/* <img
+                          src={checkCircle}
+                          alt="check-circle"
+                          style={{ marginRight: "14px" }}
+                        /> */}
+                          Validate Document
+                        </Button>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={1.5} align="right">
+                      <Box className={classes.trashbtn}>
+                        <img src={trash} alt={"trash"} />
+                      </Box>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Root>
     </>
   );
 }

@@ -11,6 +11,7 @@ import Upload from './Upload';
 import NavUpload from './NavUpload';
 import Invoice from './Invoice';
 import Payment from './Payment';
+import Custombox from './Custombox';
 // import Aggrid from './Aggrid';
 
 
@@ -20,6 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       {/* <Pages /> */}
       <Routes>
+        <Route path="/test" element={<Custombox />}/>
         <Route path='/' element={<Pages/>}/>
         {/* <Route path="/profile" element={<Nav/>}/> */}
         {/* <Route path='/payment' element={<NavPayment />} /> */}

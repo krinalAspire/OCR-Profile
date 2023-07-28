@@ -135,8 +135,33 @@ export const theme = createTheme({
 
   components: {
     // MuiBox: {
+    //   styleOverrides: {
+    //     root: {
+    //       scrollableBox: {
+    //         background:"yellow",
+    //         scrollbarWidth: 'thin',
+    //         scrollbarColor: '#888 #f1f1f1',
+    //         '&::-webkit-scrollbar': {
+    //           width: '8px',
+    //         },
+    //         '&::-webkit-scrollbar-track': {
+    //           background: '#f1f1f1',
+    //         },
+    //         '&::-webkit-scrollbar-thumb': {
+    //           background: '#888',
+    //           borderRadius: '4px',
+    //         },
+    //         '&::-webkit-scrollbar-thumb:hover': {
+    //           background: '#555',
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
+    // MuiBox: {
     //     styleOverrides: {
     //       root: {
+    //         background:"yellow",
     //         "&::-webkit-scrollbar": {
     //             width: "0.4em",
     //           },
@@ -162,8 +187,8 @@ export const theme = createTheme({
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          '&.Mui-checked': {
-            color: '#9F77EB',
+          "&.Mui-checked": {
+            color: "#9F77EB",
           },
         },
       },
@@ -199,6 +224,29 @@ export const theme = createTheme({
         },
       },
     },
+    // MuiMenuItem: {
+    //   styleOverrides: {
+    //     root: {
+    //       fontFamily: "Heebo",
+    //       fontWeight: 500,
+    //       "&:hover": {
+    //         backgroundColor: "rgba(30, 30, 30, 0.10)",
+    //         // color: "#FFFFFF",
+    //         color:"black"
+    //       },
+    //       "&.Mui-selected": {
+    //         backgroundColor: "rgba(159, 119, 235, 0.28)",
+    //         // color: "#FFFFFF",
+    //         color:"black"
+    //       },
+    //       "&.Mui-selected:hover": {
+    //         backgroundColor: "rgba(159, 119, 235, 0.28)",
+    //         // color: "#FFFFFF",
+    //         color:"black"
+    //       },
+    //     },
+    //   },
+    // },
     MuiInputLabel: {
       styleOverrides: {
         root: {

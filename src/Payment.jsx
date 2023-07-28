@@ -26,6 +26,7 @@ const classes = {
   btn: "btn",
   addIcon: "addIcon",
   filterIcon: "filterIcon",
+  FilterSelect: "FilterSelect",
 };
 
 const Root = styled(Box)(({ theme }) => ({
@@ -57,7 +58,7 @@ const Root = styled(Box)(({ theme }) => ({
     justifyContent: "center",
     background: "#9F77EB",
     color: "white",
-    marginRight:"1vh",
+    marginRight: "1vh",
     ":hover": {
       background: "#9F77EB",
       color: "white",
@@ -156,6 +157,25 @@ const Root = styled(Box)(({ theme }) => ({
       marginRight: "10px",
     },
   },
+  [`& .${classes.FilterSelect}`]: {
+    fontFamily: "Heebo",
+    fontWeight: 500,
+    "&:hover": {
+      backgroundColor: "rgba(30, 30, 30, 0.10)",
+      // color: "#FFFFFF",
+      color: "black",
+    },
+    "&.Mui-selected": {
+      backgroundColor: "rgba(159, 119, 235, 0.28)",
+      // color: "#FFFFFF",
+      color: "black",
+    },
+    "&.Mui-selected:hover": {
+      backgroundColor: "rgba(159, 119, 235, 0.28)",
+      // color: "#FFFFFF",
+      color: "black",
+    },
+  },
 }));
 
 function Payment() {
@@ -216,20 +236,28 @@ function Payment() {
 
   function responsiveHeader(params) {
     const value = params.displayName;
-    const showArrow = params.displayName === 'Status';
+    const showArrow = params.displayName === "Status";
     return (
       <>
-        <Typography variant="body1" sx={{color:"#1E1E1E"}}>{value}</Typography>
-      {showArrow ? null : <Box sx={{ pl: 1.5 }}>
-          <img src={ArrowUp} alt="arrow-up" />
-        </Box>}
+        <Typography variant="body1" sx={{ color: "#1E1E1E" }}>
+          {value}
+        </Typography>
+        {showArrow ? null : (
+          <Box sx={{ pl: 1.5 }}>
+            <img src={ArrowUp} alt="arrow-up" />
+          </Box>
+        )}
       </>
     );
   }
 
   const ResponsiveFontsize = (params) => {
     const value = params.value;
-    return <Typography variant="body1" sx={{color:"rgba(0, 0, 0, 0.60)"}}>{value}</Typography>;
+    return (
+      <Typography variant="body1" sx={{ color: "rgba(0, 0, 0, 0.60)" }}>
+        {value}
+      </Typography>
+    );
   };
 
   const handleInvoice = () => {
@@ -278,7 +306,7 @@ function Payment() {
           src={filter}
           alt="Filter Icon"
           className={classes.filterIcon}
-          />
+        />
         <Typography sx={{ color: "#868686" }} variant="body1">
           Filter by organiztion
         </Typography>
@@ -347,7 +375,7 @@ function Payment() {
         //   border: "1px solid rgba(0, 0, 0, 0.20)",
         //   borderRadius: "5px",
         //   // height: "auto",
-          // width: "auto",
+        // width: "auto",
         // }}
         // my={{ xl: 4, lg: 3.5, md: 2.5, sm: 2, xs: 1.5 }}
         // mx={{ xl: 5, lg: 4, md: 3, sm: 2, xs: 2 }}
@@ -390,7 +418,9 @@ function Payment() {
                   justifyContent: "flex-end",
                 }}
               >
-                <Box sx={{ display: "flex", alignItems: "center", mt:{xs:1} }}>
+                <Box
+                  sx={{ display: "flex", alignItems: "center", mt: { xs: 1 } }}
+                >
                   <Button
                     className={classes.btn}
                     // sx={{
@@ -460,10 +490,7 @@ function Payment() {
                       },
                     }}
                   >
-                    <FormControl
-                      fullWidth
-                      size="small"
-                    >
+                    <FormControl fullWidth size="small">
                       <Select
                         multiple
                         labelId="demo-simple-select-label"
@@ -472,12 +499,11 @@ function Payment() {
                         onChange={handleChange}
                         displayEmpty
                         IconComponent={KeyboardArrowDownIcon}
+                        className={classes.FilterSelect}
                         // renderValue={(selected) => selected.join(", ")}
                         renderValue={(selected) => {
                           if (selected.length === 0) {
-                            return (
-                              <FilterLabel />
-                            );
+                            return <FilterLabel />;
                           }
                           return selected.join(", ");
                           // return selected;
@@ -485,7 +511,7 @@ function Payment() {
                         // renderValue={(selected) => selected}
                       >
                         {options.map((option) => (
-                          <MenuItem key={option.value} value={option.value}>
+                          <MenuItem key={option.value} value={option.value} className={classes.FilterSelect}>
                             <Checkbox
                               checked={organization.includes(option.value)}
                             />

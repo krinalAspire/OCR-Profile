@@ -5,6 +5,137 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
+import { styled } from "@mui/material/styles";
+import { up } from "./Theme";
+
+const classes = {
+  root: "root",
+  GridContainer: "GridContainer",
+  CheckedFieldIcon: "CheckedFieldIcon",
+  FiberManualRecordIcon: "FiberManualRecordIcon",
+  contentEditableField: "contentEditableField",
+  TypographyField: "TypographyField",
+  GridAlign: "GridAlign",
+  CheckCloseIcon:"CheckCloseIcon"
+};
+
+const Root = styled(Box)(({ theme }) => ({
+  [`&.${classes.root}`]: {
+  },
+  [`& .${classes.GridContainer}`]: {
+    borderRadius: "5px",
+    [up("xs")]: {
+      padding: "4px",
+    },
+    [up("sm")]: {
+      padding: "5px",
+    },
+    [up("md")]: {
+      padding: "4px",
+    },
+    [up("lg")]: {
+      padding: "5px",
+    },
+    [up("xl")]: {
+      padding: "6px",
+    },
+    [up("xxl")]: {
+      padding: "8px",
+    },
+  },
+  [`& .${classes.CheckedFieldIcon}`]: {
+    [up("xs")]: {
+      width: "11px",
+      height: "11px",
+    },
+    [up("sm")]: {
+      width: "12px",
+      height: "12px",
+    },
+    [up("md")]: {
+      width: "13px",
+      height: "13px",
+    },
+    [up("lg")]: {
+      width: "14px",
+      height: "14px",
+    },
+    [up("xl")]: {
+      width: "15px",
+      height: "15px",
+    },
+    [up("xxl")]: {
+      width: "16px",
+      height: "16px",
+    },
+  },
+  [`& .${classes.FiberManualRecordIcon}`]: {
+    [up("xs")]: {
+      width: "7px",
+      height: "7px",
+    },
+    [up("sm")]: {
+      width: "8px",
+      height: "8px",
+    },
+    [up("md")]: {
+      width: "7px",
+      height: "7px",
+    },
+    [up("lg")]: {
+      width: "8px",
+      height: "8px",
+    },
+    [up("xl")]: {
+      width: "9px",
+      height: "9px",
+    },
+    [up("xxl")]: {
+      width: "10px",
+      height: "10px",
+    },
+  },
+  [`& .${classes.contentEditableField}`]: {
+    border: "none",
+    outline: "none",
+    cursor: "pointer",
+  },
+  [`& .${classes.TypographyField}`]: {
+    cursor: "pointer",
+  },
+  [`& .${classes.GridAlign}`]: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+  [`& .${classes.CheckCloseIcon}`]: {
+    cursor: "pointer",
+    [up('xs')]:{
+      width:"15px",
+      height:"15px"
+    },
+    [up('sm')]:{
+      width:"17px",
+      height:"17px"
+    },
+    [up('md')]:{
+      width:"14px",
+      height:"14px"
+    },
+    [up('lg')]:{
+      width:"17px",
+      height:"17px"
+    },
+    [up('xl')]:{
+      width:"19px",
+      height:"19px"
+    },
+    [up('xxl')]:{
+      width:"22px",
+      height:"22px"
+    },
+  },
+}));
 
 const InvoiceRecord = (props) => {
   const [field, setfield] = useState(props.fieldName);
@@ -41,23 +172,14 @@ const InvoiceRecord = (props) => {
     }
   };
 
-  // const CustomFontsize = {
-  //   xl: 16,
-  //   lg: 15,
-  //   md: 12,
-  //   sm: 10,
-  //   xs: 10,
-  // };
-
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Root sx={{ flexGrow: 1 }} className={classes.root}>
         <Grid
           container
+          className={classes.GridContainer}
           sx={{
             background: editMode ? "rgba(159, 119, 235, 0.20)" : null,
-            padding: { xl: 1, lg:0.7, md: 0.5, sm:0.3, xs:0.2 },
-            borderRadius: "5px",
           }}
         >
           <Grid
@@ -69,100 +191,51 @@ const InvoiceRecord = (props) => {
               justifyContent: "center",
             }}
           >
-            
-            { editMode ? ( <CheckIcon
+            {editMode ? (
+              <CheckIcon
+                className={classes.CheckedFieldIcon}
                 sx={{
-                  color:"#9F77EB",
-                  width: {
-                    xl: "21px",
-                    lg: "19px",
-                    md: "17px",
-                    sm: "16px",
-                    xs: "15px",
-                  },
-                  height: {
-                    xl: "21px",
-                    lg: "19px",
-                    md: "17px",
-                    sm: "16px",
-                    xs: "15px",
-                  },
+                  color: "#9F77EB",
                 }}
-              />): isEdited ? ( <CheckIcon
+              />
+            ) : isEdited ? (
+              <CheckIcon
+                className={classes.CheckedFieldIcon}
                 sx={{
-                  color: isEdited ? "#9F77EB" : "#868686",
-                  width: {
-                    xl: "21px",
-                    lg: "19px",
-                    md: "17px",
-                    sm: "16px",
-                    xs: "15px",
-                  },
-                  height: {
-                    xl: "21px",
-                    lg: "19px",
-                    md: "17px",
-                    sm: "16px",
-                    xs: "15px",
-                  },
+                  color: "#9F77EB",
                 }}
-              />):(<FiberManualRecordIcon
+              />
+            ) : (
+              <FiberManualRecordIcon
+                className={classes.FiberManualRecordIcon}
                 sx={{
                   color: "#868686",
-                  width: {
-                    xl: "10px",
-                    lg: "9px",
-                    md: "8px",
-                    sm: "7px",
-                    xs: "6px",
-                  },
-                  height: {
-                    xl: "10px",
-                    lg: "9px",
-                    md: "8px",
-                    sm: "7px",
-                    xs: "6px",
-                  },
+
                 }}
-              /> )}
+              />
+            )}
           </Grid>
           <Grid
             item
             xs={4}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-            }}
+            className={classes.GridAlign}
           >
             {editMode ? (
               <Typography
-              variant="body1"
+                variant="body1"
                 contentEditable
                 value={editedfield}
                 onBlur={handleSaveClick}
                 onChange={handleChange}
-                sx={{
-                  border: "none",
-                  outline: "none",
-                  cursor: "pointer",
-                  fontFamily: "Heebo",
-                  fontWeight: 500,
-                  // fontSize: CustomFontsize,
-                }}
+                className={classes.contentEditableField}
               >
                 {editedfield}
               </Typography>
             ) : (
               <Typography
-              variant="body1"
+                variant="body1"
                 onClick={handleEditClick}
-                sx={{
-                  cursor: "pointer",
-                  fontFamily: "Heebo",
-                  fontWeight: 500,
-                  // fontSize: CustomFontsize,
-                }}
+                className={classes.TypographyField}
               >
                 {field}
               </Typography>
@@ -171,42 +244,34 @@ const InvoiceRecord = (props) => {
           <Grid
             item
             xs={5.5}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-            }}
+            className={classes.GridAlign}
           >
             {/* Render additional data for the second column */}
             {editMode ? (
               <Typography
-              variant="body1"
+                variant="body1"
                 contentEditable
                 value={editedData}
                 onBlur={handleSaveClick}
                 onChange={handleChange}
+                className={classes.contentEditableField}
                 sx={{
-                  color:"#9F77EB",
-                  border: "none",
-                  outline: "none",
-                  cursor: "pointer",
-                  fontFamily: "Heebo",
+                  color: "#9F77EB",
                   fontWeight: 400,
-                  // fontSize: CustomFontsize,
                 }}
               >
                 {editedData}
               </Typography>
             ) : (
               <Typography
-              variant="body1"
+                variant="body1"
                 onClick={handleEditClick}
+                className={classes.TypographyField}
                 sx={{
-                  cursor: "pointer",
+                  // cursor: "pointer",
                   color: isEdited ? "#9F77EB" : "#868686",
-                  fontFamily: "Heebo",
+                  // fontFamily: "Heebo",
                   fontWeight: 400,
-                  // fontSize: CustomFontsize,
                 }}
               >
                 {data}
@@ -217,61 +282,25 @@ const InvoiceRecord = (props) => {
             {/* Render Icons only in editMode */}
             {editMode && (
               <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                }}
+              className={classes.GridAlign}
               >
                 <Box>
                   <CheckIcon
                     onClick={handleSaveClick}
-                    sx={{
-                      cursor: "pointer",
-                      width: {
-                        xl: "22px",
-                        lg: "20px",
-                        md: "18px",
-                        sm: "17px",
-                        xs: "16px",
-                      },
-                      height: {
-                        xl: "22px",
-                        lg: "20px",
-                        md: "18px",
-                        sm: "17px",
-                        xs: "16px",
-                      },
-                    }}
+                    className={classes.CheckCloseIcon}
                   />
                 </Box>
                 <Box>
                   <CloseIcon
                     onClick={handleCancelClick}
-                    sx={{
-                      cursor: "pointer",
-                      width: {
-                        xl: "22px",
-                        lg: "20px",
-                        md: "18px",
-                        sm: "17px",
-                        xs: "16px",
-                      },
-                      height: {
-                        xl: "22px",
-                        lg: "20px",
-                        md: "18px",
-                        sm: "17px",
-                        xs: "16px",
-                      },
-                    }}
+                    className={classes.CheckCloseIcon}
                   />
                 </Box>
               </Box>
             )}
           </Grid>
         </Grid>
-      </Box>
+      </Root>
     </>
   );
 };

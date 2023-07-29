@@ -59,7 +59,7 @@ const Root = styled(Box)(({ theme }) => ({
       height: "80vh",
     },
     [up("xxl")]: {
-      height: "79vh",
+      height: "92.8vh",
     },
   },
   [`& .${classes.InvoicePdfBox}`]: {
@@ -109,7 +109,7 @@ const Root = styled(Box)(({ theme }) => ({
       height: "80vh",
     },
     [up("xxl")]: {
-      height: "79vh",
+      height: "92.8vh",
     },
   },
   [`& .${classes.InvoiceGrid}`]: {
@@ -219,6 +219,7 @@ const Root = styled(Box)(({ theme }) => ({
     alignItems: "center",
     justifyContent: "center",
     background: "rgba(134, 134, 134, 0.20)",
+    borderRadius:"5px",
     [up("xs")]: {
       width: "35px",
       height: "35px",

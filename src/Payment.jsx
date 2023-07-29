@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { Button, Grid, Typography, ListItemText } from "@mui/material";
 import { AgGridReact } from "ag-grid-react";
@@ -20,6 +20,7 @@ import NavPayment from "./NavPayment";
 import { styled } from "@mui/material/styles";
 import { up } from "./Theme";
 import ArrowUp from "./images/arrow-up.svg";
+import axios  from "axios";
 
 const classes = {
   root: "root",
@@ -157,29 +158,28 @@ const Root = styled(Box)(({ theme }) => ({
       marginRight: "10px",
     },
   },
-  [`& .${classes.FilterSelect}`]: {
-    fontFamily: "Heebo",
-    fontWeight: 500,
-    "&:hover": {
-      backgroundColor: "rgba(30, 30, 30, 0.10)",
-      // color: "#FFFFFF",
-      color: "black",
-    },
-    "&.Mui-selected": {
-      backgroundColor: "rgba(159, 119, 235, 0.28)",
-      // color: "#FFFFFF",
-      color: "black",
-    },
-    "&.Mui-selected:hover": {
-      backgroundColor: "rgba(159, 119, 235, 0.28)",
-      // color: "#FFFFFF",
-      color: "black",
-    },
-  },
+  // [`& .${classes.FilterSelect}`]: {
+  //   // height:"30vh",
+  //   background:"yellow",
+  //   fontFamily: "Heebo",
+  //   fontWeight: 400,
+  //   ":hover" :{
+  //     background:"rgba(30, 30, 30, 0.10)",
+  //     color:"#1E1E1E"
+  //   },
+  //   "&.Mui-selected":{
+  //    background:"rgba(159, 119, 235, 0.28)",
+  //    color:"#1E1E1E"
+  //   },
+  //   "&.Mui-selected:hover":{
+  //    backgroundColor: "rgba(159, 119, 235, 0.28)",
+  //    color:"#1E1E1E"
+  //   }
+  // },
 }));
 
 function Payment() {
-  const [rowData, setrowData] = useState(PaymentData);
+  const [rowData, setrowData] = useState([]);
 
   const [organization, setOrganization] = useState([]);
 
@@ -200,6 +200,17 @@ function Payment() {
     //     )
     // );
   };
+
+  useEffect(()=>{
+       axios.get("http://localhost:5000/PaymentData")
+       .then((res)=>{setrowData(res.data)
+        // console.log(res.data)
+        })
+       .catch((err)=>{
+          // toast.error("Failed: " + err.message);
+          console.log(err.message);
+       })
+    },[])
 
   //   const filteredRowData = rowData && rowData.filter((item) =>
   //   organization.includes(item.Organization)
@@ -371,19 +382,9 @@ function Payment() {
       <NavPayment />
       <Root
         className={classes.root}
-        // sx={{
-        //   border: "1px solid rgba(0, 0, 0, 0.20)",
-        //   borderRadius: "5px",
-        //   // height: "auto",
-        // width: "auto",
-        // }}
-        // my={{ xl: 4, lg: 3.5, md: 2.5, sm: 2, xs: 1.5 }}
-        // mx={{ xl: 5, lg: 4, md: 3, sm: 2, xs: 2 }}
       >
         <Box
           m={{ xxl: 4, xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 2 }}
-          // my={{xxl:4, xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 2 }}
-          // mx={{xxl:4, xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 2 }}
         >
           <Typography
             variant="h4"
@@ -398,11 +399,6 @@ function Payment() {
               <Grid
                 item
                 xs={6}
-                // sx={{
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "flex-start",
-                // }}
               >
                 <Typography variant="body1">
                   See history of your payment plan invoice
@@ -423,57 +419,9 @@ function Payment() {
                 >
                   <Button
                     className={classes.btn}
-                    // sx={{
-                    // display: "flex",
-                    // alignItems: "center",
-                    // justifyContent: "center",
-                    // width: {
-                    //   xl: "147px",
-                    //   lg: "137px",
-                    //   md: "130px",
-                    //   sm: "101px",
-                    //   xs: "100px",
-                    // },
-                    // height: {
-                    //   xl: "50px",
-                    //   lg: "45px",
-                    //   md: "40px",
-                    //   sm: "35px",
-                    //   xs: "25px",
-                    // },
-                    // background: "#9F77EB",
-                    // color: "white",
-                    //   my: { xl: 3, lg: 2.6, md: 2, sm: 1.5, xs: 1.3 },
-                    // ":hover": {
-                    //   bgcolor: "#9F77EB",
-                    //   color: "white",
-                    // },
-                    // top: { xl: "-12px", lg: "-10px", md: "-8px", sm: "-6px" },
-                    // }}
                   >
                     <AddIcon
                       className={classes.addIcon}
-                      // sx={{
-                      //   width: {
-                      //     xl: "20px",
-                      //     lg: "18px",
-                      //     md: "17px",
-                      //     sm: "14px",
-                      //     xs: "14px",
-                      //   },
-                      //   height: {
-                      //     xl: "20px",
-                      //     lg: "18px",
-                      //     md: "17px",
-                      //     sm: "14px",
-                      //     xs: "14px",
-                      //   },
-                      //   marginBottom: { sm: "2.5px", xs: "2px" },
-                      //   marginTop: { md: "1.4px", xl: "2.5px" },
-                      //   display: "flex",
-                      //   alignItems: "center",
-                      //   justifyContent: "center",
-                      // }}
                     />
                     Add Payment Detail
                   </Button>
@@ -511,7 +459,33 @@ function Payment() {
                         // renderValue={(selected) => selected}
                       >
                         {options.map((option) => (
-                          <MenuItem key={option.value} value={option.value} className={classes.FilterSelect}>
+                          <MenuItem
+                            key={option.value}
+                            value={option.value}
+                            // className={classes.FilterSelect}
+                            sx={{
+                              // height:"30vh",
+                              //  background: "yellow",
+                              // "& .MuiMenuItem-alternative":{
+                              //   background:"lightblue"
+                              // },
+                               ":hover" :{
+                                 background:"rgba(30, 30, 30, 0.10)",
+                                 color:"#1E1E1E"
+                               },
+                               "&.Mui-selected":{
+                                background:"rgba(159, 119, 235, 0.28)",
+                                color:"#1E1E1E"
+                               },
+                               "&.Mui-selected:hover":{
+                                backgroundColor: "rgba(159, 119, 235, 0.28)",
+                                color:"#1E1E1E"
+                               },
+                              //  "&.MuiMenu":{
+                              //   height:"10vh"
+                              //  }
+                               }}
+                          >
                             <Checkbox
                               checked={organization.includes(option.value)}
                             />
@@ -538,14 +512,7 @@ function Payment() {
                 sm: "53vh",
                 xs: "60vh",
               },
-              // height: "46vh",
-              // width: "auto",
-              // width:{xl:"auto", lg:"auto", md:"auto", sm:"auto", xs:"auto"},
-              // fontSize: "16px",
-              // fontFamily: "Heebo",
-              // fontWeight: 500,
             }}
-            // my={{ xl: 1, lg: 0.8, md: 0.7, sm: 0.6, xs: 2 }}
           >
             <AgGridReact
               // rowData={rowData}

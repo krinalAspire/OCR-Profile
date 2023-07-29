@@ -207,6 +207,7 @@ export const theme = createTheme({
     },
     MuiMenu: {
       styleOverrides: {
+        root:{
         paper: {
           // height: "30vh",
           boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
@@ -222,31 +223,32 @@ export const theme = createTheme({
             borderRadius: "5px",
           },
         },
+        },
       },
     },
-    // MuiMenuItem: {
-    //   styleOverrides: {
-    //     root: {
-    //       fontFamily: "Heebo",
-    //       fontWeight: 500,
-    //       "&:hover": {
-    //         backgroundColor: "rgba(30, 30, 30, 0.10)",
-    //         // color: "#FFFFFF",
-    //         color:"black"
-    //       },
-    //       "&.Mui-selected": {
-    //         backgroundColor: "rgba(159, 119, 235, 0.28)",
-    //         // color: "#FFFFFF",
-    //         color:"black"
-    //       },
-    //       "&.Mui-selected:hover": {
-    //         backgroundColor: "rgba(159, 119, 235, 0.28)",
-    //         // color: "#FFFFFF",
-    //         color:"black"
-    //       },
-    //     },
-    //   },
-    // },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Heebo",
+          fontWeight: 500,
+          "&:hover": {
+            backgroundColor: "rgba(30, 30, 30, 0.10)",
+            // color: "#FFFFFF",
+            color:"black"
+          },
+          "&.Mui-selected": {
+            backgroundColor: "rgba(159, 119, 235, 0.28)",
+            // color: "#FFFFFF",
+            color:"black"
+          },
+          "&.Mui-selected:hover": {
+            backgroundColor: "rgba(159, 119, 235, 0.28)",
+            // color: "#FFFFFF",
+            color:"black"
+          },
+        },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {

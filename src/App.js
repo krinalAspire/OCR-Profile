@@ -2,16 +2,16 @@ import './App.css';
 import {ThemeProvider} from "@mui/material";
 import { theme } from './Theme';
 import { Route, Routes } from 'react-router-dom';
-import Nav from './Nav';
-import Profile from './Profile';
-import NewProfile from './NewProfile';
-import NavPayment from './NavPayment';
+// import Nav from './Nav';
+// import Profile from './Profile';
+import NewProfile from './Profile/NewProfile';
+// import NavPayment from './NavPayment';
 import Pages from './Pages';
-import Upload from './Upload';
+// import Upload from './Upload';
 import NavUpload from './NavUpload';
-import Invoice from './Invoice';
-import Payment from './Payment';
+import Payment from './Payment/Payment';
 import Custombox from './Custombox';
+import Invoice from './Invoice/Invoice';
 // import Aggrid from './Aggrid';
 
 

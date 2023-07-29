@@ -13,9 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { createTheme, ThemeProvider } from "@mui/material";
-import Profile from "./Profile";
-import NewProfile from "./NewProfile";
-import Payment from "./Payment";
+// import Profile from "./Profile";
+// import NewProfile from "./Profile/NewProfile";
+// import Payment from "./Payment";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

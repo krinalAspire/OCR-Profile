@@ -4,179 +4,22 @@ import { Button, Grid, Typography, ListItemText } from "@mui/material";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import AddIcon from "@mui/icons-material/Add";
-import filter from "./images/filter.svg";
+import filter from "../images/filter.svg";
 import Checkbox from "@mui/material/Checkbox";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import download from "./images/download.svg";
+import download from "../images/download.svg";
 import "./Payment.css";
-import { PaymentData } from "./rowData";
-import NavPayment from "./NavPayment";
-import { styled } from "@mui/material/styles";
-import { up } from "./Theme";
-import ArrowUp from "./images/arrow-up.svg";
-import axios  from "axios";
-
-const classes = {
-  root: "root",
-  btn: "btn",
-  addIcon: "addIcon",
-  filterIcon: "filterIcon",
-  FilterSelect: "FilterSelect",
-};
-
-const Root = styled(Box)(({ theme }) => ({
-  [`&.${classes.root}`]: {
-    border: "1px solid rgba(0, 0, 0, 0.20)",
-    borderRadius: "5px",
-    [up("xs")]: {
-      margin: "20px 23px",
-    },
-    [up("sm")]: {
-      margin: "32px 32px",
-    },
-    [up("md")]: {
-      margin: "25px 27px",
-    },
-    [up("lg")]: {
-      margin: "30px 32px",
-    },
-    [up("xl")]: {
-      margin: "32px 32px",
-    },
-    [up("xxl")]: {
-      margin: "32px 40px",
-    },
-  },
-  [`& .${classes.btn}`]: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#9F77EB",
-    color: "white",
-    marginRight: "1vh",
-    ":hover": {
-      background: "#9F77EB",
-      color: "white",
-    },
-    [up("xs")]: {
-      width: "114px",
-      height: "32.25px",
-      // padding:"7.9px 8px"
-    },
-    [up("sm")]: {
-      width: "128px",
-      height: "35.3px",
-      // padding:"7.9px 19px"
-    },
-    [up("md")]: {
-      width: "134px",
-      height: "35.9px",
-      // padding:"8px 10px"
-    },
-    [up("lg")]: {
-      width: "145px",
-      height: "35px",
-      // padding:"8px 12px"
-    },
-    [up("xl")]: {
-      width: "175px",
-      height: "39px",
-      // padding:"7px 15px"
-    },
-    [up("xxl")]: {
-      width: "190px",
-      height: "41px",
-      // padding:"6.5px 16px"
-    },
-  },
-  [`& .${classes.addIcon}`]: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    [up("xs")]: {
-      width: "14px",
-      height: "14px",
-    },
-    [up("sm")]: {
-      width: "15px",
-      height: "15px",
-    },
-    [up("md")]: {
-      width: "16px",
-      height: "16px",
-    },
-    [up("lg")]: {
-      width: "17px",
-      height: "17px",
-    },
-    [up("xl")]: {
-      width: "19px",
-      height: "19px",
-    },
-    [up("xxl")]: {
-      width: "20px",
-      height: "20px",
-    },
-  },
-  [`& .${classes.filterIcon}`]: {
-    display: "flex",
-    alignItems: "center",
-    [up("xs")]: {
-      width: "12px",
-      height: "12px",
-      marginRight: "6px",
-    },
-    [up("sm")]: {
-      width: "13px",
-      height: "13px",
-      marginRight: "6px",
-    },
-    [up("md")]: {
-      width: "17px",
-      height: "17px",
-      marginRight: "7px",
-    },
-    [up("lg")]: {
-      width: "18px",
-      height: "18px",
-      marginRight: "8px",
-    },
-    [up("xl")]: {
-      width: "18px",
-      height: "21px",
-      marginRight: "10px",
-    },
-    [up("xxl")]: {
-      width: "18px",
-      height: "21px",
-      marginRight: "10px",
-    },
-  },
-  // [`& .${classes.FilterSelect}`]: {
-  //   // height:"30vh",
-  //   background:"yellow",
-  //   fontFamily: "Heebo",
-  //   fontWeight: 400,
-  //   ":hover" :{
-  //     background:"rgba(30, 30, 30, 0.10)",
-  //     color:"#1E1E1E"
-  //   },
-  //   "&.Mui-selected":{
-  //    background:"rgba(159, 119, 235, 0.28)",
-  //    color:"#1E1E1E"
-  //   },
-  //   "&.Mui-selected:hover":{
-  //    backgroundColor: "rgba(159, 119, 235, 0.28)",
-  //    color:"#1E1E1E"
-  //   }
-  // },
-}));
+// import { PaymentData } from "../rowData";
+import NavPayment from "../NavPayment";
+import ArrowUp from "../images/arrow-up.svg";
+import axios from "axios";
+import { Root } from "./Style";
+import { classes } from "./Style";
+import { PAYMENT } from "../Services/constantService";
 
 function Payment() {
   const [rowData, setrowData] = useState([]);
@@ -201,16 +44,18 @@ function Payment() {
     // );
   };
 
-  useEffect(()=>{
-       axios.get("http://localhost:5000/PaymentData")
-       .then((res)=>{setrowData(res.data)
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/PaymentData")
+      .then((res) => {
+        setrowData(res.data);
         // console.log(res.data)
-        })
-       .catch((err)=>{
-          // toast.error("Failed: " + err.message);
-          console.log(err.message);
-       })
-    },[])
+      })
+      .catch((err) => {
+        // toast.error("Failed: " + err.message);
+        console.log(err.message);
+      });
+  }, []);
 
   //   const filteredRowData = rowData && rowData.filter((item) =>
   //   organization.includes(item.Organization)
@@ -319,7 +164,8 @@ function Payment() {
           className={classes.filterIcon}
         />
         <Typography sx={{ color: "#868686" }} variant="body1">
-          Filter by organiztion
+          {PAYMENT.SELECT_TEXT}
+          {/* Filter by organiztion */}
         </Typography>
       </Box>
     );
@@ -380,28 +226,25 @@ function Payment() {
     <>
       {/* <ThemeProvider theme={theme}> */}
       <NavPayment />
-      <Root
-        className={classes.root}
-      >
-        <Box
-          m={{ xxl: 4, xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 2 }}
-        >
+      <Root className={classes.root}>
+        <Box m={{ xxl: 4, xl: 3.5, lg: 3, md: 2.5, sm: 2, xs: 2 }}>
           <Typography
             variant="h4"
             sx={{
               marginBottom: 0.7,
             }}
           >
-            Payment History({DataCount})
+            {PAYMENT.HEADING}({DataCount})
           </Typography>
           <Grid>
             <Grid container columns={{ xs: 4, sm: 12 }} mb={2}>
-              <Grid
-                item
-                xs={6}
-              >
-                <Typography variant="body1">
-                  See history of your payment plan invoice
+              <Grid item xs={6}>
+                <Typography
+                  variant="body1"
+                  SX={{ color: "rgba(43, 43, 43, 0.80)" }}
+                >
+                  {PAYMENT.SUBTITLE}
+                  {/* See history of your payment plan invoice */}
                 </Typography>
               </Grid>
 
@@ -417,13 +260,10 @@ function Payment() {
                 <Box
                   sx={{ display: "flex", alignItems: "center", mt: { xs: 1 } }}
                 >
-                  <Button
-                    className={classes.btn}
-                  >
-                    <AddIcon
-                      className={classes.addIcon}
-                    />
-                    Add Payment Detail
+                  <Button className={classes.btn}>
+                    <AddIcon className={classes.addIcon} />
+                    {PAYMENT.BUTTON_TEXT}
+                    {/* Add Payment Detail */}
                   </Button>
 
                   <Box
@@ -469,22 +309,22 @@ function Payment() {
                               // "& .MuiMenuItem-alternative":{
                               //   background:"lightblue"
                               // },
-                               ":hover" :{
-                                 background:"rgba(30, 30, 30, 0.10)",
-                                 color:"#1E1E1E"
-                               },
-                               "&.Mui-selected":{
-                                background:"rgba(159, 119, 235, 0.28)",
-                                color:"#1E1E1E"
-                               },
-                               "&.Mui-selected:hover":{
+                              ":hover": {
+                                background: "rgba(30, 30, 30, 0.10)",
+                                color: "#1E1E1E",
+                              },
+                              "&.Mui-selected": {
+                                background: "rgba(159, 119, 235, 0.28)",
+                                color: "#1E1E1E",
+                              },
+                              "&.Mui-selected:hover": {
                                 backgroundColor: "rgba(159, 119, 235, 0.28)",
-                                color:"#1E1E1E"
-                               },
+                                color: "#1E1E1E",
+                              },
                               //  "&.MuiMenu":{
                               //   height:"10vh"
                               //  }
-                               }}
+                            }}
                           >
                             <Checkbox
                               checked={organization.includes(option.value)}

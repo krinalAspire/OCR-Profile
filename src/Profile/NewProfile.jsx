@@ -12,6 +12,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { Root } from "./Style";
 import { classes } from "./Style";
 import { PROFILE } from "../Services/constantService";
+import {theme} from "../Theme";
 
 function NewProfile() {
   return (
@@ -60,17 +61,20 @@ function NewProfile() {
                   <Typography
                     variant="body1"
                     className={classes.fontweight}
-                    sx={{
-                      color: "#1E1E1E",
-                    }}
+                    color={theme.palette.color30.main}
+                    // sx={{
+                    //   // color: "#1E1E1E",
+                    //   color:"color30"
+                    // }}
                   >
                     Pratik Patel
                   </Typography>
                   <Typography
                     variant="subtitle1"
-                    sx={{
-                      color: "rgba(43, 43, 43, 0.80)",
-                    }}
+                    color={theme.palette.color43.superdark}
+                    // sx={{
+                    //   color: "rgba(43, 43, 43, 0.80)",
+                    // }}
                   >
                     pratik.patel@aspiresoftserv.com
                   </Typography>
@@ -90,7 +94,8 @@ function NewProfile() {
           <Grid
             container
             sx={{
-              background: "rgba(159, 119, 235, 0.10)",
+              // background: "rgba(159, 119, 235, 0.10)",
+              background:theme.palette.primary.dark,
               borderRadius: "5px",
             }}
             mb={{ xl: 1.3, lg: 1, md: 0.9, sm: 0.7, xs: 0.5 }}
@@ -103,42 +108,26 @@ function NewProfile() {
                     alt="Remy Sharp"
                     // src={selectedImage}
                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-                    sx={{
-                      marginRight: "16px",
-                      width: {
-                        xxl: 45,
-                        xl: 35,
-                        lg: 33,
-                        md: 25,
-                        sm: 20,
-                        xs: 19,
-                      },
-                      height: {
-                        xxl: 45,
-                        xl: 35,
-                        lg: 33,
-                        md: 25,
-                        sm: 20,
-                        xs: 19,
-                      },
-                    }}
+                    className={classes.Avatar}
                   />
                 </Grid>
                 <Grid item xs={11} align="left">
                   <Typography
                     variant="subtitle1"
                     className={classes.fontweight}
-                    sx={{
-                      color: "#1E1E1E",
-                    }}
+                    color={theme.palette.color30.main}
+                    // sx={{
+                    //   color: "#1E1E1E",
+                    // }}
                   >
                     Pratik Patel
                   </Typography>
                   <Typography
                     variant="subtitle1"
-                    sx={{
-                      color: "rgba(43, 43, 43, 0.80)",
-                    }}
+                    color={theme.palette.color43.superdark}
+                    // sx={{
+                    //   color: "rgba(43, 43, 43, 0.80)",
+                    // }}
                   >
                     pratik.patel@aspiresoftserv.com
                   </Typography>
@@ -153,7 +142,8 @@ function NewProfile() {
           <Grid
             container
             sx={{
-              background: "rgba(134, 134, 134, 0.10)",
+              background:theme.palette.color134.light,
+              // background: "rgba(134, 134, 134, 0.10)",
               borderRadius: "5px",
             }}
             columns={{ xs: 4, sm: 12 }}
@@ -169,17 +159,19 @@ function NewProfile() {
                   <Typography
                     variant="subtitle1"
                     className={classes.fontweight}
-                    sx={{
-                      color: "#1E1E1E",
-                    }}
+                    color={theme.palette.color30.main}
+                    // sx={{
+                    //   color: "#1E1E1E",
+                    // }}
                   >
                     poonampavakar5632@gmail.com
                   </Typography>
                   <Typography
                     variant="subtitle1"
-                    sx={{
-                      color: "rgba(43, 43, 43, 0.80)",
-                    }}
+                    color={theme.palette.color43.superdark}
+                    // sx={{
+                    //   color: "rgba(43, 43, 43, 0.80)",
+                    // }}
                   >
                     Invited by Poonam Pavaskar. Expires 1 week from now
                   </Typography>
@@ -192,51 +184,17 @@ function NewProfile() {
           </Grid>
 
           <Box
-            sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              mb: {
-                xxl: "45px",
-                xl: "40px",
-                lg: "35px",
-                md: "30px",
-                sm: "25px",
-                xs: "20px",
-              },
-              mt: 1,
-            }}
+          className={classes.AdduserBox}
           >
             <Box>
               <AddIcon
-                // onClick={handleSaveClick}
-                sx={{
-                  color: "#9F77EB",
-                  cursor: "pointer",
-                  width: {
-                    xxl: "16px",
-                    xl: "15px",
-                    lg: "14px",
-                    md: "13px",
-                    sm: "12px",
-                    xs: "11px",
-                  },
-                  height: {
-                    xxl: "16px",
-                    xl: "15px",
-                    lg: "14px",
-                    md: "13px",
-                    sm: "12px",
-                    xs: "11px",
-                  },
-                  mr: 1,
-                }}
+              className={classes.AddIcon}
               />
             </Box>
             <Box>
               <Typography
                 variant="body2"
-                sx={{ color: "#9F77EB", cursor: "pointer" }}
+                sx={{ color: theme.palette.primary.main, cursor: "pointer" }}
               >
                 {PROFILE.ADD_MORE_USERS}
                 {/* Add More Users */}
@@ -264,18 +222,20 @@ function NewProfile() {
                 <Grid item xs={11} align="left">
                   <Typography
                     variant="h5"
-                    sx={{
-                      color: "#1E1E1E",
-                    }}
+                    color={theme.palette.color30.main}
+                    // sx={{
+                    //   color: "#1E1E1E",
+                    // }}
                   >
                     {PROFILE.MY_CURRENT_PLAN}
                     {/* My Current Plan */}
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{
-                      color: "rgba(43, 43, 43, 0.80)",
-                    }}
+                    color={theme.palette.color43.superdark}
+                    // sx={{
+                    //   color: "rgba(43, 43, 43, 0.80)",
+                    // }}
                   >
                     {PROFILE.PLAN_EXPIRY}
                     {/* please check your plan which dated expires. */}
@@ -294,7 +254,8 @@ function NewProfile() {
                 <Typography
                   variant="h5"
                   sx={{
-                    color: "rgba(43, 43, 43, 0.80)",
+                    color:theme.palette.color43.superdark,
+                    // color: "rgba(43, 43, 43, 0.80)",
                     marginTop: {
                       xxl: 2,
                       xl: 1.9,
@@ -310,7 +271,8 @@ function NewProfile() {
                 <Typography
                   variant="body1"
                   sx={{
-                    color: "rgba(43, 43, 43, 0.60)",
+                    // color: "rgba(43, 43, 43, 0.60)",
+                    color:theme.palette.color43.dark,
                     fontWeight: 400,
                   }}
                 >

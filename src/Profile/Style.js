@@ -12,6 +12,9 @@ export const classes = {
   btn: "btn",
   fontweight: "fontweight",
   Gridpadding: "Gridpadding",
+  Avatar: "Avatar",
+  AdduserBox: "AdduserBox",
+  AddIcon:"AddIcon"
   // content: "content",
 };
 
@@ -49,7 +52,8 @@ export const Root = styled("div")(({ theme }) => ({
       height: "81.5vh",
     },
     borderRadius: "5px",
-    border: "1px solid rgba(0, 0, 0, 0.20)",
+    // border: "1px solid rgba(0, 0, 0, 0.20)",
+    border: `1px solid ${theme.palette.secondaryBlack.light}`,
     overflow: "auto",
     // height: "70vh",
     scrollbarWidth: "thin",
@@ -65,10 +69,10 @@ export const Root = styled("div")(({ theme }) => ({
       borderRadius: "5px",
     },
   },
-  [`& .${classes.MainTitle}`]: {
-    fontFamily: "Poppins",
-    fontWeight: 600,
-  },
+  // [`& .${classes.MainTitle}`]: {
+  //   fontFamily: "Poppins",
+  //   fontWeight: 600,
+  // },
   [`& .${classes.box}`]: {
     // background:"yellow"
     [up("xs")]: {
@@ -91,7 +95,8 @@ export const Root = styled("div")(({ theme }) => ({
     },
   },
   [`& .${classes.title}`]: {
-    color: "rgba(30, 30, 30, 0.60)",
+    // color: "rgba(30, 30, 30, 0.60)",
+    color: theme.palette.color30.dark,
     [up("xs")]: {
       marginBottom: "7px",
     },
@@ -113,7 +118,8 @@ export const Root = styled("div")(({ theme }) => ({
   },
   [`& .${classes.titlegrid}`]: {
     borderRadius: "5px",
-    background: "rgba(134, 134, 134, 0.10)",
+    // background: "rgba(134, 134, 134, 0.10)",
+    background: theme.palette.color134.light,
     [up("xs")]: {
       marginBottom: "20px",
     },
@@ -187,10 +193,13 @@ export const Root = styled("div")(({ theme }) => ({
     paddingRight: "16px",
   },
   [`& .${classes.btn}`]: {
-    background: "rgba(134, 134, 134, 0.40)",
-    color: "#1E1E1E",
+    // background: "rgba(134, 134, 134, 0.40)",
+    background: theme.palette.color134.medium,
+    // color: "#1E1E1E",
+    color: theme.palette.color30.main,
     ":hover": {
-      background: "rgba(134, 134, 134, 0.40)",
+      // background: "rgba(134, 134, 134, 0.40)",
+      background: theme.palette.color134.medium,
       color: "1E1E1E",
     },
     [up("xs")]: {
@@ -229,6 +238,86 @@ export const Root = styled("div")(({ theme }) => ({
   },
   [`& .${classes.Gridpadding}`]: {
     paddingLeft: "37.6px",
+  },
+  [`& .${classes.Avatar}`]: {
+    marginRight: "16px",
+    [up("xs")]: {
+      width: "19px",
+      height: "19px",
+    },
+    [up("sm")]: {
+      width: "20px",
+      height: "20px",
+    },
+    [up("md")]: {
+      width: "25px",
+      height: "25px",
+    },
+    [up("lg")]: {
+      width: "33px",
+      height: "33px",
+    },
+    [up("xl")]: {
+      width: "35px",
+      height: "35px",
+    },
+    [up("xxl")]: {
+      width: "45px",
+      height: "45px",
+    },
+  },
+  [`& .${classes.AdduserBox}`]: {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginTop:"0.8vh",
+    [up('xs')]:{
+      marginBottom:"20px"
+    },
+    [up('sm')]:{
+      marginBottom:"25px"
+    },
+    [up('md')]:{
+      marginBottom:"30px"
+    },
+    [up('lg')]:{
+      marginBottom:"35px"
+    },
+    [up('xl')]:{
+      marginBottom:"40px"
+    },
+    [up('xxl')]:{
+      marginBottom:"45px"
+    },
+  },
+  [`& .${classes.AddIcon}`]: {
+    color:theme.palette.primary.main,
+    cursor: "pointer",
+    marginRight:"0.8vh",
+    [up("xs")]: {
+      width: "11px",
+      height: "11px",
+    },
+    [up("sm")]: {
+      width: "12px",
+      height: "12px",
+    },
+    [up("md")]: {
+      width: "13px",
+      height: "13px",
+    },
+    [up("lg")]: {
+      width: "14px",
+      height: "14px",
+    },
+    [up("xl")]: {
+      width: "15px",
+      height: "15px",
+    },
+    [up("xxl")]: {
+      width: "16px",
+      height: "16px",
+    },
   },
   // [`& .${classes.content}`]: {
   //   color: theme.palette.common.white,

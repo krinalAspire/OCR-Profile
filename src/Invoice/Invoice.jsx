@@ -95,7 +95,7 @@ function Invoice() {
               // className={`${classes.InvoicePdfMainBox} scrollableBox`}
               className={classes.InvoiceGridMainBox}
               sx={{
-                border: "1px solid black",
+                // border: "1px solid black",
                 // overflow: "auto",
                 // height: {
                 //   xs: "70vh",
@@ -108,16 +108,24 @@ function Invoice() {
               }}
             >
               <Box
-                // className={classes.InvoicePdfBox}
-                sx={{
-                  overflow: "auto",
-                  border: "1px solid red",
-                  mx: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
-                  my: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
-                  height: "100vh",
-                }}
+                className={classes.InvoicePdfBox}
+                // sx={{
+                //   overflow: "auto",
+                  // border: "1px solid red",
+                  // mx: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  // my: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  // height: "100vh",
+                // }}
               >
+                <Box sx={{
+                  // overflow: "auto",
+                  // border: "1px solid red",
+                  // mx: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  // my: { xxl: 3, xl: 3, lg: 2.5, md: 2, sm: 1.5, xs: 1 },
+                  height: "100vh",
+                }}>
                 <div>Hello</div>
+                </Box>
               </Box>
             </Box>
           </Grid>

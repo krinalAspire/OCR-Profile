@@ -6,12 +6,12 @@ export const classes = {
   btn: "btn",
   addIcon: "addIcon",
   filterIcon: "filterIcon",
-  FilterSelect: "FilterSelect",
+  filterSelect: "filterSelect",
 };
 
 export const Root = styled("div")(({ theme }) => ({
   [`&.${classes.root}`]: {
-    border: "1px solid rgba(0, 0, 0, 0.20)",
+    border: `1px solid ${theme.palette.secondaryBlack.light}`,
     borderRadius: "5px",
     [up("xs")]: {
       margin: "20px 23px",
@@ -36,11 +36,11 @@ export const Root = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "#9F77EB",
+    background: theme.palette.primary.main,
     color: "white",
     marginRight: "1vh",
     ":hover": {
-      background: "#9F77EB",
+      background: theme.palette.primary.main,
       color: "white",
     },
     [up("xs")]: {
@@ -137,22 +137,87 @@ export const Root = styled("div")(({ theme }) => ({
       marginRight: "10px",
     },
   },
-  // [`& .${classes.FilterSelect}`]: {
-  //   // height:"30vh",
-  //   background:"yellow",
-  //   fontFamily: "Heebo",
-  //   fontWeight: 400,
-  //   ":hover" :{
-  //     background:"rgba(30, 30, 30, 0.10)",
-  //     color:"#1E1E1E"
-  //   },
-  //   "&.Mui-selected":{
-  //    background:"rgba(159, 119, 235, 0.28)",
-  //    color:"#1E1E1E"
-  //   },
-  //   "&.Mui-selected:hover":{
-  //    backgroundColor: "rgba(159, 119, 235, 0.28)",
-  //    color:"#1E1E1E"
-  //   }
-  // },
+  [`& .${classes.filterSelect}`]: {
+    // height: "55vh",
+    // "& .MuiMenuItem-root": {
+    //   "&:hover": {
+    //     background: "rgba(30, 30, 30, 0.10)",
+    //     color: "#1E1E1E",
+    //   },
+    //   "&.Mui-selected": {
+    //     background: "rgba(159, 119, 235, 0.28)",
+    //     color: "#1E1E1E",
+    //   },
+    //   "&.Mui-selected:hover": {
+    //     background: "rgba(159, 119, 235, 0.28)",
+    //     color: "#1E1E1E",
+    //   },
+    // },
+    // "& .MuiSelect-root": {
+    //   // Add the desired height to the select container
+    //   height: "55vh", // Adjust the height as needed
+    // },
+    // "& .MuiMenuItem-root": {
+    //   "&:hover": {
+    //     background: "rgba(30, 30, 30, 0.10)",
+    //     color: "#1E1E1E",
+    //   },
+    //   "&.Mui-selected": {
+    //     background: "rgba(159, 119, 235, 0.28)",
+    //     color: "#1E1E1E",
+    //   },
+    //   "&.Mui-selected:hover": {
+    //     background: "rgba(159, 119, 235, 0.28)",
+    //     color: "#1E1E1E",
+    //   },
+    // },
+    "& .MuiSelect-selectMenu": {
+      height: "55vh",
+      boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+      "&:hover": {
+        background: "rgba(30, 30, 30, 0.10)",
+        color: "#1e1e1e",
+      },
+      "&.Mui-focused": {
+        background: "rgba(159, 119, 235, 0.28)",
+        color: "#1e1e1e",
+      },
+      "&.Mui-selected": {
+        background: "rgba(159, 119, 235, 0.28)",
+        color: "#1e1e1e",
+      },
+    },
+    // height:"30vh",  
+    // background:"yellow",
+    // "&.MuiMenu":{
+    //     // height: "30vh",
+    //     boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+    //     "&::-webkit-scrollbar": {
+    //       width: "0.4em",
+    //     },
+    //     "&::-webkit-scrollbar-track": {
+    //       background: "#D9D9D9",
+    //       borderRadius: "5px",
+    //     },
+    //     "&::-webkit-scrollbar-thumb": {
+    //       background: "#868686",
+    //       borderRadius: "5px",
+    //     },
+    // },
+    fontFamily: "Heebo",
+    fontWeight: 400,
+    // ":hover" :{
+    //   background:"rgba(30, 30, 30, 0.10)",
+    //   color:"#1E1E1E"
+    // },
+    // "&.Mui-selected":{
+    //  background:"rgba(159, 119, 235, 0.28)",
+    //  color:"#1E1E1E"
+    // },
+    // "&.Mui-selected:hover":{
+    //  backgroundColor: "rgba(159, 119, 235, 0.28)",
+    //  color:"#1E1E1E"
+    // }
+  },
 }));
+

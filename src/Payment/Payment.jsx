@@ -20,9 +20,12 @@ import axios from "axios";
 import { Root } from "./Style";
 import { classes } from "./Style";
 import { PAYMENT } from "../Services/constantService";
+import {theme} from "../Theme";
+import { PaymentData } from "../rowData";
 
 function Payment() {
-  const [rowData, setrowData] = useState([]);
+  // const [rowData, setrowData] = useState([]);
+  const [rowData, setrowData] = useState(PaymentData);
 
   const [organization, setOrganization] = useState([]);
 
@@ -44,18 +47,18 @@ function Payment() {
     // );
   };
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/PaymentData")
-      .then((res) => {
-        setrowData(res.data);
-        // console.log(res.data)
-      })
-      .catch((err) => {
-        // toast.error("Failed: " + err.message);
-        console.log(err.message);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/PaymentData")
+  //     .then((res) => {
+  //       setrowData(res.data);
+  //       // console.log(res.data)
+  //     })
+  //     .catch((err) => {
+  //       // toast.error("Failed: " + err.message);
+  //       console.log(err.message);
+  //     });
+  // }, []);
 
   //   const filteredRowData = rowData && rowData.filter((item) =>
   //   organization.includes(item.Organization)
@@ -95,7 +98,7 @@ function Payment() {
     const showArrow = params.displayName === "Status";
     return (
       <>
-        <Typography variant="body1" sx={{ color: "#1E1E1E" }}>
+        <Typography variant="body1" color={theme.palette.color30.main}>
           {value}
         </Typography>
         {showArrow ? null : (
@@ -110,7 +113,7 @@ function Payment() {
   const ResponsiveFontsize = (params) => {
     const value = params.value;
     return (
-      <Typography variant="body1" sx={{ color: "rgba(0, 0, 0, 0.60)" }}>
+      <Typography variant="body1" color={theme.palette.secondaryBlack.superdark}>
         {value}
       </Typography>
     );
@@ -138,7 +141,8 @@ function Payment() {
             <Typography
               variant="body1"
               sx={{
-                color: "#9F77EB",
+                // color: "#9F77EB",
+                color:theme.palette.primary.main,
                 cursor: "pointer",
                 // fontFamily: "Heebo",
                 // fontWeight: "500",
@@ -163,7 +167,7 @@ function Payment() {
           alt="Filter Icon"
           className={classes.filterIcon}
         />
-        <Typography sx={{ color: "#868686" }} variant="body1">
+        <Typography color={theme.palette.color134.main} variant="body1">
           {PAYMENT.SELECT_TEXT}
           {/* Filter by organiztion */}
         </Typography>
@@ -206,7 +210,7 @@ function Payment() {
     },
     {
       field: " ",
-      minWidth: 150,
+      minWidth: 165,
       // sortable: false,
       cellRenderer: handleInvoice,
     },
@@ -215,6 +219,7 @@ function Payment() {
   const defaultColDef = {
     // sortable: true,
     flex: 1,
+    resizable:true,
     // minWidth: 100,
   };
 
@@ -241,7 +246,8 @@ function Payment() {
               <Grid item xs={6}>
                 <Typography
                   variant="body1"
-                  SX={{ color: "rgba(43, 43, 43, 0.80)" }}
+                  color={theme.palette.color43.superdark}
+                  // SX={{ color: "rgba(43, 43, 43, 0.80)" }}
                 >
                   {PAYMENT.SUBTITLE}
                   {/* See history of your payment plan invoice */}
@@ -287,7 +293,25 @@ function Payment() {
                         onChange={handleChange}
                         displayEmpty
                         IconComponent={KeyboardArrowDownIcon}
-                        className={classes.FilterSelect}
+                        MenuProps={{
+                          sx: {
+                            height: "55vh",
+                            "& .MuiMenuItem-root": {
+                              "&:hover": {
+                                background: "rgba(30, 30, 30, 0.10)",
+                                color: theme.palette.color30.main,
+                              },
+                              "&.Mui-selected": {
+                                background: "rgba(159, 119, 235, 0.28)",
+                                color:theme.palette.color30.main,
+                              },
+                              "&.Mui-selected:hover": {
+                                background: "rgba(159, 119, 235, 0.28)",
+                                color:theme.palette.color30.main,
+                              },
+                            },
+                          },
+                        }}
                         // renderValue={(selected) => selected.join(", ")}
                         renderValue={(selected) => {
                           if (selected.length === 0) {
@@ -302,29 +326,6 @@ function Payment() {
                           <MenuItem
                             key={option.value}
                             value={option.value}
-                            // className={classes.FilterSelect}
-                            sx={{
-                              // height:"30vh",
-                              //  background: "yellow",
-                              // "& .MuiMenuItem-alternative":{
-                              //   background:"lightblue"
-                              // },
-                              ":hover": {
-                                background: "rgba(30, 30, 30, 0.10)",
-                                color: "#1E1E1E",
-                              },
-                              "&.Mui-selected": {
-                                background: "rgba(159, 119, 235, 0.28)",
-                                color: "#1E1E1E",
-                              },
-                              "&.Mui-selected:hover": {
-                                backgroundColor: "rgba(159, 119, 235, 0.28)",
-                                color: "#1E1E1E",
-                              },
-                              //  "&.MuiMenu":{
-                              //   height:"10vh"
-                              //  }
-                            }}
                           >
                             <Checkbox
                               checked={organization.includes(option.value)}
@@ -342,6 +343,7 @@ function Payment() {
 
           <Box
             className="ag-theme-alpine"
+            // id="my-ag-grid-container" 
             //  custom-scrollbar
             sx={{
               height: {
@@ -354,6 +356,10 @@ function Payment() {
               },
             }}
           >
+             <div className="custom-scrollbar">
+        {/* Your custom scrollbar content */}
+        {/* For example, you can add scroll buttons or other elements here */}
+      </div>
             <AgGridReact
               // rowData={rowData}
               // rowData={rowData && rowData.filter((item)=>item.Organization.includes(organization))}

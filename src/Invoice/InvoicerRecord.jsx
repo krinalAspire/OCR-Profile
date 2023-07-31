@@ -7,6 +7,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { Root } from "./Style";
 import { classes } from "./Style";
+import {theme} from "../Theme";
 
 const InvoiceRecord = (props) => {
   const [field, setfield] = useState(props.fieldName);
@@ -50,7 +51,7 @@ const InvoiceRecord = (props) => {
           container
           className={classes.GridContainer}
           sx={{
-            background: editMode ? "rgba(159, 119, 235, 0.20)" : null,
+            background: editMode ? theme.palette.primary.light : null,
           }}
         >
           <Grid
@@ -66,21 +67,21 @@ const InvoiceRecord = (props) => {
               <CheckIcon
                 className={classes.CheckedFieldIcon}
                 sx={{
-                  color: "#9F77EB",
+                  color: theme.palette.primary.main,
                 }}
               />
             ) : isEdited ? (
               <CheckIcon
                 className={classes.CheckedFieldIcon}
                 sx={{
-                  color: "#9F77EB",
+                  color: theme.palette.primary.main,
                 }}
               />
             ) : (
               <FiberManualRecordIcon
                 className={classes.FiberManualRecordIcon}
                 sx={{
-                  color: "#868686",
+                  color: theme.palette.color134.main,
                 }}
               />
             )}
@@ -118,7 +119,7 @@ const InvoiceRecord = (props) => {
                 onChange={handleChange}
                 className={classes.contentEditableField}
                 sx={{
-                  color: "#9F77EB",
+                  color: theme.palette.primary.main,
                   fontWeight: 400,
                 }}
               >
@@ -131,7 +132,7 @@ const InvoiceRecord = (props) => {
                 className={classes.TypographyField}
                 sx={{
                   // cursor: "pointer",
-                  color: isEdited ? "#9F77EB" : "#868686",
+                  color: isEdited ? theme.palette.primary.main : theme.palette.color134.main,
                   // fontFamily: "Heebo",
                   fontWeight: 400,
                 }}

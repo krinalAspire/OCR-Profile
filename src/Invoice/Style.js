@@ -28,7 +28,7 @@ export const Root = styled("div")(({ theme }) => ({
   },
   [`& .${classes.InvoicePdfMainBox}`]: {
     // background:'yellow'
-    overflow: "auto",
+    // overflow: "auto",
     // scrollbarWidth: "thin",
     // "&::-webkit-scrollbar": {
     //   width: "0.4em",
@@ -51,30 +51,54 @@ export const Root = styled("div")(({ theme }) => ({
       height: "86vh",
     },
     [up("lg")]: {
-      height: "88.8vh",
+      height: "50vh",
     },
     [up("xl")]: {
       height: "80vh",
     },
     [up("xxl")]: {
-      height: "92.8vh",
+      height: "80vh", 
     },
   },
   [`& .${classes.InvoicePdfBox}`]: {
-    // overflow: "auto",
-    // scrollbarWidth: "thin",
-    // "&::-webkit-scrollbar": {
-    //   width: "0.4em",
-    // },
-    // "&::-webkit-scrollbar-track": {
-    //   background: "#D9D9D9",
-    //   borderRadius: "5px",
-    // },
-    // "&::-webkit-scrollbar-thumb": {
-    //   backgroundColor: "#868686",
-    //   borderRadius: "5px",
-    // },
-    height: "100vh",
+    border: "1px solid red",
+    overflow: "auto",
+    scrollbarWidth: "thin",
+    "&::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "&::-webkit-scrollbar-track": {
+      background: "#D9D9D9",
+      borderRadius: "5px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#868686",
+      borderRadius: "5px",
+    },
+    [up("xs")]: {
+      height: "74vh",
+      margin:"8px 8px"
+    },
+    [up("sm")]: {
+      height: "37vh",
+      margin:"12px 12px"
+    },
+    [up("md")]: {
+      height: "81vh",
+      margin:"16px 16px"
+    },
+    [up("lg")]: {
+      height: "81vh",
+      margin:"20px 20px"
+    },
+    [up("xl")]: {
+      height: "74vh",
+      margin:"24px 24px"
+    },
+    [up("xxl")]: {
+      height: "75vh",
+      margin:"24px 24px"
+    },
   },
   [`& .${classes.InvoiceGridMainBox}`]: {
     // background:"yellow",
@@ -95,7 +119,7 @@ export const Root = styled("div")(({ theme }) => ({
       height: "77.5vh",
     },
     [up("sm")]: {
-      height: "55vh",
+      height: "40vh",
     },
     [up("md")]: {
       height: "86vh",
@@ -107,13 +131,14 @@ export const Root = styled("div")(({ theme }) => ({
       height: "80vh",
     },
     [up("xxl")]: {
-      height: "92.8vh",
+      height: "80vh",
     },
   },
   [`& .${classes.InvoiceGrid}`]: {
     borderLeft: "1px solid rgba(0, 0, 0, 0.06)",
     // border: "1px solid blue",
-    background: "#F7F7F7",
+    // background: "#F7F7F7",
+    background:theme.palette.color247.main
     // background:'yellow'
   },
   [`& .${classes.InvoiceGridBox}`]: {
@@ -157,7 +182,8 @@ export const Root = styled("div")(({ theme }) => ({
     },
   },
   [`& .${classes.InvoiceRecordTitle}`]: {
-    color: "rgba(30, 30, 30, 0.60)",
+    // color: "rgba(30, 30, 30, 0.60)",
+    color:theme.palette.color30.dark,
     [up("xs")]: {
       paddingLeft: "10px",
     },
@@ -181,10 +207,10 @@ export const Root = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "#9F77EB",
+    background: theme.palette.primary.main,
     color: "white",
     ":hover": {
-      background: "#9F77EB",
+      background: theme.palette.primary.main,
       color: "white",
     },
     [up("xs")]: {
@@ -216,7 +242,7 @@ export const Root = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "rgba(134, 134, 134, 0.20)",
+    background: theme.palette.color134.superlight,
     borderRadius: "5px",
     [up("xs")]: {
       width: "35px",

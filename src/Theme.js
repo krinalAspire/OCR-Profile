@@ -195,6 +195,29 @@ export const theme = createTheme({
         fontSize: "18px",
       },
     },
+    h6: {
+      fontFamily: "Poppins",
+      fontWeight: 600,
+      letterSpacing: 0,
+      [up("xs")]: {
+        fontSize: "15px",
+      },
+      [up("sm")]: {
+        fontSize: "16px",
+      },
+      [up("md")]: {
+        fontSize: "17px",
+      },
+      [up("lg")]: {
+        fontSize: "18px",
+      },
+      [up("xl")]: {
+        fontSize: "19px",
+      },
+      [up("xxl")]: {
+        fontSize: "20px",
+      },
+    },
   },
 
   components: {

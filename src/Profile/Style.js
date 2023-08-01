@@ -16,6 +16,12 @@ export const classes = {
   AdduserBox: "AdduserBox",
   AddIcon: "AddIcon",
   TextFieldContainer: "TextFieldContainer",
+  CardComponent: "CardComponent",
+  Cardheader: "Cardheader",
+  TextField: "TextField",
+  AdduserBtn: "AdduserBtn",
+  CardContent: "CardContent",
+  SubTitle: "SubTitle",
   // content: "content",
 };
 
@@ -369,6 +375,129 @@ export const Root = styled("div")(({ theme }) => ({
     },
     [up("xxl")]: {
       margin: "30px 0px",
+    },
+  },
+  [`& .${classes.CardComponent}`]: {
+    borderRadius: "5px",
+    [up("xs")]: {
+      width: "295px",
+      height: "285px",
+    },
+    [up("sm")]: {
+      width: "410px",
+      height: "290px",
+    },
+    [up("md")]: {
+      width: "425px",
+      height: "300px",
+    },
+    [up("lg")]: {
+      width: "500px",
+      height: "330px",
+    },
+    [up("xl")]: {
+      width: "530px",
+      height: "400px",
+    },
+    [up("xxl")]: {
+      width: "650px",
+      height: "480px",
+    },
+  },
+  [`& .${classes.Cardheader}`]: {
+    background: "rgba(134, 134, 134, 0.20)",
+    borderBottom: "1px solid rgba(134, 134, 134, 0.10)",
+  },
+  [`& .${classes.TextField}`]: {
+    [up("xs")]: {
+      width: "100px",
+    },
+    [up("sm")]: {
+      width: "100px",
+    },
+    [up("md")]: {
+      width: "100px",
+    },
+    [up("lg")]: {
+      width: "100px",
+    },
+    [up("xl")]: {
+      width: "100px",
+    },
+    [up("xxl")]: {
+      width: "100px",
+    },
+  },
+  [`& .${classes.AdduserBtn}`]: {
+    marginTop: theme.spacing(6),
+    ":hover": {
+      background: theme.palette.primary.main,
+      color: "white",
+    },
+    [up("xs")]: {
+      width: "70px",
+      height: "25px",
+    },
+    [up("sm")]: {
+      width: "74px",
+      height: "24px",
+    },
+    [up("md")]: {
+      width: "92px",
+      height: "26px",
+    },
+    [up("lg")]: {
+      width: "105px",
+      height: "33px",
+    },
+    [up("xl")]: {
+      width: "110px",
+      height: "35px",
+    },
+    [up("xxl")]: {
+      width: "133px",
+      height: "54px",
+    },
+  },
+  [`& .${classes.CardContent}`]: {
+    [up("xs")]: {
+      margin: "4px 0px 0px",
+    },
+    [up("sm")]: {
+      margin: "4px 2px 0px",
+    },
+    [up("md")]: {
+      margin: "5px 2px 0px",
+    },
+    [up("lg")]: {
+      margin: "10px 5px 0px",
+    },
+    [up("xl")]: {
+      margin: "13px 8px 0px",
+    },
+    [up("xxl")]: {
+      margin: "18px 11px 0px",
+    },
+  },
+  [`& .${classes.SubTitle}`]: {
+    color: theme.palette.color43.superdark,
+    [up("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+    [up("sm")]: {
+      marginBottom: theme.spacing(1.3),
+    },
+    [up("md")]: {
+      marginBottom: theme.spacing(1.5),
+    },
+    [up("lg")]: {
+      marginBottom: theme.spacing(1.5),
+    },
+    [up("xl")]: {
+      marginBottom: theme.spacing(2),
+    },
+    [up("xxl")]: {
+      marginBottom: theme.spacing(2.5),
     },
   },
   // [`& .${classes.content}`]: {

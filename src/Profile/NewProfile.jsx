@@ -15,8 +15,18 @@ import { Root } from "./Style";
 import { classes } from "./Style";
 import { PROFILE } from "../Services/constantService";
 import { theme } from "../Theme";
+import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
+import AddMember from "./AddMember";
 
 function NewProfile() {
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <>
       <Nav />
@@ -213,10 +223,22 @@ function NewProfile() {
               <Typography
                 variant="body2"
                 sx={{ color: theme.palette.primary.main, cursor: "pointer" }}
+                onClick={handleOpen}
               >
                 {PROFILE.ADD_MORE_USERS}
                 {/* Add More Users */}
               </Typography>
+              <Backdrop
+                sx={{
+                  color: "#fff",
+                  zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+                open={open}
+                // onClick={handleClose}
+              >
+                <AddMember handleClose={handleClose}/>
+                {/* <CircularProgress color="inherit" /> */}
+              </Backdrop>
             </Box>
           </Box>
 

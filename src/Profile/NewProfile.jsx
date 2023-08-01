@@ -9,10 +9,12 @@ import layers from "../images/layers.svg";
 import Progress from "./Progress";
 import Nav from "../Nav";
 import AddIcon from "@mui/icons-material/Add";
+import TextField from "@mui/material/TextField";
+// import Chip from '@mui/material/Chip';
 import { Root } from "./Style";
 import { classes } from "./Style";
 import { PROFILE } from "../Services/constantService";
-import {theme} from "../Theme";
+import { theme } from "../Theme";
 
 function NewProfile() {
   return (
@@ -95,7 +97,7 @@ function NewProfile() {
             container
             sx={{
               // background: "rgba(159, 119, 235, 0.10)",
-              background:theme.palette.primary.dark,
+              background: theme.palette.primary.dark,
               borderRadius: "5px",
             }}
             mb={{ xl: 1.3, lg: 1, md: 0.9, sm: 0.7, xs: 0.5 }}
@@ -135,14 +137,21 @@ function NewProfile() {
               </Grid>
             </Grid>
             <Grid item xs={7} className={classes.Gridpadding}>
-              <SelectButton label="Admin" />
+              <TextField
+                className={classes.TextFieldContainer}
+                size="small"
+                value="Admin"
+                variant="outlined"
+                disabled
+              />
+              {/* <SelectButton label="Admin" /> */}
             </Grid>
           </Grid>
 
           <Grid
             container
             sx={{
-              background:theme.palette.color134.light,
+              background: theme.palette.color134.light,
               // background: "rgba(134, 134, 134, 0.10)",
               borderRadius: "5px",
             }}
@@ -179,17 +188,26 @@ function NewProfile() {
               </Grid>
             </Grid>
             <Grid item xs={7} className={classes.Gridpadding}>
-              <SelectButton label="Members" />
+              <TextField
+                className={classes.TextFieldContainer}
+                size="small"
+                value="Member"
+                variant="outlined"
+                disabled
+              />
+              {/* <Chip
+                label="Chip Outlined"
+                // value="Member"
+                variant="outlined"
+                className={classes.TextFieldContainer}
+              /> */}
+              {/* <SelectButton label="Members" /> */}
             </Grid>
           </Grid>
 
-          <Box
-          className={classes.AdduserBox}
-          >
+          <Box className={classes.AdduserBox}>
             <Box>
-              <AddIcon
-              className={classes.AddIcon}
-              />
+              <AddIcon className={classes.AddIcon} />
             </Box>
             <Box>
               <Typography
@@ -254,7 +272,7 @@ function NewProfile() {
                 <Typography
                   variant="h5"
                   sx={{
-                    color:theme.palette.color43.superdark,
+                    color: theme.palette.color43.superdark,
                     // color: "rgba(43, 43, 43, 0.80)",
                     marginTop: {
                       xxl: 2,
@@ -272,7 +290,7 @@ function NewProfile() {
                   variant="body1"
                   sx={{
                     // color: "rgba(43, 43, 43, 0.60)",
-                    color:theme.palette.color43.dark,
+                    color: theme.palette.color43.dark,
                     fontWeight: 400,
                   }}
                 >

@@ -14,7 +14,8 @@ export const classes = {
   Gridpadding: "Gridpadding",
   Avatar: "Avatar",
   AdduserBox: "AdduserBox",
-  AddIcon:"AddIcon"
+  AddIcon: "AddIcon",
+  TextFieldContainer: "TextFieldContainer",
   // content: "content",
 };
 
@@ -202,34 +203,64 @@ export const Root = styled("div")(({ theme }) => ({
       background: theme.palette.color134.medium,
       color: "1E1E1E",
     },
+    // [up("xs")]: {
+    //   width: "29vw",
+    //   height: "4.5vh",
+    //   marginBottom: "10px",
+    // },
+    // [up("sm")]: {
+    //   width: "15vw",
+    //   height: "3.5vh",
+    //   margin: "20px 0px",
+    // },
+    // [up("md")]: {
+    //   width: "14vw",
+    //   height: "5vh",
+    //   margin: "20px 0px",
+    // },
+    // [up("lg")]: {
+    //   width: "13vw",
+    //   height: "6vh",
+    //   margin: "22px 0px",
+    // },
+    // [up("xl")]: {
+    //   width: "12.5vw",
+    //   height: "5.78vh",
+    //   margin: "23px 0px",
+    // },
+    // [up("xxl")]: {
+    //   width: "9.47vw",
+    //   height: "5vh",
+    //   margin: "24px 0px",
+    // },
     [up("xs")]: {
-      width: "29vw",
-      height: "4.5vh",
+      width: "144px",
+      height: "30px",
       marginBottom: "10px",
     },
     [up("sm")]: {
-      width: "15vw",
-      height: "3.5vh",
+      width: "159px",
+      height: "33px",
       margin: "20px 0px",
     },
     [up("md")]: {
-      width: "14vw",
-      height: "5vh",
+      width: "156px",
+      height: "34px",
       margin: "20px 0px",
     },
     [up("lg")]: {
-      width: "13vw",
-      height: "6vh",
+      width: "165px",
+      height: "37px",
       margin: "22px 0px",
     },
     [up("xl")]: {
-      width: "12.5vw",
-      height: "5.78vh",
+      width: "185px",
+      height: "40px",
       margin: "23px 0px",
     },
     [up("xxl")]: {
-      width: "9.47vw",
-      height: "5vh",
+      width: "209px",
+      height: "44px",
       margin: "24px 0px",
     },
   },
@@ -270,30 +301,30 @@ export const Root = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginTop:"0.8vh",
-    [up('xs')]:{
-      marginBottom:"20px"
+    marginTop: "0.8vh",
+    [up("xs")]: {
+      marginBottom: "20px",
     },
-    [up('sm')]:{
-      marginBottom:"25px"
+    [up("sm")]: {
+      marginBottom: "25px",
     },
-    [up('md')]:{
-      marginBottom:"30px"
+    [up("md")]: {
+      marginBottom: "30px",
     },
-    [up('lg')]:{
-      marginBottom:"35px"
+    [up("lg")]: {
+      marginBottom: "35px",
     },
-    [up('xl')]:{
-      marginBottom:"40px"
+    [up("xl")]: {
+      marginBottom: "40px",
     },
-    [up('xxl')]:{
-      marginBottom:"45px"
+    [up("xxl")]: {
+      marginBottom: "45px",
     },
   },
   [`& .${classes.AddIcon}`]: {
-    color:theme.palette.primary.main,
+    color: theme.palette.primary.main,
     cursor: "pointer",
-    marginRight:"0.8vh",
+    marginRight: "0.8vh",
     [up("xs")]: {
       width: "11px",
       height: "11px",
@@ -317,6 +348,27 @@ export const Root = styled("div")(({ theme }) => ({
     [up("xxl")]: {
       width: "16px",
       height: "16px",
+    },
+  },
+  [`& .${classes.TextFieldContainer}`]: {
+    // background:"yellow"
+    [up("xs")]: {
+      margin: "10px 0px",
+    },
+    [up("sm")]: {
+      margin: "10px 0px",
+    },
+    [up("md")]: {
+      margin: "15px 0px",
+    },
+    [up("lg")]: {
+      margin: "20px 0px",
+    },
+    [up("xl")]: {
+      margin: "25px 0px",
+    },
+    [up("xxl")]: {
+      margin: "30px 0px",
     },
   },
   // [`& .${classes.content}`]: {

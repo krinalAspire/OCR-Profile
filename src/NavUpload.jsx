@@ -21,21 +21,22 @@ import MailIcon from '@mui/icons-material/Mail';
 import { createTheme, ThemeProvider } from '@mui/material';
 // import Page from './Page';
 import Upload from './Upload';
+import UploadFile from './Upload/UploadFile';
 
-const Ntheme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,       // Extra small devices (portrait phones)
-      sm: 960,     // Small devices (landscape phones)
-      md: 1366,     // Medium devices (tablets)
-      lg: 1440,    // Large devices (desktops)
-      xl: 1920     // Extra large devices (large desktops)
-    }
-  }
-});
+// const Ntheme = createTheme({
+//   breakpoints: {
+//     values: {
+//       xs: 0,       // Extra small devices (portrait phones)
+//       sm: 960,     // Small devices (landscape phones)
+//       md: 1366,     // Medium devices (tablets)
+//       lg: 1440,    // Large devices (desktops)
+//       xl: 1920     // Extra large devices (large desktops)
+//     }
+//   }
+// });
 
 // const drawerWidth = 300;
-const drawerWidth = {xl:383, lg:383, md:285, sm:250, xs:250 };
+const drawerWidth = {xxl:383, xl:383, lg:285, md:250, sm:233, xs:146 };
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -95,7 +96,7 @@ export default function NavUpload() {
   };
 
   return (
-    <ThemeProvider theme={Ntheme}>
+    // <ThemeProvider theme={Ntheme}>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} 
@@ -169,10 +170,11 @@ export default function NavUpload() {
           }}>
            
          </Box>
+         <UploadFile />
         {/* <Page/> */}
-        <Upload />
+        {/* <Upload /> */}
       </Main>
     </Box>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }

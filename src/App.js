@@ -12,6 +12,7 @@ import NavUpload from './NavUpload';
 import Payment from './Payment/Payment';
 import Custombox from './Custombox';
 import Invoice from './Invoice/Invoice';
+import UploadFile from './Upload/UploadFile';
 // import Aggrid from './Aggrid';
 
 
@@ -26,7 +27,8 @@ function App() {
         {/* <Route path="/profile" element={<Nav/>}/> */}
         {/* <Route path='/payment' element={<NavPayment />} /> */}
         <Route path='/payment' element={<Payment />} />
-        <Route path='/upload' element={<NavUpload/>}/>
+        <Route path='/upload' element={<NavUpload/>}/>  
+        {/* <Route path='/upload' element={<UploadFile />} /> */}
         {/* <Route path='/' element={<Scroll/>} /> */}
         {/* <Route path='/' element={<Profile/>} /> */}
          <Route path="/profile" element={<NewProfile />}/>

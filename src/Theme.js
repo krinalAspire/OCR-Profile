@@ -200,19 +200,19 @@ export const theme = createTheme({
       fontWeight: 600,
       letterSpacing: 0,
       [up("xs")]: {
-        fontSize: "15px",
+        fontSize: "13px",
       },
       [up("sm")]: {
-        fontSize: "16px",
+        fontSize: "15px",
       },
       [up("md")]: {
-        fontSize: "17px",
+        fontSize: "16px",
       },
       [up("lg")]: {
-        fontSize: "18px",
+        fontSize: "17px",
       },
       [up("xl")]: {
-        fontSize: "19px",
+        fontSize: "18px",
       },
       [up("xxl")]: {
         fontSize: "20px",

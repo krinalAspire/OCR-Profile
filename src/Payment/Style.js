@@ -7,6 +7,15 @@ export const classes = {
   addIcon: "addIcon",
   filterIcon: "filterIcon",
   filterSelect: "filterSelect",
+  CardComponent: "CardComponent",
+  Cardheader: "Cardheader",
+  AdduserBtn: "AdduserBtn",
+  CardContent: "CardContent",
+  SubTitle: "SubTitle",
+  CloseAction: "CloseAction",
+  EmailTextfieldText: "EmailTextfieldText",
+  TextField:"TextField",
+  TypographyText:"TypographyText"
 };
 
 export const Root = styled("div")(({ theme }) => ({
@@ -219,5 +228,180 @@ export const Root = styled("div")(({ theme }) => ({
     //  color:"#1E1E1E"
     // }
   },
+  [`& .${classes.CardComponent}`]: {
+    borderRadius: "5px",
+    // width:"50.88vh",
+    // height:"70vh"
+    [up("xs")]: {
+      width: "977px",
+      height: "756px",
+    },
+    [up("sm")]: {
+      width: "977px",
+      height: "756px",
+    },
+    [up("md")]: {
+      width: "977px",
+      height: "756px",
+    },
+    [up("lg")]: {
+      width: "800px",
+      height: "550px",
+    },
+    [up("xl")]: {
+      width: "977px",
+      height: "756px",
+    },
+    [up("xxl")]: {
+      width: "977px",
+      height: "756px",
+    },
+  },
+  [`& .${classes.Cardheader}`]: {
+    background: "rgba(134, 134, 134, 0.20)",
+    borderBottom: "1px solid rgba(134, 134, 134, 0.10)",
+  },
+  [`& .${classes.AdduserBtn}`]: {
+    // marginTop: theme.spacing(6),
+    ":hover": {
+      background: theme.palette.primary.main,
+      color: "white",
+    },
+    [up("xs")]: {
+      width: "70px",
+      height: "25px",
+      marginTop: "29px",
+    },
+    [up("sm")]: {
+      width: "74px",
+      height: "24px",
+      marginTop: "30px",
+    },
+    [up("md")]: {
+      width: "92px",
+      height: "26px",
+      marginTop: "30px",
+    },
+    [up("lg")]: {
+      width: "105px",
+      // height: "33px",
+      height:"35px",
+      marginTop: "35px",
+    },
+    [up("xl")]: {
+      // width: "110px",
+      // height: "35px",
+      width: "115px",
+      height: "40px",
+      marginTop: "40px",
+    },
+    [up("xxl")]: {
+      // width: "125px",
+      // height: "41px",
+      width:"133px",
+      height:"52px",
+      marginTop: "45px",
+    },
+  },
+  [`& .${classes.CardContent}`]: {
+    [up("xs")]: {
+      margin: "4px 0px 0px",
+    },
+    [up("sm")]: {
+      margin: "4px 2px 0px",
+    },
+    [up("md")]: {
+      margin: "5px 2px 0px",
+    },
+    [up("lg")]: {
+      margin: "10px 5px 0px",
+    },
+    [up("xl")]: {
+      margin: "13px 8px 0px",
+    },
+    [up("xxl")]: {
+      margin: "18px 11px 0px",
+    },
+  },
+  [`& .${classes.SubTitle}`]: {
+    color: theme.palette.color43.superdark,
+    [up("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+    [up("sm")]: {
+      marginBottom: theme.spacing(1.3),
+    },
+    [up("md")]: {
+      marginBottom: theme.spacing(1.5),
+    },
+    [up("lg")]: {
+      marginBottom: theme.spacing(1.5),
+    },
+    [up("xl")]: {
+      marginBottom: theme.spacing(2),
+    },
+    [up("xxl")]: {
+      marginBottom: theme.spacing(2.5),
+    },
+  },
+  [`& .${classes.CloseAction}`]: {
+    cursor: "pointer",
+    // background:"yellow"
+    [up("xs")]: {
+      width: "16px",
+      height: "16px",
+    },
+    [up("sm")]: {
+      width: "18px",
+      height: "18px",
+    },
+    [up("md")]: {
+      width: "20px",
+      height: "20px",
+    },
+    [up("lg")]: {
+      width: "22px",
+      height: "22px",
+    },
+    [up("xl")]: {
+      width: "23px",
+      height: "23px",
+    },
+    [up("xxl")]: {
+      width: "24px",
+      height: "24px",
+    },
+  },
+  [`& .${classes.EmailTextfieldText}`]: {
+    fontWeight: 500,
+    paddingBottom: theme.spacing(1.5),
+  },
+  [`& .${classes.TextField}`]:{
+    '& .MuiInputBase-input': {
+      [up('xs')]:{
+        height:"6px" 
+      },
+      [up('sm')]:{
+        height:"13px" 
+      },
+      [up('md')]:{
+        height:"13px" 
+      },
+      [up('lg')]:{
+        height:"17px" 
+      },
+      [up('xl')]:{
+        height:"25px" 
+      },
+      [up('xxl')]:{
+        height:"34px" 
+        // height:"54px"
+      },
+    },
+  },
+  [`& .${classes.TypographyText}`]:{
+    marginBottom:theme.spacing(1),
+    fontWeight:500
+  }
 }));
 

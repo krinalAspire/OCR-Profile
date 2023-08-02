@@ -18,10 +18,13 @@ export const classes = {
   TextFieldContainer: "TextFieldContainer",
   CardComponent: "CardComponent",
   Cardheader: "Cardheader",
-  TextField: "TextField",
   AdduserBtn: "AdduserBtn",
   CardContent: "CardContent",
   SubTitle: "SubTitle",
+  CloseAction: "CloseAction",
+  EmailTextfieldText: "EmailTextfieldText",
+  TextField:"TextField",
+  Input:"Input"
   // content: "content",
 };
 
@@ -201,6 +204,7 @@ export const Root = styled("div")(({ theme }) => ({
   },
   [`& .${classes.btn}`]: {
     // background: "rgba(134, 134, 134, 0.40)",
+    boxShadow: 'none',
     background: theme.palette.color134.medium,
     // color: "#1E1E1E",
     color: theme.palette.color30.main,
@@ -401,35 +405,15 @@ export const Root = styled("div")(({ theme }) => ({
     },
     [up("xxl")]: {
       width: "650px",
-      height: "480px",
+      height: "440px",
     },
   },
   [`& .${classes.Cardheader}`]: {
     background: "rgba(134, 134, 134, 0.20)",
     borderBottom: "1px solid rgba(134, 134, 134, 0.10)",
   },
-  [`& .${classes.TextField}`]: {
-    [up("xs")]: {
-      width: "100px",
-    },
-    [up("sm")]: {
-      width: "100px",
-    },
-    [up("md")]: {
-      width: "100px",
-    },
-    [up("lg")]: {
-      width: "100px",
-    },
-    [up("xl")]: {
-      width: "100px",
-    },
-    [up("xxl")]: {
-      width: "100px",
-    },
-  },
   [`& .${classes.AdduserBtn}`]: {
-    marginTop: theme.spacing(6),
+    // marginTop: theme.spacing(6),
     ":hover": {
       background: theme.palette.primary.main,
       color: "white",
@@ -437,26 +421,37 @@ export const Root = styled("div")(({ theme }) => ({
     [up("xs")]: {
       width: "70px",
       height: "25px",
+      marginTop: "29px",
     },
     [up("sm")]: {
       width: "74px",
       height: "24px",
+      marginTop: "30px",
     },
     [up("md")]: {
       width: "92px",
       height: "26px",
+      marginTop: "30px",
     },
     [up("lg")]: {
       width: "105px",
-      height: "33px",
+      // height: "33px",
+      height:"35px",
+      marginTop: "35px",
     },
     [up("xl")]: {
-      width: "110px",
-      height: "35px",
+      // width: "110px",
+      // height: "35px",
+      width: "115px",
+      height: "40px",
+      marginTop: "40px",
     },
     [up("xxl")]: {
-      width: "133px",
-      height: "54px",
+      // width: "125px",
+      // height: "41px",
+      width:"133px",
+      height:"52px",
+      marginTop: "45px",
     },
   },
   [`& .${classes.CardContent}`]: {
@@ -500,6 +495,86 @@ export const Root = styled("div")(({ theme }) => ({
       marginBottom: theme.spacing(2.5),
     },
   },
+  [`& .${classes.CloseAction}`]: {
+    cursor: "pointer",
+    // background:"yellow"
+    [up("xs")]: {
+      width: "16px",
+      height: "16px",
+    },
+    [up("sm")]: {
+      width: "18px",
+      height: "18px",
+    },
+    [up("md")]: {
+      width: "20px",
+      height: "20px",
+    },
+    [up("lg")]: {
+      width: "22px",
+      height: "22px",
+    },
+    [up("xl")]: {
+      width: "23px",
+      height: "23px",
+    },
+    [up("xxl")]: {
+      width: "24px",
+      height: "24px",
+    },
+  },
+  [`& .${classes.EmailTextfieldText}`]: {
+    fontWeight: 500,
+    paddingBottom: theme.spacing(1.5),
+  },
+  [`& .${classes.TextField}`]:{
+    '& .MuiInputBase-input': {
+      [up('xs')]:{
+        height:"6px" 
+      },
+      [up('sm')]:{
+        height:"13px" 
+      },
+      [up('md')]:{
+        height:"13px" 
+      },
+      [up('lg')]:{
+        height:"17px" 
+      },
+      [up('xl')]:{
+        height:"25px" 
+      },
+      [up('xxl')]:{
+        height:"34px" 
+        // height:"54px"
+      },
+    },
+    // padding:"15px"
+    // lineHeight: '5',
+    // "&.MuiInputLabel":{
+    //   [up('xs')]:{
+    //     height:"15px"
+    //   },
+    //   [up('sm')]:{
+    //     height:"15px"
+    //   },
+    //   [up('md')]:{
+    //     height:"15px"
+    //   },
+    //   [up('lg')]:{
+    //     height:"15px"
+    //   },
+    //   [up('xl')]:{
+    //     height:"15px"
+    //   },
+    //   [up('xxl')]:{
+    //     height:"70px"
+    //   },
+    // }
+  },
+  // [`& .${classes.Input}`]: {
+  //   padding: '70px',
+  // },
   // [`& .${classes.content}`]: {
   //   color: theme.palette.common.white,
   //   fontSize: 16,

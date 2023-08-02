@@ -18,46 +18,39 @@ import TextField from "@mui/material/TextField";
 import closeIcon from "../images/x-circle.svg";
 import { classes } from "./Style";
 import { theme } from "../Theme";
-import { Button } from "@mui/material";
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import { Box, Button, Grid } from "@mui/material";
 
 function AddMember({ handleClose }) {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
-    <Card
-    className={classes.CardComponent}
-    //   sx={{
-    //     //  maxWidth: 345
-    //     width: "36.45vw",
-    //     height: "50.37vh",
-    //   }}
-    >
+    <Card className={classes.CardComponent}>
       <CardHeader
         className={classes.Cardheader}
-        action={
-          <Avatar
-            onClick={handleClose}
-            src={closeIcon}
-            sx={{ cursor: "pointer" }}
-          />
-        }
+        // action={
+        //   <Box className={classes.actionsContainer}>
+        //     <Avatar
+        //       onClick={handleClose}
+        //       src={closeIcon}
+        //       className={classes.CloseAction}
+        //       // sx={{ cursor: "pointer" }}
+        //     />
+        //   </Box>
+        // }
         title={
-          <Typography variant="h6">Add a Member to Aspire software</Typography>
+          <Grid container alignItems="center">
+            <Grid item xs={10}>
+              <Typography variant="h6">
+                Add a Member to Aspire software
+              </Typography>
+            </Grid>
+            <Grid item xs={2} align="right">
+              <Avatar
+                onClick={handleClose}
+                src={closeIcon}
+                className={classes.CloseAction}
+              />
+            </Grid>
+          </Grid>
         }
       />
 
@@ -66,7 +59,7 @@ function AddMember({ handleClose }) {
           Organizations allow you to invite team members and assign them.
         </Typography>
 
-        <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
+        <Typography variant="subtitle1" className={classes.EmailTextfieldText}>
           Email
         </Typography>
         <TextField
@@ -74,9 +67,13 @@ function AddMember({ handleClose }) {
           size="small"
           id="outlined-basic"
           variant="outlined"
+          className={classes.TextField}
+          // InputProps={{ className: classes.input }}
         />
 
-        <Button variant="contained" className={classes.AdduserBtn}>Add User</Button>
+        <Button variant="contained" className={classes.AdduserBtn}>
+          Add User
+        </Button>
       </CardContent>
     </Card>
   );

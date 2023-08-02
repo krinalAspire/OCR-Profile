@@ -15,15 +15,25 @@ import download from "../images/download.svg";
 import "./Payment.css";
 // import { PaymentData } from "../rowData";
 import NavPayment from "../NavPayment";
+import Backdrop from "@mui/material/Backdrop";
 import ArrowUp from "../images/arrow-up.svg";
 import axios from "axios";
 import { Root } from "./Style";
 import { classes } from "./Style";
 import { PAYMENT } from "../Services/constantService";
-import {theme} from "../Theme";
+import { theme } from "../Theme";
 import { PaymentData } from "../rowData";
+import AddPayment from "./AddPayment";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function Payment() {
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
   // const [rowData, setrowData] = useState([]);
   const [rowData, setrowData] = useState(PaymentData);
 
@@ -35,6 +45,7 @@ function Payment() {
     const selectedOrganizations = Array.isArray(event.target.value)
       ? event.target.value
       : [event.target.value];
+    // console.log(selectedOrganizations);
     setOrganization(selectedOrganizations);
     // console.log(organization);
     // console.log(rowData && rowData.filter((item)=>item.Organization.includes(organization)));
@@ -113,7 +124,10 @@ function Payment() {
   const ResponsiveFontsize = (params) => {
     const value = params.value;
     return (
-      <Typography variant="body1" color={theme.palette.secondaryBlack.superdark}>
+      <Typography
+        variant="body1"
+        color={theme.palette.secondaryBlack.superdark}
+      >
         {value}
       </Typography>
     );
@@ -142,7 +156,7 @@ function Payment() {
               variant="body1"
               sx={{
                 // color: "#9F77EB",
-                color:theme.palette.primary.main,
+                color: theme.palette.primary.main,
                 cursor: "pointer",
                 // fontFamily: "Heebo",
                 // fontWeight: "500",
@@ -219,7 +233,7 @@ function Payment() {
   const defaultColDef = {
     // sortable: true,
     flex: 1,
-    resizable:true,
+    resizable: true,
     // minWidth: 100,
   };
 
@@ -266,11 +280,21 @@ function Payment() {
                 <Box
                   sx={{ display: "flex", alignItems: "center", mt: { xs: 1 } }}
                 >
-                  <Button className={classes.btn}>
+                  <Button className={classes.btn} onClick={handleOpen}>
                     <AddIcon className={classes.addIcon} />
                     {PAYMENT.BUTTON_TEXT}
                     {/* Add Payment Detail */}
                   </Button>
+                  <Backdrop
+                    sx={{
+                      color: "#fff",
+                      zIndex: (theme) => theme.zIndex.drawer + 1,
+                    }}
+                    open={open}
+                    // onClick={handleClose}
+                  >
+                    <AddPayment handleClose={handleClose}/>
+                  </Backdrop>
 
                   <Box
                     sx={{
@@ -303,11 +327,11 @@ function Payment() {
                               },
                               "&.Mui-selected": {
                                 background: "rgba(159, 119, 235, 0.28)",
-                                color:theme.palette.color30.main,
+                                color: theme.palette.color30.main,
                               },
                               "&.Mui-selected:hover": {
                                 background: "rgba(159, 119, 235, 0.28)",
-                                color:theme.palette.color30.main,
+                                color: theme.palette.color30.main,
                               },
                             },
                           },
@@ -323,10 +347,7 @@ function Payment() {
                         // renderValue={(selected) => selected}
                       >
                         {options.map((option) => (
-                          <MenuItem
-                            key={option.value}
-                            value={option.value}
-                          >
+                          <MenuItem key={option.value} value={option.value}>
                             <Checkbox
                               checked={organization.includes(option.value)}
                             />
@@ -343,7 +364,7 @@ function Payment() {
 
           <Box
             className="ag-theme-alpine"
-            // id="my-ag-grid-container" 
+            // id="my-ag-grid-container"
             //  custom-scrollbar
             sx={{
               height: {
@@ -356,10 +377,10 @@ function Payment() {
               },
             }}
           >
-             <div className="custom-scrollbar">
-        {/* Your custom scrollbar content */}
-        {/* For example, you can add scroll buttons or other elements here */}
-      </div>
+            <div className="custom-scrollbar">
+              {/* Your custom scrollbar content */}
+              {/* For example, you can add scroll buttons or other elements here */}
+            </div>
             <AgGridReact
               // rowData={rowData}
               // rowData={rowData && rowData.filter((item)=>item.Organization.includes(organization))}

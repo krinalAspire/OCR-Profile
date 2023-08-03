@@ -15,6 +15,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import StatusDropdown from "./StatusDropdown";
 import { DemoItem } from "@mui/x-date-pickers/internals/demo";
+import IconButton from "@mui/material/IconButton";
+import { theme } from "../Theme";
 
 function AddPayment({ handleClose }) {
   const fileInputRef = useRef(null);
@@ -46,124 +48,91 @@ function AddPayment({ handleClose }) {
       />
 
       <CardContent className={classes.CardContent}>
-          <Typography
-            variant="subtitle1"
-            className={classes.TypographyText}
-          >
-            Organization Name
-          </Typography>
-          <TextField
-            fullWidth
-            id="outlined-basic"
-            rows={1}
-            variant="outlined"
-            sx={{
-              // paddingLeft: "23px",
-              "@media (min-width: 600px)": {
-                "& input": {
-                  height: "13px",
-                  //  width: "43vw",
-                },
-              },
-              "@media (min-width: 960px)": {
-                "& input": {
-                  height: "13px",
-                  //width: "43.4vw",
-                },
-              },
-              "@media (min-width: 1280px)": {
-                "& input": {
-                  height: "13px",
-                  //width: "46vw",
-                },
-                "@media (min-width: 1920px)": {
-                  "& input": {
-                    height: "24px",
-                    //width: "48.1vw",
-                  },
-                },
-              },
-            }}
-          />
+        <Typography variant="subtitle1" className={classes.TypographyText}>
+          Organization Name
+        </Typography>
+        <TextField
+          fullWidth
+          size="small"
+          id="outlined-basic"
+          // rows={1}
+          variant="outlined"
+          className={classes.TextField}
+        />
 
-          <Grid
-            container
-            // variant="subtitle1"
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 2, lg: 4 }}
-            mt={3}
-            // sx={{
-            //   height: { xl: "98px", lg: "89px", md: "88px", sm: "82px" },
-            // }}
-          >
-            <Grid item xs={4}>
-              <Typography
-              className={classes.TypographyText}
-              >
-                Amount
-              </Typography>
-              <TextField
-                fullWidth
-                sx={{
-                  // paddingLeft: "23px",
-                  "@media (min-width: 600px)": {
-                    "& input": {
-                      height: "13px",
-                      //  width: "43vw",
-                    },
-                  },
-                  "@media (min-width: 960px)": {
-                    "& input": {
-                      height: "13px",
-                      //width: "43.4vw",
-                    },
-                  },
-                  "@media (min-width: 1280px)": {
-                    "& input": {
-                      height: "13px",
-                      //width: "46vw",
-                    },
-                    "@media (min-width: 1920px)": {
-                      "& input": {
-                        height: "24px",
-                        //width: "48.1vw",
-                      },
-                    },
-                  },
-                }}
-              />
-            </Grid>
-            <Grid item xs={4}>
-              <Typography className={classes.TypographyText}>Date</Typography>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoItem >
-                  <DatePicker
-                    // slots={{
-                    //   openPickerIcon: <img src={calendar} alt="Calendar" />, // Use the SVG icon here
-                    // }}
-                  />
-                </DemoItem>
-              </LocalizationProvider>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography className={classes.TypographyText}>Status</Typography>
-              <StatusDropdown />
-              {/* <Dropdown /> */}
-            </Grid>
+        <Grid
+          container
+          // rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 2, lg: 4 }}
+          className={classes.AddPaymentGridContainer}
+        >
+          <Grid item xs={4}>
+            <Typography variant="subtitle1" className={classes.TypographyText}>
+              Amount
+            </Typography>
+            <TextField fullWidth size="small" className={classes.TextField} />
           </Grid>
+          <Grid item xs={4}>
+            <Typography variant="subtitle1" className={classes.TypographyText}>
+              Date
+            </Typography>
+            {/* <img src={calendar} alt="ghgjh"/> */}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoItem>
+                <DatePicker
+                  className={classes.TextField}
+                  slotProps={{
+                    textField: { size: "small" },
+                    // tabs: {
+                    //   dateIcon: <CalendarIcon/>,
+                    //   timeIcon: <CalendarIcon/>,
+                    // },
+                    // actionBar: calendar,
+                    // toolbar: calendar,
+                    // openPickerIcon: <CalendarIcon/>
+                    // keyboardPicker: {
+                    //   keyboardIcon: <img src={calendar} alt="Calendar" />,
+                    // },
+                  }}
+                  // renderInput={(props) => (
+                  //   <div>
+                  //     <input {...props} />
+                  //     <IconButton edge="end" onClick={props.openPicker}>
+                  //     <img src={calendar} alt="Calendar" />
+                  //     </IconButton>
+                  //   </div>
+                  // )}
+                  // inputFormat="MM/dd/yyyy"
+                  // renderInput={(props) => (
+                  //   <div>
+                  //     <input {...props} />
+                  //     <img src={calendar} alt="Calendar" />
+                  //   </div>
+                  // )}
+                  // openPickerIcon={<img src={calendar} alt="Calendar" />}
+                  // components={{openPickerIcon:calendar}}
+                  // openPickerIcon={<img src={calendar} alt="Calendar" />}
+                  // slots={{
+                  //   openPickerIcon: <img src={calendar} alt="Calendar" />, // Use the SVG icon here
+                  // }}
+                />
+              </DemoItem>
+            </LocalizationProvider>
+          </Grid>
+          <Grid item xs={4}>
+            <Typography variant="subtitle1" className={classes.TypographyText}>
+              Status
+            </Typography>
+            <StatusDropdown />
+            {/* <Dropdown /> */}
+          </Grid>
+        </Grid>
 
-          <Typography
-            variant="subtitle1"
-            className={classes.TypographyText}
-            // sx={{
-            // //   margin: "4px",
-            //   mb: 2,
-            // //   mt: 4.5,
-            // }}
-          >
+        <Box className={classes.AddPaymentGridContainer}>
+          <Typography variant="subtitle1" className={classes.TypographyText}>
             Upload Payment Invoice
           </Typography>
-          <Box border={"1px solid rgba(0, 0, 0, 0.20)"}>
+          <Box border={"1px solid rgba(0, 0, 0, 0.20)"} borderRadius="5px">
             <input
               ref={fileInputRef}
               type="file"
@@ -171,97 +140,31 @@ function AddPayment({ handleClose }) {
               style={{ display: "none" }}
               onChange={handleFileSelect}
               fullWidth
-              sx={{
-                // paddingLeft: "23px",
-                "@media (min-width: 600px)": {
-                  "& input": {
-                    height: "13px",
-                    //  width: "43vw",
-                  },
-                },
-                "@media (min-width: 960px)": {
-                  "& input": {
-                    height: "13px",
-                    //width: "43.4vw",
-                  },
-                },
-                "@media (min-width: 1280px)": {
-                  "& input": {
-                    height: "13px",
-                    //width: "46vw",
-                  },
-                  "@media (min-width: 1920px)": {
-                    "& input": {
-                      height: "24px",
-                      //width: "48.1vw",
-                    },
-                  },
-                },
-              }}
             />
-            <Box sx={{display:"flex", alignItems:"center"}}>
-            <Button
-              onClick={() => fileInputRef.current.click()}
-              sx={{
-                width: {
-                  xl: "169px",
-                  lg: "151px",
-                  md: "134px",
-                  sm: "110px",
-                },
-                ":hover": {
-                  background: "rgba(134, 134, 134, 0.40)",
-                  color: "#1E1E1E",
-                },
-                height: { xl: "54px", lg: "47px", md: "36px", sm: "32px" },
-                background: "rgba(134, 134, 134, 0.40)",
-                color: "#1E1E1E",
-                margin: "5px",
-                textTransform: "none",
-                borderRadius: "5px",
-              }}
-            >
-              Browse File
-            </Button>
+            <Box className={classes.BrowseFileBox}>
+              <Button
+                onClick={() => fileInputRef.current.click()}
+                className={classes.BrowseFileButton}
+              >
+                Browse File
+              </Button>
 
-            <Typography variant="subtitle1" sx={{ marginLeft: "69px" }}>
-              {selectedFile ? selectedFile.name : "No File Selected"}
-            </Typography>
+              <Typography
+                variant="subtitle1"
+                className={classes.SelectFileTypography}
+                color={
+                  selectedFile
+                    ? theme.palette.color30.main
+                    : theme.palette.color30.superlight
+                }
+              >
+                {selectedFile ? selectedFile.name : "No File Selected"}
+              </Typography>
             </Box>
           </Box>
+        </Box>
 
-          {/* <p> */}
-            <Button
-              sx={{
-                width: {
-                  xl: "169px",
-                  lg: "151px",
-                  md: "134px",
-                  sm: "110px",
-                },
-                height: { xl: "54px", lg: "47px", md: "36px", sm: "32px" },
-                backgroundColor: "#9F77EB",
-                fontFamily: "heebo",
-                fontSize: {
-                  xl: "16px",
-                  lg: "14px",
-                  md: "12px",
-                  sm: "10px",
-                },
-                padding: { sm: "7px" },
-                fontWeight: "500!important",
-                borderRadius: "5px",
-                textTransform: "none",
-                color: "#FFF",
-                mt: 5,
-                ":hover": {
-                  bgcolor: "#9F77EB",
-                  color: "white",
-                },
-              }}
-            >
-              Add Payment
-            </Button>
+        <Button className={classes.AddPaymentbtn}>Add Payment</Button>
       </CardContent>
     </Card>
   );

@@ -373,7 +373,7 @@ function Payment() {
                 lg: "41.5vh",
                 md: "47vh",
                 sm: "53vh",
-                xs: "60vh",
+                xs: "58vh",
               },
             }}
           >

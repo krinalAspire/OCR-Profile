@@ -42,7 +42,7 @@ const lightPalette = {
     superdark: "rgba(30, 30, 30, 0.8)",
     dark: "rgba(30, 30, 30, 0.6)",
     medium: "",
-    superlight: "",
+    superlight: "rgba(30, 30, 30, 0.40)",
     light: "rgba(30, 30, 30, 0.2)",
   },
   color43: {
@@ -285,7 +285,7 @@ export const theme = createTheme({
         root: {
           borderRadius: "5px",
           border: "1px solid rgba(0, 0, 0, 0.20)",
-          position: "relative",
+          // position: "relative",
           // background: 'yellow',
           // width: '150px',
           // width:'13vw'

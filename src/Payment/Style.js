@@ -19,10 +19,11 @@ export const classes = {
   customDatePicker: "customDatePicker",
   StatusDropDown: "StatusDropDown",
   AddPaymentGridContainer: "AddPaymentGridContainer",
-  BrowseFileBox: "BrowseFileBox",
+  BrowseFileButtonBox: "BrowseFileButtonBox",
   BrowseFileButton: "BrowseFileButton",
   SelectFileTypography: "SelectFileTypography",
   AddPaymentbtn:"AddPaymentbtn",
+  BrowseFileBox:"BrowseFileBox"
   // MenuItemIcon:"MenuItemIcon"
   // SelectComponent:"SelectComponent"
 };
@@ -476,7 +477,7 @@ export const Root = styled("div")(({ theme }) => ({
       marginTop: "30px",
     },
   },
-  [`& .${classes.BrowseFileBox}`]: {
+  [`& .${classes.BrowseFileButtonBox}`]: {
     display: "flex",
     alignItems: "center",
   },
@@ -555,6 +556,10 @@ export const Root = styled("div")(({ theme }) => ({
       marginTop:"50px"
     },
   },
+  [`& .${classes.BrowseFileBox}`]:{
+    border:"1px solid rgba(0, 0, 0, 0.20)",
+     borderRadius:"5px"
+  }
   // [`& .${classes.MenuItemIcon}`]:{
     // background:"yellow !important",
   //   [up("xs")]: {

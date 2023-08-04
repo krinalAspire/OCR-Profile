@@ -221,6 +221,33 @@ export const theme = createTheme({
   },
 
   components: {
+    MuiPickersPopper: {
+      styleOverrides: {
+        paper: {
+          height: '250px', // Set your desired height here
+          overflow: 'auto',
+          "&::-webkit-scrollbar": {
+            width: "0.4em",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#D9D9D9",
+            borderRadius: "5px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#868686",
+            borderRadius: "5px",
+          },
+        },
+      },
+    },
+    MuiPickersCalendar: {
+      styleOverrides: {
+        transitionContainer: {
+          // Ensure the content doesn't overflow
+          overflow: 'hidden',
+        },
+      },
+    },
     // MuiBox: {
     //   styleOverrides: {
     //     root: {
